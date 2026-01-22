@@ -2,19 +2,23 @@
 id: librem-5-gaming
 title: "Librem 5 | Gaming"
 date: 2019-12-01
-category: Linux Phones
-tags: ["linux-phone", "librem-5", "gaming", "open-source"]
+category: Gaming
+tags: ["linux phone", "librem 5", "gaming", "open source", "purism", "birch"]
 videoId: a1ENmWmwE8k
-excerpt: "Sebastian, one of the badass devs over at Purism, messed around with some common open-source games on the Librem 5. Let's check out what he got running!"
+excerpt: "Let's take a look at what runs on the Librem 5 birch batch."
 ---
 
 # Librem 5 | Gaming
 
-Sebastian, one of the badass devs over at Purism, messed around with some common open-source games on the Librem 5. Let's check out what he got running and go over some of the useful tweaks he used.
+Let's take a look at what runs on the Librem 5 Birch batch.
+
+Sebastian, one of the developers at Purism, explored gaming capabilities on the Librem 5 Birch edition. This video showcases various open-source games running on the device.
 
 ## Credit Where Due
 
 All credit for this goes to Sebastian. It is truly amazing what an experienced developer can do in such a short amount of time.
+
+**Support Sebastian**: https://dosowisko.net/donate/
 
 ## Warning
 
@@ -24,13 +28,17 @@ If you're not feeling that adventurous, don't worry - just watching is fine!
 
 ## Games That Work
 
-Several open-source games have been tested:
+Several open-source games have been tested on the Librem 5:
 - Classic 2D games work well
 - Some 3D games run with tweaks
-- Touch controls need adaptation
+- Touch controls need adaptation for games designed for keyboard/mouse input
+
+## The Birch Batch
+
+The Birch batch was an early production run of the Librem 5, following the dev kit and Aspen batches. It featured hardware improvements but was still considered a developer-focused release as the software continued to mature.
 
 ## The Takeaway
 
-Gaming on a Linux phone is possible! It's not going to replace your Switch, but for casual open-source games, it's actually pretty decent.
+Gaming on a Linux phone is possible! It's not going to replace your Switch, but for casual open-source games, it's actually pretty decent. The full Linux environment means any game that can be compiled for ARM and uses compatible graphics APIs has the potential to run.
 
-📺 [Watch on YouTube](https://youtube.com/watch?v=a1ENmWmwE8k)
+[Watch on YouTube](https://youtube.com/watch?v=a1ENmWmwE8k)

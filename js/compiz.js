@@ -6,7 +6,7 @@
 class CompizEffects {
     constructor() {
         this.enabled = {
-            wobbly: true,
+            wobbly: false,
             expo: true,
             glow: true,
             animations: true
@@ -21,7 +21,8 @@ class CompizEffects {
         this.loadSettings();
         this.createExpoOverlay();
         this.setupKeyboardShortcuts();
-        this.setupWobblyWindows();
+        // Wobbly windows disabled - causes visual issues
+        // this.setupWobblyWindows();
         this.setupWindowAnimations();
     }
 

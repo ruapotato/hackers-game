@@ -84,6 +84,11 @@ class WindowManager {
         // Focus this window
         this.focusWindow(windowId);
 
+        // Auto-maximize on mobile/small screens
+        if (window.innerWidth < 768) {
+            this.toggleMaximize(windowId);
+        }
+
         return { windowId, contentEl: windowEl.querySelector('.window-content') };
     }
 
