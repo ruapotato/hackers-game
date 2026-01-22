@@ -311,6 +311,7 @@ class BlogReaderApp {
                             <span class="post-date">📅 ${this.formatDate(post.date)}</span>
                             ${post.videoId ? `<a href="https://youtube.com/watch?v=${post.videoId}" target="_blank" class="watch-video">📺 Watch Video</a>` : ''}
                             <button class="share-btn" data-url="${window.location.origin}?blog=${post.id}">🔗 Copy Link</button>
+                            <a href="/blog/${post.id}/" class="static-link">📄 Static Page</a>
                         </div>
                         <div class="post-tags">
                             ${post.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
@@ -405,6 +406,20 @@ class BlogReaderApp {
                     color: #000;
                 }
                 .share-btn.copied {
+                    background: #87a752;
+                    color: #000;
+                }
+                .static-link {
+                    background: rgba(135, 167, 82, 0.2);
+                    border: 1px solid #87a752;
+                    color: #87a752;
+                    padding: 4px 12px;
+                    border-radius: 12px;
+                    font-size: 0.85em;
+                    text-decoration: none;
+                    transition: all 0.2s;
+                }
+                .static-link:hover {
                     background: #87a752;
                     color: #000;
                 }
