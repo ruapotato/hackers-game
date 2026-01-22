@@ -220,6 +220,12 @@ class Desktop {
             case 'sandy-potato':
                 sandyPotatoApp.open();
                 break;
+            case 'music-player':
+                musicPlayerApp.open();
+                break;
+            case 'spelin':
+                spelinApp.open();
+                break;
             default:
                 console.warn('Unknown app:', appName);
         }

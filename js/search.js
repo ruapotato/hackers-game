@@ -24,6 +24,8 @@ class GlobalSearch {
             { type: 'app', name: 'Text Editor', desc: 'Edit text files', icon: '&#128221;', action: () => textEditorApp.open() },
             { type: 'app', name: 'Settings', desc: 'Desktop preferences', icon: '&#9881;', action: () => settingsApp.open() },
             { type: 'app', name: 'Sandy Potato', desc: 'Falling sand simulation game', icon: '🏖️', action: () => sandyPotatoApp.open() },
+            { type: 'app', name: 'Music Player', desc: 'Play music and audio files', icon: '🎵', action: () => musicPlayerApp.open() },
+            { type: 'app', name: 'Spelin', desc: 'A better way to spell', icon: '📝', action: () => spelinApp.open() },
             { type: 'app', name: 'Code Playground', desc: 'Interactive coding experiments', icon: '&#128187;', action: () => hackersGameApp.open() },
 
             // Folders

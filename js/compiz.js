@@ -275,8 +275,17 @@ class CompizEffects {
     }
 }
 
-// Initialize after DOM ready
+// Initialize - must happen before any windows are created
+// DOM elements for compiz UI are created dynamically, so we can init immediately
+// if windowManager exists, otherwise wait for DOMContentLoaded
 let compiz;
-document.addEventListener('DOMContentLoaded', () => {
-    compiz = new CompizEffects();
-});
+if (typeof windowManager !== 'undefined') {
+    // windowManager exists, init now but wait for DOM for UI elements
+    document.addEventListener('DOMContentLoaded', () => {
+        compiz = new CompizEffects();
+    });
+} else {
+    document.addEventListener('DOMContentLoaded', () => {
+        compiz = new CompizEffects();
+    });
+}
