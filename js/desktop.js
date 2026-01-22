@@ -14,10 +14,13 @@ class Desktop {
         this.setupContextMenu();
         this.applySettings();
 
-        // Welcome - auto-open blog reader on visit
-        setTimeout(() => {
-            blogReaderApp.open();
-        }, 300);
+        // Welcome - auto-open blog reader on visit (unless direct link)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (!urlParams.get('blog')) {
+            setTimeout(() => {
+                blogReaderApp.open();
+            }, 300);
+        }
     }
 
     setupClock() {

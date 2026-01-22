@@ -586,10 +586,8 @@ class BlogReaderApp {
         // Show post without updating URL (it's already set)
         this.showPost(windowId, contentEl, postId, false);
 
-        // Maximize on mobile or when opened via direct link
-        if (window.innerWidth < 1024) {
-            windowManager.toggleMaximize(windowId);
-        }
+        // Always maximize when opened via direct link for best reading experience
+        windowManager.toggleMaximize(windowId);
 
         return windowId;
     }
