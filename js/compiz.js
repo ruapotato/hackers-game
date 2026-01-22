@@ -1,21 +1,17 @@
 /**
  * Compiz-style Desktop Effects
- * Wobbly windows, desktop cube, expo mode
+ * Wobbly windows, expo mode, window animations
  */
 
 class CompizEffects {
     constructor() {
         this.enabled = {
             wobbly: true,
-            cube: true,
             expo: true,
             glow: true,
             animations: true
         };
 
-        this.workspaces = ['Main', 'Work', 'Games', 'Media'];
-        this.currentWorkspace = 0;
-        this.cubeRotation = 0;
         this.isDragging = false;
 
         this.init();
@@ -23,8 +19,6 @@ class CompizEffects {
 
     init() {
         this.loadSettings();
-        this.createWorkspaceSwitcher();
-        this.createCubeContainer();
         this.createExpoOverlay();
         this.setupKeyboardShortcuts();
         this.setupWobblyWindows();
@@ -78,10 +72,15 @@ class CompizEffects {
             lastX = e.clientX;
             lastY = e.clientY;
 
-            // Apply dynamic skew based on movement velocity
-            const skewX = Math.max(-5, Math.min(5, velocity.x * 0.3));
-            const skewY = Math.max(-3, Math.min(3, velocity.y * 0.2));
-            activeWindow.style.transform = `skewX(${skewX}deg) skewY(${skewY}deg)`;
+            // Apply dynamic skew based on movement velocity (reduced sensitivity)
+            // Only apply if movement is significant (> 5px)
+            if (Math.abs(velocity.x) > 5 || Math.abs(velocity.y) > 5) {
+                const skewX = Math.max(-3, Math.min(3, velocity.x * 0.15));
+                const skewY = Math.max(-2, Math.min(2, velocity.y * 0.1));
+                activeWindow.style.transform = `skewX(${skewX}deg) skewY(${skewY}deg)`;
+            } else {
+                activeWindow.style.transform = '';
+            }
         });
 
         document.addEventListener('mouseup', () => {
@@ -143,122 +142,6 @@ class CompizEffects {
                 originalCloseWindow(windowId);
             }
         };
-    }
-
-    // ===== WORKSPACE SWITCHER =====
-    createWorkspaceSwitcher() {
-        const switcher = document.createElement('div');
-        switcher.id = 'workspace-switcher';
-        switcher.innerHTML = this.workspaces.map((name, i) => `
-            <div class="workspace-indicator ${i === 0 ? 'active' : ''}"
-                 data-workspace="${i}"
-                 data-num="${i + 1}"
-                 title="${name}"></div>
-        `).join('');
-
-        document.body.appendChild(switcher);
-
-        switcher.querySelectorAll('.workspace-indicator').forEach(ind => {
-            ind.addEventListener('click', () => {
-                const index = parseInt(ind.dataset.workspace);
-                if (index !== this.currentWorkspace) {
-                    this.switchWorkspace(index);
-                }
-            });
-        });
-    }
-
-    switchWorkspace(index) {
-        if (index === this.currentWorkspace || !this.enabled.cube) {
-            // Just update indicator without animation
-            this.updateWorkspaceIndicator(index);
-            this.currentWorkspace = index;
-            return;
-        }
-
-        // Show cube transition
-        this.showCubeTransition(this.currentWorkspace, index);
-        this.currentWorkspace = index;
-    }
-
-    updateWorkspaceIndicator(index) {
-        const indicators = document.querySelectorAll('.workspace-indicator');
-        indicators.forEach((ind, i) => {
-            ind.classList.toggle('active', i === index);
-        });
-    }
-
-    // ===== DESKTOP CUBE =====
-    createCubeContainer() {
-        const container = document.createElement('div');
-        container.id = 'desktop-cube-container';
-
-        const icons = ['🏠', '💼', '🎮', '🎬'];
-
-        container.innerHTML = `
-            <div class="desktop-cube">
-                <div class="cube-face front">
-                    <div class="cube-face-label">Main</div>
-                    <div class="cube-face-content">${icons[0]}</div>
-                </div>
-                <div class="cube-face right">
-                    <div class="cube-face-label">Work</div>
-                    <div class="cube-face-content">${icons[1]}</div>
-                </div>
-                <div class="cube-face back">
-                    <div class="cube-face-label">Games</div>
-                    <div class="cube-face-content">${icons[2]}</div>
-                </div>
-                <div class="cube-face left">
-                    <div class="cube-face-label">Media</div>
-                    <div class="cube-face-content">${icons[3]}</div>
-                </div>
-            </div>
-        `;
-        document.body.appendChild(container);
-
-        // Click outside cube to close
-        container.addEventListener('click', (e) => {
-            if (e.target === container) {
-                this.hideCube();
-            }
-        });
-    }
-
-    showCubeTransition(from, to) {
-        const container = document.getElementById('desktop-cube-container');
-        const cube = container.querySelector('.desktop-cube');
-
-        // Calculate rotation direction
-        const diff = to - from;
-        this.cubeRotation += diff * 90;
-
-        // Set initial rotation
-        cube.style.transition = 'none';
-        cube.style.transform = `rotateY(${-(this.cubeRotation - diff * 90)}deg)`;
-
-        // Show container
-        container.classList.add('active');
-
-        // Animate to new position
-        requestAnimationFrame(() => {
-            cube.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-            cube.style.transform = `rotateY(${-this.cubeRotation}deg)`;
-        });
-
-        // Update indicator and hide cube
-        setTimeout(() => {
-            this.updateWorkspaceIndicator(to);
-        }, 300);
-
-        setTimeout(() => {
-            container.classList.remove('active');
-        }, 700);
-    }
-
-    hideCube() {
-        const container = document.getElementById('desktop-cube-container');
-        container.classList.remove('active');
     }
 
     // ===== EXPO MODE =====
@@ -338,23 +221,9 @@ class CompizEffects {
                 this.toggleExpo();
             }
 
-            // Escape to close expo/cube
+            // Escape to close expo
             if (e.key === 'Escape') {
                 this.hideExpo();
-                this.hideCube();
-            }
-
-            // Ctrl + Alt + Left/Right = Switch workspace
-            if (e.ctrlKey && e.altKey) {
-                if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    const next = (this.currentWorkspace + 1) % this.workspaces.length;
-                    this.switchWorkspace(next);
-                } else if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    const prev = (this.currentWorkspace - 1 + this.workspaces.length) % this.workspaces.length;
-                    this.switchWorkspace(prev);
-                }
             }
         });
     }
