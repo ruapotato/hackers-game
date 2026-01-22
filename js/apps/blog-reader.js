@@ -75,6 +75,7 @@ class BlogReaderApp {
                         <div class="social-links">
                             <a href="${aboutData.links.youtube}" target="_blank" class="social-btn">📺 YouTube</a>
                             <a href="${aboutData.links.github}" target="_blank" class="social-btn">🐙 GitHub</a>
+                            <a href="${aboutData.links.linkedin}" target="_blank" class="social-btn">💼 LinkedIn</a>
                         </div>
                     </div>
                     <div class="expertise-bars">

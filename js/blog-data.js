@@ -356,6 +356,7 @@ const aboutData = {
     links: {
         youtube: "https://youtube.com/@DavidHamner",
         github: "https://github.com/ruapotato",
+        linkedin: "https://www.linkedin.com/in/david-hamner-a1633635/",
         website: "https://hackers-game.com"
     },
     expertise: [
