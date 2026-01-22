@@ -787,7 +787,7 @@ But this is a simulated environment, so your data is safe. 😉
         const wars = {
             'vim': 'Vim is clearly superior. :wq',
             'nano': 'Nano - for when you just need to edit a file without a PhD.',
-            'emacs': 'Emacs - it\\'s not just an editor, it\\'s an operating system!'
+            'emacs': "Emacs - it's not just an editor, it's an operating system!"
         };
         this.printHtml(windowId, contentEl, `
 <span class="term-cyan">${editor.toUpperCase()}</span>

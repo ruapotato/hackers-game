@@ -1,52 +1,47 @@
 /**
- * Hackers Game App - The main hacking game experience
+ * Code Playground App - Fun coding experiments and visualizations
  */
 
 class HackersGameApp {
     constructor() {
         this.instances = new Map();
-        this.challenges = [
+        this.experiments = [
             {
-                id: 'crack-password',
-                name: 'Password Cracker',
-                description: 'Crack the encrypted password using brute force',
-                difficulty: 'Easy',
-                unlocked: true
+                id: 'ascii-art',
+                name: 'ASCII Art Generator',
+                description: 'Create cool ASCII art from text',
+                icon: '🎨'
             },
             {
-                id: 'sql-injection',
-                name: 'SQL Injection',
-                description: 'Exploit a vulnerable login form',
-                difficulty: 'Medium',
-                unlocked: true
+                id: 'sorting-viz',
+                name: 'Sorting Visualizer',
+                description: 'Watch sorting algorithms in action',
+                icon: '📊'
             },
             {
-                id: 'network-scan',
-                name: 'Network Recon',
-                description: 'Discover hidden services on the network',
-                difficulty: 'Easy',
-                unlocked: true
+                id: 'conway',
+                name: "Conway's Game of Life",
+                description: 'Cellular automaton simulation',
+                icon: '🧬'
             },
             {
-                id: 'crypto-decode',
-                name: 'Cipher Cracker',
-                description: 'Decode the secret message',
-                difficulty: 'Medium',
-                unlocked: true
+                id: 'fractal',
+                name: 'Fractal Generator',
+                description: 'Generate beautiful fractals',
+                icon: '🌀'
             },
             {
-                id: 'privilege-escalation',
-                name: 'Privilege Escalation',
-                description: 'Gain root access to the system',
-                difficulty: 'Hard',
-                unlocked: false
+                id: 'regex',
+                name: 'Regex Tester',
+                description: 'Test regular expressions live',
+                icon: '🔤'
             }
         ];
     }
 
     open() {
         const { windowId, contentEl } = windowManager.createWindow({
-            title: 'Hackers Game',
+            title: 'Code Playground',
             icon: '&#128187;',
             width: 800,
             height: 550,
@@ -55,8 +50,7 @@ class HackersGameApp {
 
         const instance = {
             windowId,
-            currentScreen: 'menu',
-            score: 0
+            currentScreen: 'menu'
         };
 
         this.instances.set(windowId, instance);
@@ -70,33 +64,22 @@ class HackersGameApp {
             <div class="hackers-game-app">
                 <div class="game-screen">
                     <div class="game-title">
-                        <pre>
- ██░ ██  ▄▄▄       ▄████▄   ██ ▄█▀▓█████  ██▀███    ██████
-▓██░ ██▒▒████▄    ▒██▀ ▀█   ██▄█▒ ▓█   ▀ ▓██ ▒ ██▒▒██    ▒
-▒██▀▀██░▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▒███   ▓██ ░▄█ ▒░ ▓██▄
-░▓█ ░██ ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ▒▓█  ▄ ▒██▀▀█▄    ▒   ██▒
-░▓█▒░██▓ ▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄░▒████▒░██▓ ▒██▒▒██████▒▒
- ▒ ░░▒░▒ ▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░░ ▒░ ░░ ▒▓ ░▒▓░▒ ▒▓▒ ▒ ░
- ▒ ░▒░ ░  ▒   ▒▒ ░  ░  ▒   ░ ░▒ ▒░ ░ ░  ░  ░▒ ░ ▒░░ ░▒  ░ ░
- ░  ░░ ░  ░   ▒   ░        ░ ░░ ░    ░     ░░   ░ ░  ░  ░
- ░  ░  ░      ░  ░░ ░      ░  ░      ░  ░   ░           ░
-                  ░
-  ▄████  ▄▄▄       ███▄ ▄███▓▓█████
- ██▒ ▀█▒▒████▄    ▓██▒▀█▀ ██▒▓█   ▀
-▒██░▄▄▄░▒██  ▀█▄  ▓██    ▓██░▒███
-░▓█  ██▓░██▄▄▄▄██ ▒██    ▒██ ▒▓█  ▄
-░▒▓███▀▒ ▓█   ▓██▒▒██▒   ░██▒░▒████▒
- ░▒   ▒  ▒▒   ▓▒█░░ ▒░   ░  ░░░ ▒░ ░
-  ░   ░   ▒   ▒▒ ░░  ░      ░ ░ ░  ░
-░ ░   ░   ░   ▒   ░      ░      ░
-      ░       ░  ░       ░      ░  ░
+                        <pre style="color: #87a752; font-size: 10px; line-height: 1.2;">
+   ____          _        ____  _                                             _
+  / ___|___   __| | ___  |  _ \\| | __ _ _   _  __ _ _ __ ___  _   _ _ __   __| |
+ | |   / _ \\ / _\` |/ _ \\ | |_) | |/ _\` | | | |/ _\` | '__/ _ \\| | | | '_ \\ / _\` |
+ | |__| (_) | (_| |  __/ |  __/| | (_| | |_| | (_| | | | (_) | |_| | | | | (_| |
+  \\____\\___/ \\__,_|\\___| |_|   |_|\\__,_|\\__, |\\__, |_|  \\___/ \\__,_|_| |_|\\__,_|
+                                        |___/ |___/
                         </pre>
+                        <p style="color: #888; margin-top: 10px;">Fun coding experiments and visualizations</p>
                     </div>
                     <div class="game-menu">
-                        <button class="game-menu-item" data-action="challenges">🎯 Challenges</button>
-                        <button class="game-menu-item" data-action="terminal">💻 Terminal Mode</button>
-                        <button class="game-menu-item" data-action="story">📖 Story Mode</button>
-                        <button class="game-menu-item" data-action="about">ℹ️ About</button>
+                        ${this.experiments.map(exp => `
+                            <button class="game-menu-item" data-action="${exp.id}">
+                                ${exp.icon} ${exp.name}
+                            </button>
+                        `).join('')}
                     </div>
                 </div>
             </div>
@@ -109,443 +92,528 @@ class HackersGameApp {
         contentEl.querySelectorAll('.game-menu-item').forEach(btn => {
             btn.addEventListener('click', () => {
                 const action = btn.dataset.action;
-                switch (action) {
-                    case 'challenges':
-                        this.showChallenges(windowId, contentEl);
-                        break;
-                    case 'terminal':
-                        terminalApp.open();
-                        break;
-                    case 'story':
-                        this.showStory(windowId, contentEl);
-                        break;
-                    case 'about':
-                        this.showAbout(windowId, contentEl);
-                        break;
-                }
+                this.launchExperiment(windowId, contentEl, action);
             });
         });
     }
 
-    showChallenges(windowId, contentEl) {
-        const challengeList = this.challenges.map(c => `
-            <div class="challenge-item ${c.unlocked ? '' : 'locked'}" data-id="${c.id}">
-                <div class="challenge-icon">${c.unlocked ? '🔓' : '🔒'}</div>
-                <div class="challenge-info">
-                    <div class="challenge-name">${c.name}</div>
-                    <div class="challenge-desc">${c.description}</div>
-                    <div class="challenge-diff difficulty-${c.difficulty.toLowerCase()}">${c.difficulty}</div>
-                </div>
-            </div>
-        `).join('');
-
-        contentEl.innerHTML = `
-            <div class="hackers-game-app">
-                <div class="game-screen">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">Select Challenge</h2>
-                    </div>
-                    <div class="challenges-list" style="display: grid; gap: 10px;">
-                        ${challengeList}
-                    </div>
-                    <style>
-                        .challenge-item {
-                            display: flex;
-                            align-items: center;
-                            gap: 15px;
-                            padding: 15px;
-                            border: 1px solid #00ff00;
-                            cursor: pointer;
-                            transition: all 0.2s;
-                        }
-                        .challenge-item:hover:not(.locked) {
-                            background: rgba(0, 255, 0, 0.1);
-                        }
-                        .challenge-item.locked {
-                            opacity: 0.5;
-                            cursor: not-allowed;
-                            border-color: #444;
-                        }
-                        .challenge-icon { font-size: 24px; }
-                        .challenge-name { font-size: 16px; font-weight: bold; }
-                        .challenge-desc { font-size: 12px; color: #888; margin-top: 4px; }
-                        .challenge-diff {
-                            display: inline-block;
-                            padding: 2px 8px;
-                            font-size: 10px;
-                            border-radius: 3px;
-                            margin-top: 8px;
-                        }
-                        .difficulty-easy { background: #2a5; color: #fff; }
-                        .difficulty-medium { background: #c80; color: #fff; }
-                        .difficulty-hard { background: #c22; color: #fff; }
-                    </style>
-                </div>
-            </div>
-        `;
-
-        contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
-            this.showMenu(windowId, contentEl);
-        });
-
-        contentEl.querySelectorAll('.challenge-item:not(.locked)').forEach(item => {
-            item.addEventListener('click', () => {
-                this.startChallenge(windowId, contentEl, item.dataset.id);
-            });
-        });
-    }
-
-    startChallenge(windowId, contentEl, challengeId) {
-        switch (challengeId) {
-            case 'crack-password':
-                this.passwordCrackerChallenge(windowId, contentEl);
+    launchExperiment(windowId, contentEl, expId) {
+        switch (expId) {
+            case 'ascii-art':
+                this.asciiArtGenerator(windowId, contentEl);
                 break;
-            case 'sql-injection':
-                this.sqlInjectionChallenge(windowId, contentEl);
+            case 'sorting-viz':
+                this.sortingVisualizer(windowId, contentEl);
                 break;
-            case 'network-scan':
-                this.networkScanChallenge(windowId, contentEl);
+            case 'conway':
+                this.gameOfLife(windowId, contentEl);
                 break;
-            case 'crypto-decode':
-                this.cryptoChallenge(windowId, contentEl);
+            case 'fractal':
+                this.fractalGenerator(windowId, contentEl);
+                break;
+            case 'regex':
+                this.regexTester(windowId, contentEl);
                 break;
             default:
-                this.showChallenges(windowId, contentEl);
+                this.showMenu(windowId, contentEl);
         }
     }
 
-    passwordCrackerChallenge(windowId, contentEl) {
-        const targetPassword = 'admin123';
-        const hash = 'e99a18c428cb38d5f260853678922e03'; // MD5 of admin123
-
-        contentEl.innerHTML = `
-            <div class="hackers-game-app">
-                <div class="game-screen">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">🔐 Password Cracker</h2>
-                    </div>
-                    <div class="game-content">
-                        <p>You've intercepted an MD5 password hash from the target server.</p>
-                        <p style="margin-top: 15px;">Hash: <span style="color: #ff0; font-family: monospace;">${hash}</span></p>
-                        <p style="margin-top: 15px; color: #888;">Hint: Try common passwords like "password", "admin123", "123456"...</p>
-                        <div style="margin-top: 20px;">
-                            <input type="text" id="password-guess" placeholder="Enter password guess..."
-                                   style="background: #111; border: 1px solid #00ff00; color: #00ff00; padding: 10px; width: 300px; font-family: monospace;">
-                            <button id="crack-btn" style="background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; margin-left: 10px;">
-                                Crack!
-                            </button>
-                        </div>
-                        <div id="crack-result" style="margin-top: 20px; min-height: 50px;"></div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
-            this.showChallenges(windowId, contentEl);
-        });
-
-        const input = contentEl.querySelector('#password-guess');
-        const resultDiv = contentEl.querySelector('#crack-result');
-
-        const checkPassword = () => {
-            const guess = input.value;
-            if (guess === targetPassword) {
-                resultDiv.innerHTML = `
-                    <p style="color: #0f0;">✓ PASSWORD CRACKED!</p>
-                    <p style="color: #ff0; margin-top: 10px;">🏴 FLAG{p4ssw0rd_cr4ck3d_md5} 🏴</p>
-                    <p style="margin-top: 10px; color: #888;">The password was: ${targetPassword}</p>
-                `;
-            } else {
-                resultDiv.innerHTML = `<p style="color: #f00;">✗ Incorrect. Hash doesn't match.</p>`;
+    asciiArtGenerator(windowId, contentEl) {
+        const fonts = {
+            standard: {
+                A: [' █████╗ ','██╔══██╗','███████║','██╔══██║','██║  ██║','╚═╝  ╚═╝'],
+                B: ['██████╗ ','██╔══██╗','██████╔╝','██╔══██╗','██████╔╝','╚═════╝ '],
+                C: [' ██████╗','██╔════╝','██║     ','██║     ','╚██████╗',' ╚═════╝'],
+                D: ['██████╗ ','██╔══██╗','██║  ██║','██║  ██║','██████╔╝','╚═════╝ '],
+                E: ['███████╗','██╔════╝','█████╗  ','██╔══╝  ','███████╗','╚══════╝'],
+                F: ['███████╗','██╔════╝','█████╗  ','██╔══╝  ','██║     ','╚═╝     '],
+                G: [' ██████╗ ','██╔════╝ ','██║  ███╗','██║   ██║','╚██████╔╝',' ╚═════╝ '],
+                H: ['██╗  ██╗','██║  ██║','███████║','██╔══██║','██║  ██║','╚═╝  ╚═╝'],
+                I: ['██╗','██║','██║','██║','██║','╚═╝'],
+                J: ['     ██╗','     ██║','     ██║','██   ██║','╚█████╔╝',' ╚════╝ '],
+                K: ['██╗  ██╗','██║ ██╔╝','█████╔╝ ','██╔═██╗ ','██║  ██╗','╚═╝  ╚═╝'],
+                L: ['██╗     ','██║     ','██║     ','██║     ','███████╗','╚══════╝'],
+                M: ['███╗   ███╗','████╗ ████║','██╔████╔██║','██║╚██╔╝██║','██║ ╚═╝ ██║','╚═╝     ╚═╝'],
+                N: ['███╗   ██╗','████╗  ██║','██╔██╗ ██║','██║╚██╗██║','██║ ╚████║','╚═╝  ╚═══╝'],
+                O: [' ██████╗ ','██╔═══██╗','██║   ██║','██║   ██║','╚██████╔╝',' ╚═════╝ '],
+                P: ['██████╗ ','██╔══██╗','██████╔╝','██╔═══╝ ','██║     ','╚═╝     '],
+                Q: [' ██████╗ ','██╔═══██╗','██║   ██║','██║▄▄ ██║','╚██████╔╝',' ╚══▀▀═╝ '],
+                R: ['██████╗ ','██╔══██╗','██████╔╝','██╔══██╗','██║  ██║','╚═╝  ╚═╝'],
+                S: ['███████╗','██╔════╝','███████╗','╚════██║','███████║','╚══════╝'],
+                T: ['████████╗','╚══██╔══╝','   ██║   ','   ██║   ','   ██║   ','   ╚═╝   '],
+                U: ['██╗   ██╗','██║   ██║','██║   ██║','██║   ██║','╚██████╔╝',' ╚═════╝ '],
+                V: ['██╗   ██╗','██║   ██║','██║   ██║','╚██╗ ██╔╝',' ╚████╔╝ ','  ╚═══╝  '],
+                W: ['██╗    ██╗','██║    ██║','██║ █╗ ██║','██║███╗██║','╚███╔███╔╝',' ╚══╝╚══╝ '],
+                X: ['██╗  ██╗','╚██╗██╔╝',' ╚███╔╝ ',' ██╔██╗ ','██╔╝ ██╗','╚═╝  ╚═╝'],
+                Y: ['██╗   ██╗','╚██╗ ██╔╝',' ╚████╔╝ ','  ╚██╔╝  ','   ██║   ','   ╚═╝   '],
+                Z: ['███████╗','╚══███╔╝','  ███╔╝ ',' ███╔╝  ','███████╗','╚══════╝'],
+                ' ': ['    ','    ','    ','    ','    ','    ']
             }
         };
 
-        contentEl.querySelector('#crack-btn').addEventListener('click', checkPassword);
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') checkPassword();
-        });
-    }
-
-    sqlInjectionChallenge(windowId, contentEl) {
-        contentEl.innerHTML = `
-            <div class="hackers-game-app">
-                <div class="game-screen">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">💉 SQL Injection</h2>
-                    </div>
-                    <div class="game-content" style="background: #1a1a1a; padding: 20px; border-radius: 5px;">
-                        <div style="background: #252525; padding: 20px; border-radius: 5px; margin-bottom: 20px;">
-                            <h3 style="color: #fff; margin-bottom: 15px;">🔐 Admin Login</h3>
-                            <div style="margin-bottom: 10px;">
-                                <label style="color: #888; display: block; margin-bottom: 5px;">Username:</label>
-                                <input type="text" id="sql-username" style="background: #333; border: 1px solid #555; color: #fff; padding: 8px; width: 250px;">
-                            </div>
-                            <div style="margin-bottom: 15px;">
-                                <label style="color: #888; display: block; margin-bottom: 5px;">Password:</label>
-                                <input type="password" id="sql-password" style="background: #333; border: 1px solid #555; color: #fff; padding: 8px; width: 250px;">
-                            </div>
-                            <button id="sql-login-btn" style="background: #3a7; color: #fff; border: none; padding: 10px 30px; cursor: pointer;">Login</button>
-                        </div>
-                        <div id="sql-query" style="font-family: monospace; color: #888; font-size: 12px;"></div>
-                        <div id="sql-result" style="margin-top: 15px;"></div>
-                        <p style="color: #555; font-size: 11px; margin-top: 20px;">Hint: The query is: SELECT * FROM users WHERE username='[input]' AND password='[input]'</p>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
-            this.showChallenges(windowId, contentEl);
-        });
-
-        const usernameInput = contentEl.querySelector('#sql-username');
-        const passwordInput = contentEl.querySelector('#sql-password');
-        const queryDiv = contentEl.querySelector('#sql-query');
-        const resultDiv = contentEl.querySelector('#sql-result');
-
-        const attemptLogin = () => {
-            const username = usernameInput.value;
-            const password = passwordInput.value;
-
-            // Show the constructed query
-            queryDiv.innerHTML = `Query: SELECT * FROM users WHERE username='${username}' AND password='${password}'`;
-
-            // Check for SQL injection
-            if (username.includes("'") && (username.includes("OR") || username.includes("or") || username.includes("--"))) {
-                resultDiv.innerHTML = `
-                    <p style="color: #0f0;">✓ SQL INJECTION SUCCESSFUL!</p>
-                    <p style="color: #ff0; margin-top: 10px;">🏴 FLAG{sql_1nj3ct10n_m4st3r} 🏴</p>
-                    <p style="margin-top: 10px; color: #888;">You bypassed authentication using: ${username}</p>
-                `;
-            } else if (username === 'admin' && password === 'admin') {
-                resultDiv.innerHTML = `<p style="color: #f80;">Logged in as admin... but that's not the challenge! Try SQL injection.</p>`;
-            } else {
-                resultDiv.innerHTML = `<p style="color: #f00;">Login failed. Invalid credentials.</p>`;
-            }
-        };
-
-        contentEl.querySelector('#sql-login-btn').addEventListener('click', attemptLogin);
-    }
-
-    networkScanChallenge(windowId, contentEl) {
-        const hosts = [
-            { ip: '192.168.1.1', name: 'router', ports: [22, 80, 443] },
-            { ip: '192.168.1.10', name: 'webserver', ports: [80, 443, 8080] },
-            { ip: '192.168.1.20', name: 'database', ports: [3306, 5432] },
-            { ip: '192.168.1.42', name: 'secret-server', ports: [1337, 31337], hidden: true },
-            { ip: '192.168.1.100', name: 'workstation', ports: [22, 3389] }
-        ];
-
-        contentEl.innerHTML = `
-            <div class="hackers-game-app">
-                <div class="game-screen">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">🌐 Network Recon</h2>
-                    </div>
-                    <div class="game-content">
-                        <p>Scan the 192.168.1.0/24 network to find the hidden server.</p>
-                        <div style="margin-top: 20px;">
-                            <input type="text" id="scan-target" placeholder="Enter IP or range (e.g., 192.168.1.42)"
-                                   style="background: #111; border: 1px solid #00ff00; color: #00ff00; padding: 10px; width: 300px; font-family: monospace;">
-                            <button id="scan-btn" style="background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; margin-left: 10px;">
-                                Scan
-                            </button>
-                        </div>
-                        <div id="scan-result" style="margin-top: 20px; font-family: monospace; white-space: pre-wrap;"></div>
-                        <p style="color: #555; font-size: 11px; margin-top: 20px;">Hint: There's a hidden server somewhere in the 192.168.1.x range with unusual ports...</p>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
-            this.showChallenges(windowId, contentEl);
-        });
-
-        const input = contentEl.querySelector('#scan-target');
-        const resultDiv = contentEl.querySelector('#scan-result');
-
-        const scan = () => {
-            const target = input.value.trim();
-            const host = hosts.find(h => h.ip === target);
-
-            if (host) {
-                let result = `<span style="color: #0ff;">Scanning ${host.ip} (${host.name})...</span>\n\n`;
-                result += `Host is up.\n\n`;
-                result += `PORT     STATE  SERVICE\n`;
-                host.ports.forEach(p => {
-                    result += `${p}/tcp   open   ${this.getServiceName(p)}\n`;
-                });
-
-                if (host.hidden) {
-                    result += `\n<span style="color: #0f0;">🎯 HIDDEN SERVER FOUND!</span>\n`;
-                    result += `<span style="color: #ff0;">🏴 FLAG{h1dd3n_s3rv3r_f0und} 🏴</span>`;
+        const generateAscii = (text) => {
+            const upper = text.toUpperCase();
+            const lines = ['', '', '', '', '', ''];
+            for (const char of upper) {
+                const art = fonts.standard[char] || fonts.standard[' '];
+                for (let i = 0; i < 6; i++) {
+                    lines[i] += art[i];
                 }
-
-                resultDiv.innerHTML = result;
-            } else if (target.includes('/24') || target === '192.168.1.*') {
-                resultDiv.innerHTML = `<span style="color: #0ff;">Scanning ${target}...</span>\n\nFound ${hosts.length} hosts up.\nTry scanning individual IPs for details.`;
-            } else {
-                resultDiv.innerHTML = `<span style="color: #f00;">Host ${target} appears to be down or doesn't exist.</span>`;
             }
+            return lines.join('\n');
         };
-
-        contentEl.querySelector('#scan-btn').addEventListener('click', scan);
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') scan();
-        });
-    }
-
-    getServiceName(port) {
-        const services = {
-            22: 'ssh', 80: 'http', 443: 'https', 3306: 'mysql', 5432: 'postgresql',
-            8080: 'http-proxy', 3389: 'rdp', 1337: 'waste', 31337: 'Elite'
-        };
-        return services[port] || 'unknown';
-    }
-
-    cryptoChallenge(windowId, contentEl) {
-        const plaintext = 'THE_SECRET_CODE_IS_HACKTHEBOX';
-        const key = 3;
-        const encrypted = plaintext.split('').map(c => {
-            if (c.match(/[A-Z]/)) {
-                return String.fromCharCode(((c.charCodeAt(0) - 65 + key) % 26) + 65);
-            }
-            return c;
-        }).join('');
 
         contentEl.innerHTML = `
             <div class="hackers-game-app">
                 <div class="game-screen">
                     <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">🔤 Cipher Cracker</h2>
+                        <button class="game-back-btn">← Back</button>
+                        <h2 style="margin-left: 20px; color: #87a752;">🎨 ASCII Art Generator</h2>
                     </div>
                     <div class="game-content">
-                        <p>You intercepted an encrypted message. Decode it to find the secret.</p>
-                        <p style="margin-top: 15px;">Encrypted: <span style="color: #ff0; font-family: monospace;">${encrypted}</span></p>
-                        <p style="margin-top: 15px; color: #888;">Hint: This is a Caesar cipher. Try different shift values (1-25).</p>
-                        <div style="margin-top: 20px;">
-                            <label style="color: #888;">Shift value: </label>
-                            <input type="number" id="shift-value" min="1" max="25" value="1"
-                                   style="background: #111; border: 1px solid #00ff00; color: #00ff00; padding: 10px; width: 60px; font-family: monospace;">
-                            <button id="decode-btn" style="background: #00ff00; color: #000; border: none; padding: 10px 20px; cursor: pointer; margin-left: 10px;">
-                                Decode
-                            </button>
-                        </div>
-                        <div style="margin-top: 20px;">
-                            <p style="color: #888;">Your answer:</p>
-                            <input type="text" id="crypto-answer" placeholder="Enter decoded message..."
-                                   style="background: #111; border: 1px solid #00ff00; color: #00ff00; padding: 10px; width: 400px; font-family: monospace; margin-top: 10px;">
-                            <button id="submit-answer" style="background: #0a0; color: #fff; border: none; padding: 10px 20px; cursor: pointer; margin-left: 10px;">
-                                Submit
-                            </button>
-                        </div>
-                        <div id="crypto-result" style="margin-top: 20px; font-family: monospace;"></div>
+                        <input type="text" id="ascii-input" placeholder="Type something..." maxlength="12"
+                               style="background: #111; border: 1px solid #87a752; color: #87a752; padding: 10px; width: 300px; font-family: monospace;">
+                        <pre id="ascii-output" style="color: #87a752; margin-top: 20px; font-size: 8px; line-height: 1;"></pre>
                     </div>
                 </div>
             </div>
         `;
 
-        contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
-            this.showChallenges(windowId, contentEl);
+        contentEl.querySelector('.game-back-btn').addEventListener('click', () => this.showMenu(windowId, contentEl));
+
+        const input = contentEl.querySelector('#ascii-input');
+        const output = contentEl.querySelector('#ascii-output');
+
+        input.addEventListener('input', () => {
+            output.textContent = generateAscii(input.value || 'HI');
         });
 
-        const shiftInput = contentEl.querySelector('#shift-value');
-        const resultDiv = contentEl.querySelector('#crypto-result');
-
-        contentEl.querySelector('#decode-btn').addEventListener('click', () => {
-            const shift = parseInt(shiftInput.value);
-            const decoded = encrypted.split('').map(c => {
-                if (c.match(/[A-Z]/)) {
-                    return String.fromCharCode(((c.charCodeAt(0) - 65 - shift + 26) % 26) + 65);
-                }
-                return c;
-            }).join('');
-            resultDiv.innerHTML = `<span style="color: #0ff;">Decoded (shift ${shift}): ${decoded}</span>`;
-        });
-
-        contentEl.querySelector('#submit-answer').addEventListener('click', () => {
-            const answer = contentEl.querySelector('#crypto-answer').value.toUpperCase().replace(/\s/g, '_');
-            if (answer === plaintext) {
-                resultDiv.innerHTML = `
-                    <p style="color: #0f0;">✓ CORRECT! Message decoded!</p>
-                    <p style="color: #ff0; margin-top: 10px;">🏴 FLAG{c43s4r_c1ph3r_cr4ck3d} 🏴</p>
-                `;
-            } else {
-                resultDiv.innerHTML = `<p style="color: #f00;">✗ Incorrect. Keep trying!</p>`;
-            }
-        });
+        output.textContent = generateAscii('HI');
     }
 
-    showStory(windowId, contentEl) {
+    sortingVisualizer(windowId, contentEl) {
+        let array = [];
+        let sorting = false;
+        let animationId = null;
+
+        const generateArray = () => {
+            array = Array.from({ length: 50 }, () => Math.floor(Math.random() * 200) + 10);
+            renderArray();
+        };
+
+        const renderArray = (highlightIndices = []) => {
+            const container = contentEl.querySelector('#sort-container');
+            if (!container) return;
+
+            container.innerHTML = array.map((val, i) =>
+                `<div class="sort-bar ${highlightIndices.includes(i) ? 'highlight' : ''}"
+                      style="height: ${val}px;"></div>`
+            ).join('');
+        };
+
+        const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+        const bubbleSort = async () => {
+            sorting = true;
+            const n = array.length;
+            for (let i = 0; i < n - 1 && sorting; i++) {
+                for (let j = 0; j < n - i - 1 && sorting; j++) {
+                    renderArray([j, j + 1]);
+                    if (array[j] > array[j + 1]) {
+                        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+                    }
+                    await sleep(20);
+                }
+            }
+            sorting = false;
+            renderArray();
+        };
+
+        const quickSort = async (low = 0, high = array.length - 1) => {
+            if (low < high && sorting) {
+                const pivot = array[high];
+                let i = low - 1;
+                for (let j = low; j < high && sorting; j++) {
+                    renderArray([j, high]);
+                    await sleep(30);
+                    if (array[j] < pivot) {
+                        i++;
+                        [array[i], array[j]] = [array[j], array[i]];
+                    }
+                }
+                [array[i + 1], array[high]] = [array[high], array[i + 1]];
+                const pi = i + 1;
+                await quickSort(low, pi - 1);
+                await quickSort(pi + 1, high);
+            }
+            if (low === 0 && high === array.length - 1) {
+                sorting = false;
+                renderArray();
+            }
+        };
+
         contentEl.innerHTML = `
             <div class="hackers-game-app">
                 <div class="game-screen">
                     <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">📖 Story Mode</h2>
+                        <button class="game-back-btn">← Back</button>
+                        <h2 style="margin-left: 20px; color: #87a752;">📊 Sorting Visualizer</h2>
                     </div>
-                    <div class="game-content" style="line-height: 1.8;">
-                        <p style="color: #0f0;">[ INCOMING TRANSMISSION ]</p>
-                        <p style="margin-top: 20px;">Agent,</p>
-                        <p style="margin-top: 15px;">Welcome to the Hackers Game network. You've been selected for your exceptional skills in digital reconnaissance and system penetration.</p>
-                        <p style="margin-top: 15px;">Your first mission: Explore this desktop environment. Hidden within its files and systems are flags - digital proof of your capabilities.</p>
-                        <p style="margin-top: 15px;">Use the terminal. Navigate the filesystem. Crack the codes. Find the secrets.</p>
-                        <p style="margin-top: 15px;">The challenges await. Show us what you're made of.</p>
-                        <p style="margin-top: 25px; color: #888;">-- The Collective</p>
-                        <p style="margin-top: 30px; color: #555; font-size: 12px;">[ END TRANSMISSION ]</p>
-                        <p style="margin-top: 30px; color: #0ff;">Tips:</p>
-                        <ul style="color: #888; margin-top: 10px; margin-left: 20px;">
-                            <li>Open the Terminal and try 'help'</li>
-                            <li>Explore hidden files with 'ls -a'</li>
-                            <li>Check /var/log for clues</li>
-                            <li>Play the Challenges for guided missions</li>
-                        </ul>
+                    <div class="game-content">
+                        <div style="margin-bottom: 15px;">
+                            <button id="btn-generate" class="sort-btn">New Array</button>
+                            <button id="btn-bubble" class="sort-btn">Bubble Sort</button>
+                            <button id="btn-quick" class="sort-btn">Quick Sort</button>
+                            <button id="btn-stop" class="sort-btn" style="background: #a75252;">Stop</button>
+                        </div>
+                        <div id="sort-container" style="display: flex; align-items: flex-end; gap: 2px; height: 220px; background: #111; padding: 10px;"></div>
+                        <style>
+                            .sort-btn { background: #87a752; color: #000; border: none; padding: 8px 15px; cursor: pointer; margin-right: 5px; }
+                            .sort-btn:hover { background: #9ab862; }
+                            .sort-bar { width: 8px; background: #87a752; transition: height 0.05s; }
+                            .sort-bar.highlight { background: #ff0; }
+                        </style>
                     </div>
                 </div>
             </div>
         `;
 
         contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
+            sorting = false;
             this.showMenu(windowId, contentEl);
         });
+
+        contentEl.querySelector('#btn-generate').addEventListener('click', () => {
+            if (!sorting) generateArray();
+        });
+
+        contentEl.querySelector('#btn-bubble').addEventListener('click', () => {
+            if (!sorting) { sorting = true; bubbleSort(); }
+        });
+
+        contentEl.querySelector('#btn-quick').addEventListener('click', () => {
+            if (!sorting) { sorting = true; quickSort(); }
+        });
+
+        contentEl.querySelector('#btn-stop').addEventListener('click', () => {
+            sorting = false;
+        });
+
+        generateArray();
     }
 
-    showAbout(windowId, contentEl) {
+    gameOfLife(windowId, contentEl) {
+        const rows = 30;
+        const cols = 50;
+        let grid = Array(rows).fill().map(() => Array(cols).fill(false));
+        let running = false;
+        let intervalId = null;
+
+        const randomize = () => {
+            grid = grid.map(row => row.map(() => Math.random() > 0.7));
+            render();
+        };
+
+        const clear = () => {
+            grid = Array(rows).fill().map(() => Array(cols).fill(false));
+            render();
+        };
+
+        const countNeighbors = (r, c) => {
+            let count = 0;
+            for (let dr = -1; dr <= 1; dr++) {
+                for (let dc = -1; dc <= 1; dc++) {
+                    if (dr === 0 && dc === 0) continue;
+                    const nr = (r + dr + rows) % rows;
+                    const nc = (c + dc + cols) % cols;
+                    if (grid[nr][nc]) count++;
+                }
+            }
+            return count;
+        };
+
+        const step = () => {
+            const newGrid = grid.map((row, r) =>
+                row.map((cell, c) => {
+                    const neighbors = countNeighbors(r, c);
+                    if (cell) return neighbors === 2 || neighbors === 3;
+                    return neighbors === 3;
+                })
+            );
+            grid = newGrid;
+            render();
+        };
+
+        const render = () => {
+            const container = contentEl.querySelector('#life-grid');
+            if (!container) return;
+            container.innerHTML = grid.map((row, r) =>
+                row.map((cell, c) =>
+                    `<div class="life-cell ${cell ? 'alive' : ''}" data-r="${r}" data-c="${c}"></div>`
+                ).join('')
+            ).join('');
+        };
+
         contentEl.innerHTML = `
             <div class="hackers-game-app">
                 <div class="game-screen">
-                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
-                        <button class="game-back-btn" style="background: none; border: 1px solid #00ff00; color: #00ff00; padding: 5px 15px; cursor: pointer;">← Back</button>
-                        <h2 style="margin-left: 20px; color: #00ff00;">ℹ️ About</h2>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <button class="game-back-btn">← Back</button>
+                        <h2 style="margin-left: 20px; color: #87a752;">🧬 Conway's Game of Life</h2>
                     </div>
-                    <div class="game-content" style="text-align: center;">
-                        <p style="font-size: 48px;">🎮</p>
-                        <h2 style="margin-top: 20px;">Hackers Game</h2>
-                        <p style="color: #888; margin-top: 10px;">Version 2.0</p>
-                        <p style="margin-top: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">
-                            Hackers Game is an educational platform designed to teach cybersecurity concepts through interactive challenges and a simulated desktop environment.
-                        </p>
-                        <p style="margin-top: 20px; color: #888;">
-                            All challenges are simulations. No real systems are accessed or harmed.
-                        </p>
-                        <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #333;">
-                            <p style="color: #555; font-size: 12px;">Made with 💚 for the hacker community</p>
+                    <div class="game-content">
+                        <div style="margin-bottom: 10px;">
+                            <button id="btn-start" class="life-btn">▶ Start</button>
+                            <button id="btn-step" class="life-btn">⏭ Step</button>
+                            <button id="btn-random" class="life-btn">🎲 Random</button>
+                            <button id="btn-clear" class="life-btn">🗑 Clear</button>
                         </div>
+                        <div id="life-grid" style="display: grid; grid-template-columns: repeat(${cols}, 10px); gap: 1px; background: #111; padding: 5px;"></div>
+                        <p style="color: #666; font-size: 11px; margin-top: 10px;">Click cells to toggle. Classic rules: Live cells with 2-3 neighbors survive, dead cells with 3 neighbors become alive.</p>
+                        <style>
+                            .life-btn { background: #87a752; color: #000; border: none; padding: 6px 12px; cursor: pointer; margin-right: 5px; }
+                            .life-cell { width: 10px; height: 10px; background: #222; cursor: pointer; }
+                            .life-cell.alive { background: #87a752; }
+                            .life-cell:hover { background: #555; }
+                        </style>
                     </div>
                 </div>
             </div>
         `;
 
         contentEl.querySelector('.game-back-btn').addEventListener('click', () => {
+            if (intervalId) clearInterval(intervalId);
             this.showMenu(windowId, contentEl);
         });
+
+        contentEl.querySelector('#btn-start').addEventListener('click', function() {
+            running = !running;
+            this.textContent = running ? '⏸ Pause' : '▶ Start';
+            if (running) {
+                intervalId = setInterval(step, 100);
+            } else {
+                clearInterval(intervalId);
+            }
+        });
+
+        contentEl.querySelector('#btn-step').addEventListener('click', () => { if (!running) step(); });
+        contentEl.querySelector('#btn-random').addEventListener('click', randomize);
+        contentEl.querySelector('#btn-clear').addEventListener('click', clear);
+
+        contentEl.querySelector('#life-grid').addEventListener('click', (e) => {
+            if (e.target.classList.contains('life-cell')) {
+                const r = parseInt(e.target.dataset.r);
+                const c = parseInt(e.target.dataset.c);
+                grid[r][c] = !grid[r][c];
+                render();
+            }
+        });
+
+        randomize();
+    }
+
+    fractalGenerator(windowId, contentEl) {
+        contentEl.innerHTML = `
+            <div class="hackers-game-app">
+                <div class="game-screen">
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <button class="game-back-btn">← Back</button>
+                        <h2 style="margin-left: 20px; color: #87a752;">🌀 Fractal Generator</h2>
+                    </div>
+                    <div class="game-content">
+                        <div style="margin-bottom: 10px;">
+                            <select id="fractal-type" style="background: #222; color: #87a752; border: 1px solid #87a752; padding: 5px;">
+                                <option value="mandelbrot">Mandelbrot Set</option>
+                                <option value="julia">Julia Set</option>
+                                <option value="sierpinski">Sierpinski Triangle</option>
+                            </select>
+                            <button id="btn-generate" style="background: #87a752; color: #000; border: none; padding: 6px 15px; cursor: pointer; margin-left: 10px;">Generate</button>
+                        </div>
+                        <canvas id="fractal-canvas" width="500" height="350" style="background: #000; border: 1px solid #333;"></canvas>
+                        <p style="color: #666; font-size: 11px; margin-top: 10px;">Mathematical art through recursive algorithms</p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const canvas = contentEl.querySelector('#fractal-canvas');
+        const ctx = canvas.getContext('2d');
+
+        const drawMandelbrot = () => {
+            const width = canvas.width;
+            const height = canvas.height;
+            const imageData = ctx.createImageData(width, height);
+
+            for (let px = 0; px < width; px++) {
+                for (let py = 0; py < height; py++) {
+                    const x0 = (px / width) * 3.5 - 2.5;
+                    const y0 = (py / height) * 2 - 1;
+                    let x = 0, y = 0, iteration = 0;
+                    const maxIter = 100;
+
+                    while (x*x + y*y <= 4 && iteration < maxIter) {
+                        const xtemp = x*x - y*y + x0;
+                        y = 2*x*y + y0;
+                        x = xtemp;
+                        iteration++;
+                    }
+
+                    const idx = (py * width + px) * 4;
+                    if (iteration === maxIter) {
+                        imageData.data[idx] = 0;
+                        imageData.data[idx+1] = 0;
+                        imageData.data[idx+2] = 0;
+                    } else {
+                        const hue = iteration / maxIter;
+                        imageData.data[idx] = Math.floor(hue * 135);
+                        imageData.data[idx+1] = Math.floor(hue * 167);
+                        imageData.data[idx+2] = Math.floor(hue * 82);
+                    }
+                    imageData.data[idx+3] = 255;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        const drawJulia = () => {
+            const width = canvas.width;
+            const height = canvas.height;
+            const imageData = ctx.createImageData(width, height);
+            const cRe = -0.7, cIm = 0.27015;
+
+            for (let px = 0; px < width; px++) {
+                for (let py = 0; py < height; py++) {
+                    let x = (px / width) * 3 - 1.5;
+                    let y = (py / height) * 2 - 1;
+                    let iteration = 0;
+                    const maxIter = 100;
+
+                    while (x*x + y*y <= 4 && iteration < maxIter) {
+                        const xtemp = x*x - y*y + cRe;
+                        y = 2*x*y + cIm;
+                        x = xtemp;
+                        iteration++;
+                    }
+
+                    const idx = (py * width + px) * 4;
+                    const hue = iteration / maxIter;
+                    imageData.data[idx] = Math.floor(hue * 200);
+                    imageData.data[idx+1] = Math.floor(hue * 100);
+                    imageData.data[idx+2] = Math.floor(hue * 150);
+                    imageData.data[idx+3] = 255;
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+        };
+
+        const drawSierpinski = () => {
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#87a752';
+
+            const drawTriangle = (x, y, size, depth) => {
+                if (depth === 0) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y);
+                    ctx.lineTo(x + size, y);
+                    ctx.lineTo(x + size/2, y - size * Math.sqrt(3)/2);
+                    ctx.closePath();
+                    ctx.fill();
+                } else {
+                    const newSize = size / 2;
+                    drawTriangle(x, y, newSize, depth - 1);
+                    drawTriangle(x + newSize, y, newSize, depth - 1);
+                    drawTriangle(x + newSize/2, y - newSize * Math.sqrt(3)/2, newSize, depth - 1);
+                }
+            };
+
+            drawTriangle(50, 340, 400, 6);
+        };
+
+        contentEl.querySelector('.game-back-btn').addEventListener('click', () => this.showMenu(windowId, contentEl));
+
+        contentEl.querySelector('#btn-generate').addEventListener('click', () => {
+            const type = contentEl.querySelector('#fractal-type').value;
+            switch (type) {
+                case 'mandelbrot': drawMandelbrot(); break;
+                case 'julia': drawJulia(); break;
+                case 'sierpinski': drawSierpinski(); break;
+            }
+        });
+
+        drawMandelbrot();
+    }
+
+    regexTester(windowId, contentEl) {
+        contentEl.innerHTML = `
+            <div class="hackers-game-app">
+                <div class="game-screen">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <button class="game-back-btn">← Back</button>
+                        <h2 style="margin-left: 20px; color: #87a752;">🔤 Regex Tester</h2>
+                    </div>
+                    <div class="game-content">
+                        <div style="margin-bottom: 15px;">
+                            <label style="color: #888; display: block; margin-bottom: 5px;">Pattern:</label>
+                            <input type="text" id="regex-pattern" placeholder="e.g., \\d+|[a-z]+"
+                                   style="background: #111; border: 1px solid #87a752; color: #87a752; padding: 10px; width: 400px; font-family: monospace;">
+                            <span id="regex-flags" style="margin-left: 10px;">
+                                <label style="color: #666;"><input type="checkbox" id="flag-g" checked> g</label>
+                                <label style="color: #666; margin-left: 10px;"><input type="checkbox" id="flag-i"> i</label>
+                                <label style="color: #666; margin-left: 10px;"><input type="checkbox" id="flag-m"> m</label>
+                            </span>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label style="color: #888; display: block; margin-bottom: 5px;">Test String:</label>
+                            <textarea id="regex-input" rows="5" placeholder="Enter text to test..."
+                                      style="background: #111; border: 1px solid #87a752; color: #fff; padding: 10px; width: 400px; font-family: monospace; resize: vertical;"></textarea>
+                        </div>
+                        <div id="regex-result" style="background: #111; padding: 15px; min-height: 60px; font-family: monospace;"></div>
+                        <div id="regex-matches" style="color: #888; margin-top: 10px; font-size: 12px;"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const testRegex = () => {
+            const pattern = contentEl.querySelector('#regex-pattern').value;
+            const input = contentEl.querySelector('#regex-input').value;
+            const resultDiv = contentEl.querySelector('#regex-result');
+            const matchesDiv = contentEl.querySelector('#regex-matches');
+
+            if (!pattern) {
+                resultDiv.innerHTML = `<span style="color: #666;">Enter a regex pattern</span>`;
+                matchesDiv.textContent = '';
+                return;
+            }
+
+            try {
+                let flags = '';
+                if (contentEl.querySelector('#flag-g').checked) flags += 'g';
+                if (contentEl.querySelector('#flag-i').checked) flags += 'i';
+                if (contentEl.querySelector('#flag-m').checked) flags += 'm';
+
+                const regex = new RegExp(pattern, flags);
+                const matches = input.match(regex) || [];
+
+                // Highlight matches in the result
+                let highlighted = input.replace(regex, '<span style="background: #87a752; color: #000;">$&</span>');
+                resultDiv.innerHTML = highlighted || `<span style="color: #666;">No matches</span>`;
+
+                matchesDiv.textContent = matches.length > 0
+                    ? `${matches.length} match${matches.length > 1 ? 'es' : ''}: ${matches.slice(0, 10).join(', ')}${matches.length > 10 ? '...' : ''}`
+                    : 'No matches found';
+            } catch (e) {
+                resultDiv.innerHTML = `<span style="color: #f66;">Invalid regex: ${e.message}</span>`;
+                matchesDiv.textContent = '';
+            }
+        };
+
+        contentEl.querySelector('.game-back-btn').addEventListener('click', () => this.showMenu(windowId, contentEl));
+        contentEl.querySelector('#regex-pattern').addEventListener('input', testRegex);
+        contentEl.querySelector('#regex-input').addEventListener('input', testRegex);
+        contentEl.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.addEventListener('change', testRegex));
     }
 }
 

@@ -23,7 +23,8 @@ class GlobalSearch {
             { type: 'app', name: 'YouTube Channel', desc: 'David Hamner on YouTube', icon: '&#128250;', action: () => browserApp.open('https://youtube.com/@DavidHamner') },
             { type: 'app', name: 'Text Editor', desc: 'Edit text files', icon: '&#128221;', action: () => textEditorApp.open() },
             { type: 'app', name: 'Settings', desc: 'Desktop preferences', icon: '&#9881;', action: () => settingsApp.open() },
-            { type: 'app', name: 'Hackers Game', desc: 'Hacking challenges and games', icon: '&#128187;', action: () => hackersGameApp.open() },
+            { type: 'app', name: 'Sandy Potato', desc: 'Falling sand simulation game', icon: '🏖️', action: () => sandyPotatoApp.open() },
+            { type: 'app', name: 'Code Playground', desc: 'Interactive coding experiments', icon: '&#128187;', action: () => hackersGameApp.open() },
 
             // Folders
             { type: 'folder', name: 'Home', desc: '/home/hacker', icon: '🏠', action: () => fileManagerApp.open('/home/hacker') },

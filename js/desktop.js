@@ -217,6 +217,9 @@ class Desktop {
             case 'youtube':
                 browserApp.open('https://youtube.com/@DavidHamner');
                 break;
+            case 'sandy-potato':
+                sandyPotatoApp.open();
+                break;
             default:
                 console.warn('Unknown app:', appName);
         }

@@ -1,0 +1,319 @@
+/* Compiz-style Desktop Effects */
+
+/* ===== WOBBLY WINDOWS ===== */
+.window.wobble {
+    animation: wobble 0.3s ease-out;
+}
+
+@keyframes wobble {
+    0% { transform: scale(1) skewX(0deg); }
+    25% { transform: scale(1.02, 0.98) skewX(2deg); }
+    50% { transform: scale(0.98, 1.02) skewX(-1deg); }
+    75% { transform: scale(1.01, 0.99) skewX(0.5deg); }
+    100% { transform: scale(1) skewX(0deg); }
+}
+
+.window.dragging.wobbly-enabled {
+    transition: none;
+    will-change: transform;
+}
+
+/* Wobbly drag effect - applied via JS */
+.window.wobbly-drag {
+    transform-origin: top center;
+}
+
+/* ===== WINDOW OPEN/CLOSE EFFECTS ===== */
+.window.zoom-open {
+    animation: zoomOpen 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes zoomOpen {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.window.zoom-close {
+    animation: zoomClose 0.2s ease-in forwards;
+}
+
+@keyframes zoomClose {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Magic lamp minimize effect */
+.window.magic-lamp-minimize {
+    animation: magicLampMin 0.3s ease-in forwards;
+    transform-origin: bottom center;
+}
+
+@keyframes magicLampMin {
+    0% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleY(0.1) scaleX(0.3) translateY(100%);
+    }
+}
+
+.window.magic-lamp-restore {
+    animation: magicLampRestore 0.3s ease-out;
+    transform-origin: bottom center;
+}
+
+@keyframes magicLampRestore {
+    0% {
+        opacity: 0;
+        transform: scaleY(0.1) scaleX(0.3) translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleY(1) scaleX(1);
+    }
+}
+
+/* ===== DESKTOP CUBE ===== */
+#desktop-cube-container {
+    position: fixed;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 28px;
+    perspective: 1500px;
+    overflow: hidden;
+    display: none;
+}
+
+#desktop-cube-container.active {
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 8500;
+}
+
+.desktop-cube {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.cube-face {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    background: var(--desktop-bg);
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.cube-face.front { transform: translateZ(calc(40vw)); }
+.cube-face.back { transform: rotateY(180deg) translateZ(calc(40vw)); }
+.cube-face.left { transform: rotateY(-90deg) translateZ(calc(40vw)); }
+.cube-face.right { transform: rotateY(90deg) translateZ(calc(40vw)); }
+
+.cube-face-label {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== WORKSPACE SWITCHER ===== */
+#workspace-switcher {
+    position: fixed;
+    bottom: 32px;
+    right: 10px;
+    display: flex;
+    gap: 4px;
+    z-index: 9001;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.workspace-indicator {
+    width: 24px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.workspace-indicator:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.workspace-indicator.active {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ===== WINDOW SHADOWS & GLOW ===== */
+.window.glow-effect {
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(135, 167, 82, 0.3),
+        0 0 20px rgba(135, 167, 82, 0.1);
+}
+
+.window:not(.inactive).glow-effect {
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(135, 167, 82, 0.5),
+        0 0 30px rgba(135, 167, 82, 0.2);
+}
+
+/* ===== EXPO MODE ===== */
+#expo-overlay {
+    position: fixed;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 28px;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 8500;
+    display: none;
+    padding: 40px;
+}
+
+#expo-overlay.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-content: center;
+}
+
+.expo-window {
+    background: #2a2a2a;
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    aspect-ratio: 16/10;
+    display: flex;
+    flex-direction: column;
+}
+
+.expo-window:hover {
+    border-color: var(--accent);
+    transform: scale(1.05);
+}
+
+.expo-window-title {
+    color: white;
+    font-size: 12px;
+    padding: 5px;
+    background: #333;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+}
+
+.expo-window-preview {
+    flex: 1;
+    background: #1a1a1a;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+/* ===== SCREEN EDGE EFFECTS ===== */
+.screen-edge-glow {
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.screen-edge-glow.active {
+    opacity: 1;
+}
+
+.screen-edge-glow.top {
+    top: 28px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.screen-edge-glow.bottom {
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to top, var(--accent), transparent);
+}
+
+/* ===== WINDOW SNAP PREVIEW ===== */
+.snap-preview {
+    position: fixed;
+    background: rgba(135, 167, 82, 0.3);
+    border: 2px dashed var(--accent);
+    border-radius: 8px;
+    z-index: 50;
+    pointer-events: none;
+    transition: all 0.15s ease;
+}
+
+/* ===== RAIN EFFECT (Easter Egg) ===== */
+.matrix-rain {
+    position: fixed;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 28px;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0.1;
+}
+
+.matrix-rain.active {
+    opacity: 0.3;
+}
+
+.rain-column {
+    position: absolute;
+    top: -100%;
+    color: #0f0;
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1;
+    writing-mode: vertical-rl;
+    animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
