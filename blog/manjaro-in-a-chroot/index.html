@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manjaro in a Chroot - Hackers Game</title>
+    <meta name="description" content="Now you can use Manjaro in Ubuntu, OpenSuSE, Fedora, ...">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="chroot, manjaro, linux, ubuntu, opensuse, fedora, systemd, arch, pacman">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/manjaro-in-a-chroot/">
+    <meta property="og:title" content="Manjaro in a Chroot">
+    <meta property="og:description" content="Now you can use Manjaro in Ubuntu, OpenSuSE, Fedora, ...">
+    <meta property="og:image" content="https://img.youtube.com/vi/KQpoy6wWVEo/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2018-06-01">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/manjaro-in-a-chroot/">
+    <meta name="twitter:title" content="Manjaro in a Chroot">
+    <meta name="twitter:description" content="Now you can use Manjaro in Ubuntu, OpenSuSE, Fedora, ...">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/KQpoy6wWVEo/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/manjaro-in-a-chroot/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Manjaro in a Chroot",
+        "description": "Now you can use Manjaro in Ubuntu, OpenSuSE, Fedora, ...",
+        "image": "https://img.youtube.com/vi/KQpoy6wWVEo/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2018-06-01",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/manjaro-in-a-chroot/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Manjaro in a Chroot",
+            "thumbnailUrl": "https://img.youtube.com/vi/KQpoy6wWVEo/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/KQpoy6wWVEo"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Manjaro in a Chroot</h1>
+        <div class="meta">
+            <span>2018-06-01</span> ·
+            <span>Linux</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">chroot</span><span class="tag">manjaro</span><span class="tag">linux</span><span class="tag">ubuntu</span><span class="tag">opensuse</span><span class="tag">fedora</span><span class="tag">systemd</span><span class="tag">arch</span><span class="tag">pacman</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/KQpoy6wWVEo"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Manjaro in a Chroot">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Manjaro in a Chroot</h1></p><p>Now you can use Manjaro in Ubuntu, OpenSuSE, Fedora, and more.</p><p><h2>What is a Chroot?</h2></p><p>A chroot (change root) creates an isolated environment where you can run a different Linux distribution within your current system. It's like having two distros at once without dual-booting.</p><p><h2>Why Run Manjaro in a Chroot?</h2></p><p><ul><li>Access Arch-based packages (AUR) from any distro</li><br><li>Test Manjaro without installing it</li><br><li>Use <code>pacman</code> package manager alongside your native one</li><br><li>Run Manjaro-specific tools</li><br><li>No need for VMs or dual-boot</li></p><p><h2>Compatible Host Systems</h2></p><p>This technique works on:<br><li>Ubuntu and derivatives</li><br><li>OpenSuSE</li><br><li>Fedora</li><br><li>Any Linux distribution with chroot support</li></p><p><h2>Basic Steps</h2></p><p>1. <strong>Download Manjaro rootfs</strong> - Get the base filesystem<br>2. <strong>Extract to a directory</strong> - Unpack the root filesystem<br>3. <strong>Mount necessary filesystems</strong> - Bind mount /proc, /sys, /dev<br>4. <strong>Chroot into Manjaro</strong> - Enter the new environment<br>5. <strong>Configure and use</strong> - Run pacman, install packages</p><p><h2>Considerations</h2></p><p><li>Graphics and systemd services have limitations in chroot</li><br><li>Network access works through the host</li><br><li>Great for command-line tools and package building</li><br><li>Not ideal for running full desktop sessions</li></p><p><h2>Use Cases</h2></p><p><li>Building AUR packages</li><br><li>Testing Manjaro/Arch software</li><br><li>Accessing rolling-release packages</li><br><li>Learning Arch-based systems safely</li></ul></p><p><a href="https://youtube.com/watch?v=KQpoy6wWVEo">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=manjaro-in-a-chroot" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

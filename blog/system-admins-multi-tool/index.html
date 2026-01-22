@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The System Admin's Multi-tool - Hackers Game</title>
+    <meta name="description" content="Control or install just about any Linux OS, from one device.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="sysadmin, linux, tools, installation, multi-boot, kvm, usb, keyboard, python">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/system-admins-multi-tool/">
+    <meta property="og:title" content="The System Admin's Multi-tool">
+    <meta property="og:description" content="Control or install just about any Linux OS, from one device.">
+    <meta property="og:image" content="https://img.youtube.com/vi/H55tQc5wYEs/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2020-12-29">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/system-admins-multi-tool/">
+    <meta name="twitter:title" content="The System Admin's Multi-tool">
+    <meta name="twitter:description" content="Control or install just about any Linux OS, from one device.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/H55tQc5wYEs/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/system-admins-multi-tool/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The System Admin's Multi-tool",
+        "description": "Control or install just about any Linux OS, from one device.",
+        "image": "https://img.youtube.com/vi/H55tQc5wYEs/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2020-12-29",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/system-admins-multi-tool/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "The System Admin's Multi-tool",
+            "thumbnailUrl": "https://img.youtube.com/vi/H55tQc5wYEs/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/H55tQc5wYEs"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>The System Admin's Multi-tool</h1>
+        <div class="meta">
+            <span>2020-12-29</span> ·
+            <span>Hardware</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">sysadmin</span><span class="tag">linux</span><span class="tag">tools</span><span class="tag">installation</span><span class="tag">multi-boot</span><span class="tag">kvm</span><span class="tag">usb</span><span class="tag">keyboard</span><span class="tag">python</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/H55tQc5wYEs"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="The System Admin's Multi-tool">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>The System Admin's Multi-tool</h1></p><p>Control or install just about any Linux OS, from one device.</p><p>This video demonstrates a versatile hardware tool that system administrators can use to manage and install various Linux distributions. Whether you need to deploy a new server, troubleshoot an existing system, or maintain multiple machines, this multi-tool approach streamlines the process by consolidating everything into a single device.</p><p><h2>What It Does</h2></p><p>The system admin's multi-tool combines several capabilities:</p><p><ul><li><strong>KVM (Keyboard, Video, Mouse) functionality</strong> - Control remote systems as if you were sitting in front of them</li><br><li><strong>USB boot capability</strong> - Boot any system from your device with multiple Linux distributions ready to go</li><br><li><strong>Keyboard emulation</strong> - Send keystrokes to target systems for automation and setup</li></p><p><h2>Technical Details</h2></p><p>The project involves:</p><p><li><strong>Python scripting</strong> - Custom code to manage the multi-tool functionality</li><br><li><strong>USB device emulation</strong> - Making the device appear as different USB peripherals</li><br><li><strong>Multiple Linux distributions</strong> - Having various distros ready to deploy</li></p><p><h2>Use Cases</h2></p><p><li><strong>Server deployment</strong> - Quickly install Linux on new servers</li><br><li><strong>System recovery</strong> - Boot into a live environment to rescue broken systems</li><br><li><strong>Remote administration</strong> - Manage systems without needing physical keyboard/monitor switches</li><br><li><strong>Consistent tooling</strong> - Carry your entire toolkit in one portable device</li></ul></p><p><h2>Interactive Version</h2></p><p>For more details and interactive content, check out the full blog post:<br><a href="https://www.hackers-game.com/2020/12/29/the-system-admins-multi-tool/">The System Admin's Multi-tool</a></p><p><a href="https://youtube.com/watch?v=H55tQc5wYEs">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=system-admins-multi-tool" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Recover From a Full Root Filesystem - Hackers Game</title>
+    <meta name="description" content="If you want to find big file(s) in Linux... Watch this.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="linux, sysadmin, troubleshooting, filesystem, disk-space, recovery, du, sort">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/recover-from-full-root-filesystem/">
+    <meta property="og:title" content="How to Recover From a Full Root Filesystem">
+    <meta property="og:description" content="If you want to find big file(s) in Linux... Watch this.">
+    <meta property="og:image" content="https://img.youtube.com/vi/HnDN18Gc3Ig/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2018-01-10">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/recover-from-full-root-filesystem/">
+    <meta name="twitter:title" content="How to Recover From a Full Root Filesystem">
+    <meta name="twitter:description" content="If you want to find big file(s) in Linux... Watch this.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/HnDN18Gc3Ig/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/recover-from-full-root-filesystem/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Recover From a Full Root Filesystem",
+        "description": "If you want to find big file(s) in Linux... Watch this.",
+        "image": "https://img.youtube.com/vi/HnDN18Gc3Ig/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2018-01-10",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/recover-from-full-root-filesystem/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "How to Recover From a Full Root Filesystem",
+            "thumbnailUrl": "https://img.youtube.com/vi/HnDN18Gc3Ig/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/HnDN18Gc3Ig"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>How to Recover From a Full Root Filesystem</h1>
+        <div class="meta">
+            <span>2018-01-10</span> ·
+            <span>Linux</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">linux</span><span class="tag">sysadmin</span><span class="tag">troubleshooting</span><span class="tag">filesystem</span><span class="tag">disk-space</span><span class="tag">recovery</span><span class="tag">du</span><span class="tag">sort</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/HnDN18Gc3Ig"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="How to Recover From a Full Root Filesystem">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>How to Recover From a Full Root Filesystem</h1></p><p>If you want to find big files in Linux, watch this.</p><p>A full root filesystem can bring a Linux system to its knees, preventing normal operations and even blocking you from logging in. This video walks through the process of identifying and removing large files that are consuming disk space, helping you recover your system and get back to normal operations.</p><p><h2>The Problem</h2></p><p>When your root filesystem (<code>/</code>) fills up completely, you may experience:</p><p><ul><li>Unable to log in to the system</li><br><li>Services failing to start or crashing</li><br><li>Unable to create new files or save data</li><br><li>System instability and errors</li></p><p><h2>Finding Big Files</h2></p><p>The key commands covered in this tutorial:</p><p><h3>Using <code>du</code> (Disk Usage)</h3></p><p>The <code>du</code> command shows disk usage for files and directories:</p><p><pre><code>du -h /path/to/check<br></code></pre></p><p><h3>Sorting by Size</h3></p><p>Combine <code>du</code> with <code>sort</code> to find the largest files and directories:</p><p><pre><code>du -h / | sort -h<br></code></pre></p><p>This pipes the output of <code>du</code> into <code>sort</code> with the <code>-h</code> flag for human-readable sizes, showing the largest items at the bottom.</p><p><h3>Quick Recovery Steps</h3></p><p>1. Identify what's consuming space using <code>du</code> and <code>sort</code><br>2. Look in common problem areas: <code>/var/log</code>, <code>/tmp</code>, <code>/home</code><br>3. Remove or compress large unnecessary files<br>4. Consider setting up log rotation to prevent future issues</p><p><h2>Prevention Tips</h2></p><p><li>Monitor disk space regularly with <code>df -h</code></li><br><li>Set up alerts for low disk space</li><br><li>Configure log rotation for application and system logs</li><br><li>Use separate partitions for <code>/var</code> and <code>/home</code> to prevent root filesystem issues</li></ul></p><p><a href="https://youtube.com/watch?v=HnDN18Gc3Ig">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=recover-from-full-root-filesystem" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

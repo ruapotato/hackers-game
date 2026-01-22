@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librem 5 Development Kit [Booting] - Hackers Game</title>
+    <meta name="description" content="A look at the Librem 5 dev kit booting up">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem 5, purism, linux phone, development kit, booting, boot-process, imx8">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/librem-5-development-kit-booting/">
+    <meta property="og:title" content="Librem 5 Development Kit [Booting]">
+    <meta property="og:description" content="A look at the Librem 5 dev kit booting up">
+    <meta property="og:image" content="https://img.youtube.com/vi/JMCWlRyVzgQ/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2019-01-23">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/librem-5-development-kit-booting/">
+    <meta name="twitter:title" content="Librem 5 Development Kit [Booting]">
+    <meta name="twitter:description" content="A look at the Librem 5 dev kit booting up">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/JMCWlRyVzgQ/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/librem-5-development-kit-booting/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Librem 5 Development Kit [Booting]",
+        "description": "A look at the Librem 5 dev kit booting up",
+        "image": "https://img.youtube.com/vi/JMCWlRyVzgQ/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2019-01-23",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/librem-5-development-kit-booting/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Librem 5 Development Kit [Booting]",
+            "thumbnailUrl": "https://img.youtube.com/vi/JMCWlRyVzgQ/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/JMCWlRyVzgQ"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Librem 5 Development Kit [Booting]</h1>
+        <div class="meta">
+            <span>2019-01-23</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem 5</span><span class="tag">purism</span><span class="tag">linux phone</span><span class="tag">development kit</span><span class="tag">booting</span><span class="tag">boot-process</span><span class="tag">imx8</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/JMCWlRyVzgQ"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Librem 5 Development Kit [Booting]">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Librem 5 Development Kit [Booting]</h1></p><p>A look at the Librem 5 development kit booting up.</p><p>This video shows the early stages of Purism's Linux phone development, demonstrating the boot process of the dev kit hardware that preceded the final Librem 5 device.</p><p><h2>Boot Process Overview</h2></p><p>The video captures the complete boot sequence of the Librem 5 development kit:</p><p><ul><li>Power-on and bootloader initialization</li><br><li>Kernel loading</li><br><li>System initialization</li><br><li>Desktop environment startup</li></p><p><h2>Development Kit Hardware</h2></p><p>The Librem 5 dev kit featured:</p><p><li>i.MX 8M processor (same as production Librem 5)</li><br><li>Development board form factor</li><br><li>Full I/O access for testing</li><br><li>Modular design for component testing</li></p><p><h2>Why This Matters</h2></p><p>The development kit allowed developers and enthusiasts to:</p><p><li>Start working on mobile Linux applications before the phone's official release</li><br><li>Test and debug hardware drivers</li><br><li>Develop the Phosh mobile shell</li><br><li>Optimize the software stack for the i.MX 8M platform</li></p><p><h2>Early Development Insights</h2></p><p>This boot video shows the state of the software stack early in development:</p><p><li>Boot time performance</li><br><li>Initial desktop environment state</li><br><li>System stability during startup</li></ul></p><p>The dev kit was instrumental in getting the Librem 5 ready for production shipments.</p><p><a href="https://youtube.com/watch?v=JMCWlRyVzgQ">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=librem-5-development-kit-booting" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Automation: Home Assistant, VOSK, and Python - Hackers Game</title>
+    <meta name="description" content="Full blog with source code for integrating Home Assistant with VOSK voice recognition and Python">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="home assistant, vosk, python, voice control, automation, speech-recognition, smart-home, offline, privacy">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/home-automation-home-assistant-vosk-and-python/">
+    <meta property="og:title" content="Home Automation: Home Assistant, VOSK, and Python">
+    <meta property="og:description" content="Full blog with source code for integrating Home Assistant with VOSK voice recognition and Python">
+    <meta property="og:image" content="https://img.youtube.com/vi/iuqCutdfX2s/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2022-01-03">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/home-automation-home-assistant-vosk-and-python/">
+    <meta name="twitter:title" content="Home Automation: Home Assistant, VOSK, and Python">
+    <meta name="twitter:description" content="Full blog with source code for integrating Home Assistant with VOSK voice recognition and Python">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/iuqCutdfX2s/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/home-automation-home-assistant-vosk-and-python/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Home Automation: Home Assistant, VOSK, and Python",
+        "description": "Full blog with source code for integrating Home Assistant with VOSK voice recognition and Python",
+        "image": "https://img.youtube.com/vi/iuqCutdfX2s/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2022-01-03",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/home-automation-home-assistant-vosk-and-python/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Home Automation: Home Assistant, VOSK, and Python",
+            "thumbnailUrl": "https://img.youtube.com/vi/iuqCutdfX2s/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/iuqCutdfX2s"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Home Automation: Home Assistant, VOSK, and Python</h1>
+        <div class="meta">
+            <span>2022-01-03</span> ·
+            <span>Home Automation</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">home assistant</span><span class="tag">vosk</span><span class="tag">python</span><span class="tag">voice control</span><span class="tag">automation</span><span class="tag">speech-recognition</span><span class="tag">smart-home</span><span class="tag">offline</span><span class="tag">privacy</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/iuqCutdfX2s"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Home Automation: Home Assistant, VOSK, and Python">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Home Automation: Home Assistant, VOSK, and Python</h1></p><p>This video covers integrating Home Assistant with VOSK voice recognition using Python. The Home Butler project demonstrates how to build a local voice-controlled home automation system without relying on cloud services.</p><p><h2>Project Overview</h2></p><p>The Home Butler project provides a privacy-focused approach to voice-controlled home automation by keeping all speech recognition processing local on your own hardware.</p><p><h2>Key Technologies</h2></p><p><h3>Home Assistant</h3><br>An open-source home automation platform that runs on various devices and supports thousands of smart home devices and services.</p><p><h3>VOSK</h3><br>An offline speech recognition toolkit that provides accurate voice recognition without sending your data to cloud services. Perfect for privacy-conscious users who want voice control without surveillance.</p><p><h3>Python Integration</h3><br>Python serves as the glue connecting VOSK's speech recognition to Home Assistant's automation capabilities, allowing voice commands to control your smart home devices.</p><p><h2>Resources</h2></p><p><ul><li><strong>Full Blog Post</strong>: <a href="https://www.hackers-game.com/2022/01/03/home-automation-home-assistant-vosk-and-python/">Home Automation Guide</a></li><br><li><strong>Source Code</strong>: <a href="https://bitbucket.org/hackersgame/home-butler/src/master/">Home Butler Repository</a></li></p><p><h2>Key Benefits</h2></p><p><li><strong>Privacy</strong>: All voice processing happens locally - no cloud services required</li><br><li><strong>Customizable</strong>: Full control over voice commands and automations</li><br><li><strong>Open Source</strong>: Completely transparent and modifiable code</li><br><li><strong>No Subscription</strong>: No monthly fees for voice assistant services</li></ul></p><p><a href="https://youtube.com/watch?v=iuqCutdfX2s">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=home-automation-home-assistant-vosk-and-python" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

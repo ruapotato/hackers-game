@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The First Distro | H.J.Lu's bootable rootdisk for Linux - Hackers Game</title>
+    <meta name="description" content="The first GNU+Linux distro.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="linux-history, distro, bootable, rootdisk, qemu, gnu-linux, hj-lu">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/the-first-distro-hj-lus-bootable-rootdisk-for-linux/">
+    <meta property="og:title" content="The First Distro | H.J.Lu's bootable rootdisk for Linux">
+    <meta property="og:description" content="The first GNU+Linux distro.">
+    <meta property="og:image" content="https://img.youtube.com/vi/b8-G9JjgknA/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2020-06-24">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/the-first-distro-hj-lus-bootable-rootdisk-for-linux/">
+    <meta name="twitter:title" content="The First Distro | H.J.Lu's bootable rootdisk for Linux">
+    <meta name="twitter:description" content="The first GNU+Linux distro.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/b8-G9JjgknA/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/the-first-distro-hj-lus-bootable-rootdisk-for-linux/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "The First Distro | H.J.Lu's bootable rootdisk for Linux",
+        "description": "The first GNU+Linux distro.",
+        "image": "https://img.youtube.com/vi/b8-G9JjgknA/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2020-06-24",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/the-first-distro-hj-lus-bootable-rootdisk-for-linux/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "The First Distro | H.J.Lu's bootable rootdisk for Linux",
+            "thumbnailUrl": "https://img.youtube.com/vi/b8-G9JjgknA/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/b8-G9JjgknA"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>The First Distro | H.J.Lu's bootable rootdisk for Linux</h1>
+        <div class="meta">
+            <span>2020-06-24</span> ·
+            <span>Linux</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">linux-history</span><span class="tag">distro</span><span class="tag">bootable</span><span class="tag">rootdisk</span><span class="tag">qemu</span><span class="tag">gnu-linux</span><span class="tag">hj-lu</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/b8-G9JjgknA"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="The First Distro | H.J.Lu's bootable rootdisk for Linux">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>The First Distro | H.J.Lu's bootable rootdisk for Linux</h1></p><p>The first GNU+Linux distro.</p><p>This video explores the very first Linux distribution - H.J. Lu's bootable rootdisk. Before Ubuntu, before Red Hat, before Slackware, there was this simple floppy disk image that allowed people to boot into a working Linux system.</p><p><h2>Historical Significance</h2></p><p>H.J. Lu's bootable rootdisk represents a pivotal moment in Linux history. It was one of the first ways for people to actually try Linux without having to compile everything themselves from Linus Torvalds' kernel source code.</p><p><h2>Try It Yourself</h2></p><p>You can download and test this piece of computing history for yourself!</p><p><strong>Download:</strong> <a href="https://www.pcorner.com/list/LINUX/HU985-5R.ZIP/INFO/">HU985-5R.ZIP from PC Corner</a></p><p><h3>Running with QEMU</h3></p><p>To run the historic bootable rootdisk, use QEMU with the following command:</p><p><pre><code>qemu-system-i386 -drive file=./HU985-5R.img,if=floppy,format=raw<br></code></pre></p><p>This boots the floppy image in an emulated i386 system, letting you experience what early Linux adopters would have seen.</p><p><h2>What to Expect</h2></p><p>This is a minimal system from the early 1990s. Don't expect a graphical interface or modern conveniences. What you'll find is:</p><p><ul><li>A basic shell environment</li><br><li>Core Unix utilities</li><br><li>The ability to explore one of the first complete, bootable Linux systems</li></ul></p><p><h2>Why This Matters</h2></p><p>Understanding where Linux came from helps us appreciate how far it has come. From a single floppy disk to powering everything from smartphones to supercomputers, Linux's journey is remarkable.</p><p><a href="https://youtube.com/watch?v=b8-G9JjgknA">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=the-first-distro-hj-lus-bootable-rootdisk-for-linux" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

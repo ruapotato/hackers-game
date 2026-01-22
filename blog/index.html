@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hackers Game</title>
+    <meta name="description" content="David Hamner's blog about Linux phones, home automation, and open source development">
+    <meta property="og:title" content="Hackers Game Blog">
+    <meta property="og:description" content="GNU/Linux stuff - Linux phones, home automation, and open source">
+    <meta property="og:url" content="https://hackers-game.com/blog/">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://hackers-game.com/blog/">
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        h1 { color: #fff; }
+        .nav { margin-bottom: 30px; }
+        .nav a { margin-right: 15px; }
+        .posts { display: grid; gap: 20px; }
+        .post-card {
+            display: flex;
+            gap: 20px;
+            background: #16213e;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .post-card img {
+            width: 200px;
+            height: 112px;
+            object-fit: cover;
+            border-radius: 5px;
+            flex-shrink: 0;
+        }
+        .post-info h2 { margin: 0 0 5px 0; font-size: 1.2em; }
+        .post-info h2 a { color: #fff; }
+        .meta { color: #888; font-size: 0.9em; margin-bottom: 10px; }
+        .post-info p { margin: 0; color: #ccc; }
+        @media (max-width: 600px) {
+            .post-card { flex-direction: column; }
+            .post-card img { width: 100%; height: auto; }
+        }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; color: #888; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <h1>Blog Posts</h1>
+    <p>99 posts about Linux phones, home automation, and open source development.</p>
+
+    <div class="posts">
+        
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/f5Bscjm3EJI/mqdefault.jpg" alt="Do Hardware Kill Switches Actually Work?" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/do-hardware-kill-switches-actually-work/">Do Hardware Kill Switches Actually Work?</a></h2>
+                <div class="meta">2026-01-15 · Linux Phones</div>
+                <p>Linux phones are shipping with hardware kill switches. But do they actually work?</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/lhHr6khxtUE/mqdefault.jpg" alt="New Linux Phone DE | Flick V0" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/new-linux-phone-de-flick-v0/">New Linux Phone DE | Flick V0</a></h2>
+                <div class="meta">2025-12-12 · Desktop Linux</div>
+                <p>Playing around building a new DE for mobile Linux.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/gdS_Kpwrrgw/mqdefault.jpg" alt="Wow! A New Linux Phone! FLX1s" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/wow-a-new-linux-phone-flx1s/">Wow! A New Linux Phone! FLX1s</a></h2>
+                <div class="meta">2025-10-03 · Linux Phones</div>
+                <p>Check out the FLX1s from Furilabs</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/VD94Al_Q0Hs/mqdefault.jpg" alt="Linux Phone Upgrade | Comet +1" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-phone-upgrade-comet-plus-1/">Linux Phone Upgrade | Comet +1</a></h2>
+                <div class="meta">2025-03-08 · Linux Phones</div>
+                <p>A quick overview of the Mecha Comet Linux phone upgrade</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/YKAsUK3a8M0/mqdefault.jpg" alt="Maemo Leste SystemV Hackjob #music" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/maemo-leste-systemv-hackjob/">Maemo Leste SystemV Hackjob #music</a></h2>
+                <div class="meta">2025-03-04 · Desktop Linux</div>
+                <p>Documenting my work for the day in a fun way.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/GLl4-82vZ7A/mqdefault.jpg" alt="Are Linux Phones Ready in 2025?" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/are-linux-phones-ready-in-2025/">Are Linux Phones Ready in 2025?</a></h2>
+                <div class="meta">2025-02-28 · Linux Phones</div>
+                <p>I tried daily driving a Pixel 3a running PostmarketOS. Let me show you how it went.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/IG5HSx5A-h4/mqdefault.jpg" alt="Linux Phones: Fresh Approaches and New Players in 2025" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-phones-fresh-approaches-and-new-players-in-2025/">Linux Phones: Fresh Approaches and New Players in 2025</a></h2>
+                <div class="meta">2025-02-09 · Linux Phones</div>
+                <p>Jolla has a new community phone.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/0Q6BbMiVtjg/mqdefault.jpg" alt="Your Phone is Terrible | Music Video" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/your-phone-is-terrible-music-video/">Your Phone is Terrible | Music Video</a></h2>
+                <div class="meta">2025-02-01 · Linux Phones</div>
+                <p>Something a bit different. Here is a song I wrote about phones in 2025.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/-154CWGhuAI/mqdefault.jpg" alt="Linux Phone Takeover: The AI Revolution" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-phone-takeover-ai-revolution/">Linux Phone Takeover: The AI Revolution</a></h2>
+                <div class="meta">2025-01-25 · AI/ML</div>
+                <p>Ever notice that AI gives you lousy output when you restrict it to using crappy tools?</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/pAywiV7r4gE/mqdefault.jpg" alt="Next Gen Linux Phones" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/next-gen-linux-phones/">Next Gen Linux Phones</a></h2>
+                <div class="meta">2025-01-22 · Linux Phones</div>
+                <p>Out with the old and in with the new! 2025 will be really hot for mobile Linux.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/2G_drprsrTM/mqdefault.jpg" alt="AI Linux is Here!" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/ai-linux-is-here/">AI Linux is Here!</a></h2>
+                <div class="meta">2024-12-05 · AI/ML</div>
+                <p>Want to use an AI-powered Linux desktop? Well, that's what MAGI OS is for.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/H5LeNkgdRg4/mqdefault.jpg" alt="MAGI OS | Public Test" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/magi-os-public-test/">MAGI OS | Public Test</a></h2>
+                <div class="meta">2024-11-18 · AI/ML</div>
+                <p>MAGI (Machine Augmented GTK Interface) is a local open-source AI powered operating system.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/ev2qv-Oxtdo/mqdefault.jpg" alt="AI Linux Desktop | MAGI" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/ai-linux-desktop-magi/">AI Linux Desktop | MAGI</a></h2>
+                <div class="meta">2024-11-10 · AI/ML</div>
+                <p>Introducing MAGI, an AI-powered Linux desktop environment.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/R5bfClvmmqc/mqdefault.jpg" alt="Whisper Large V3 Turbo | Tested" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/whisper-large-v3-turbo-tested/">Whisper Large V3 Turbo | Tested</a></h2>
+                <div class="meta">2024-10-18 · AI/ML</div>
+                <p>How good is Whisper Large V3. Very!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/kx6tMCeUmaY/mqdefault.jpg" alt="Neural Network Meets Falling Sand Game" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/neural-network-meets-falling-sand-game/">Neural Network Meets Falling Sand Game</a></h2>
+                <div class="meta">2024-09-08 · AI/ML</div>
+                <p>Hey everyone! Today, I'm excited to share my progress on a falling sand game powered by neural networks.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/DI4VYUv4vFQ/mqdefault.jpg" alt="AI-Powered Terminal Assistant: Revolutionizing Command Line Interactions" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/ai-powered-terminal-assistant/">AI-Powered Terminal Assistant: Revolutionizing Command Line Interactions</a></h2>
+                <div class="meta">2024-08-07 · AI/ML</div>
+                <p>Discover the future of command line interfaces with our AI-Powered Terminal Assistant!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/lITN4HJ3M5Q/mqdefault.jpg" alt="Linux Phone That Actually Works - FLX1s Review" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-phone-that-works/">Linux Phone That Actually Works - FLX1s Review</a></h2>
+                <div class="meta">2024-01-15 · Linux Phones</div>
+                <p>The FuriLabs FLX1s is a Linux phone that just works. Calls, texts, mobile data - out of the box.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/VRh6cQM8Kio/mqdefault.jpg" alt="Godot vs Armory3d vs UPBGE" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/godot-vs-armory3d-vs-upbge/">Godot vs Armory3d vs UPBGE</a></h2>
+                <div class="meta">2023-12-24 · Gaming</div>
+                <p>Just what is the best Open Source Game engine, let's find out!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/iuqCutdfX2s/mqdefault.jpg" alt="Home Automation: Home Assistant, VOSK, and Python" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/home-automation-home-assistant-vosk-and-python/">Home Automation: Home Assistant, VOSK, and Python</a></h2>
+                <div class="meta">2022-01-03 · Home Automation</div>
+                <p>Full blog with source code for integrating Home Assistant with VOSK voice recognition and Python</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/_86tEHCyMsY/mqdefault.jpg" alt="Containerization on Linux Phones" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/containerization-on-linux-phones/">Containerization on Linux Phones</a></h2>
+                <div class="meta">2021-10-11 · Linux Phones</div>
+                <p>Messing around with containerization with nspawn.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/oGhSBksuCZs/mqdefault.jpg" alt="Poodillion (An OS game)" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/poodillion-an-os-game/">Poodillion (An OS game)</a></h2>
+                <div class="meta">2021-09-04 · Gaming</div>
+                <p>Poodillion - an operating system themed game.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/zEXWN1BCieA/mqdefault.jpg" alt="3D Dependency Forest" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/3d-dependency-forest/">3D Dependency Forest</a></h2>
+                <div class="meta">2021-08-09 · Programming</div>
+                <p>A 3D visualization tool for exploring dependency trees.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/l82fVM85be8/mqdefault.jpg" alt="FunkyFish v2 (Playing around with blender)" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/funkyfish-v2-playing-around-with-blender/">FunkyFish v2 (Playing around with blender)</a></h2>
+                <div class="meta">2021-07-27 · Desktop Linux</div>
+                <p>Not useful, but funky.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/z9j6QM2onhg/mqdefault.jpg" alt="Hacking: a Better Definition" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/hacking-a-better-definition/">Hacking: a Better Definition</a></h2>
+                <div class="meta">2021-07-18 · Programming</div>
+                <p>A hacker is someone who enjoys playful cleverness - not necessarily with computers.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/ioraJIPnQ-E/mqdefault.jpg" alt="Librem 5 Screen Reader" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-screen-reader/">Librem 5 Screen Reader</a></h2>
+                <div class="meta">2021-05-24 · Linux Phones</div>
+                <p>Read and copy any text from any app on the Librem 5.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/nRWvbmD7gJY/mqdefault.jpg" alt="Debugging Debian Based Distros" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/debugging-debian-based-distros/">Debugging Debian Based Distros</a></h2>
+                <div class="meta">2021-04-06 · Linux</div>
+                <p>Interactive debugging guide for Debian-based Linux distributions.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/FCyjY5R05N8/mqdefault.jpg" alt="Navigating the GNU Linux Filesystem" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/navigating-the-gnu-linux-filesystem/">Navigating the GNU Linux Filesystem</a></h2>
+                <div class="meta">2021-03-08 · Linux</div>
+                <p>Learn how to navigate the GNU Linux filesystem.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/lN2h7VN8mfU/mqdefault.jpg" alt="Booting and Using Old Hardware" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/booting-and-using-old-hardware/">Booting and Using Old Hardware</a></h2>
+                <div class="meta">2021-01-12 · Hardware</div>
+                <p>Exploring how to boot and use old hardware.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/H55tQc5wYEs/mqdefault.jpg" alt="The System Admin's Multi-tool" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/system-admins-multi-tool/">The System Admin's Multi-tool</a></h2>
+                <div class="meta">2020-12-29 · Hardware</div>
+                <p>Control or install just about any Linux OS, from one device.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/rv5YBCzd4Wo/mqdefault.jpg" alt="Terminal Touch Interface | Multilsh" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/terminal-touch-interface-multilsh/">Terminal Touch Interface | Multilsh</a></h2>
+                <div class="meta">2020-12-21 · Linux Phones</div>
+                <p>A touch-friendly terminal interface using Multilsh</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/deMB2GzBVHc/mqdefault.jpg" alt="3d Printing a Phone Case" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/3d-printing-a-phone-case/">3d Printing a Phone Case</a></h2>
+                <div class="meta">2020-11-16 · Hardware</div>
+                <p>3D printing a custom phone case for the Librem 5.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/uJ5UOJJVkgA/mqdefault.jpg" alt="Networking and OSI Basics" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/networking-and-osi-basics/">Networking and OSI Basics</a></h2>
+                <div class="meta">2020-11-07 · Linux</div>
+                <p>How does the internet work?</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/SFS0YTQl4vY/mqdefault.jpg" alt="Robocalls | Fight Bots with Bots" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/robocalls-fight-bots-with-bots/">Robocalls | Fight Bots with Bots</a></h2>
+                <div class="meta">2020-09-08 · Home Automation</div>
+                <p>Let a robot answer your phone for you.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/WHqJPqUzC2Q/mqdefault.jpg" alt="Linux Boot Process" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-boot-process/">Linux Boot Process</a></h2>
+                <div class="meta">2020-08-23 · Linux</div>
+                <p>Understanding the Linux boot process from power-on to login.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/1t4L_QNZ74A/mqdefault.jpg" alt="Mobile IP-native Communication" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/mobile-ip-native-communication/">Mobile IP-native Communication</a></h2>
+                <div class="meta">2020-07-21 · Linux Phones</div>
+                <p>Use cellular data or Wifi at home to call or text.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/ONLpCiTlTQg/mqdefault.jpg" alt="Librem 5 Dogwood Game Emulation" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-dogwood-game-emulation/">Librem 5 Dogwood Game Emulation</a></h2>
+                <div class="meta">2020-07-13 · Gaming</div>
+                <p>Playing with Mupen64plus and Snes9x on a Librem 5 Dogwood.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/K_RpvXSuY2Q/mqdefault.jpg" alt="Pinephone Images on the Librem 5" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/pinephone-images-on-the-librem-5/">Pinephone Images on the Librem 5</a></h2>
+                <div class="meta">2020-06-30 · Linux Phones</div>
+                <p>Let's hack around with some Linux phone images.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/b8-G9JjgknA/mqdefault.jpg" alt="The First Distro | H.J.Lu's bootable rootdisk for Linux" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/the-first-distro-hj-lus-bootable-rootdisk-for-linux/">The First Distro | H.J.Lu's bootable rootdisk for Linux</a></h2>
+                <div class="meta">2020-06-24 · Linux</div>
+                <p>The first GNU+Linux distro.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/9J-bkP9lSH0/mqdefault.jpg" alt="Copyleft Smartphone" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/copyleft-smartphone/">Copyleft Smartphone</a></h2>
+                <div class="meta">2020-03-14 · Linux Phones</div>
+                <p>Android is less free than we were led to believe.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/K4OfNFis--g/mqdefault.jpg" alt="Librem 5 | New Apps" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-new-apps/">Librem 5 | New Apps</a></h2>
+                <div class="meta">2020-02-13 · Linux Phones</div>
+                <p>Let's go over localvoice and what-not.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/dTr6plNybok/mqdefault.jpg" alt="Librem 5 | Temperatures and Runtime" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-temperatures-and-runtime/">Librem 5 | Temperatures and Runtime</a></h2>
+                <div class="meta">2020-01-22 · Linux Phones</div>
+                <p>A quick look at the Librem5's runtime and temperatures.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/eOVJ7eOHY2c/mqdefault.jpg" alt="Librem 5 Chestnut | Apps" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-chestnut-apps/">Librem 5 Chestnut | Apps</a></h2>
+                <div class="meta">2020-01-11 · Linux Phones</div>
+                <p>Let's go over the Librem5 chestnut hardware changes, and talk about Librem5 apps.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/RrTl2TYSg_4/mqdefault.jpg" alt="Librem 5 Birch | Status" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-birch-status/">Librem 5 Birch | Status</a></h2>
+                <div class="meta">2019-12-18 · Linux Phones</div>
+                <p>Let's see what it's like to use a Librem 5 in December 2019</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/a1ENmWmwE8k/mqdefault.jpg" alt="Librem 5 | Gaming" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-gaming/">Librem 5 | Gaming</a></h2>
+                <div class="meta">2019-12-01 · Gaming</div>
+                <p>Let's take a look at what runs on the Librem 5 birch batch.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/Mqmz0cJkYRQ/mqdefault.jpg" alt="Librem 5 | Calling and Updates" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-calling-and-updates/">Librem 5 | Calling and Updates</a></h2>
+                <div class="meta">2019-11-29 · Linux Phones</div>
+                <p>Librem 5 calling functionality and software updates overview.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/xhCbN3OOFxA/mqdefault.jpg" alt="User Empowered Smartphones" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/user-empowered-smartphones/">User Empowered Smartphones</a></h2>
+                <div class="meta">2019-11-17 · Linux Phones</div>
+                <p>GNU/Linux phones!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/j_PzGz8dePY/mqdefault.jpg" alt="Robot and Librem 5 Hacking" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/robot-librem-hacking/">Robot and Librem 5 Hacking</a></h2>
+                <div class="meta">2019-11-15 · Linux Phones</div>
+                <p>Screen-capture, keyboard input, and a hacky way to install stuff. Plus, hear about the robot I'm working on!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/AnbqjNvpupI/mqdefault.jpg" alt="Librem 5 | Server apps" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-server-apps/">Librem 5 | Server apps</a></h2>
+                <div class="meta">2019-10-28 · Linux Phones</div>
+                <p>Running server applications on the Librem 5.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/p_OE8EaIKl8/mqdefault.jpg" alt="Librem 5 | In Less Than a Year" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-in-less-than-a-year/">Librem 5 | In Less Than a Year</a></h2>
+                <div class="meta">2019-10-21 · Linux Phones</div>
+                <p>You should know what Purism is up to.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/gqQjQ7WRWRU/mqdefault.jpg" alt="Librem 5 | Android apps?" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-android-apps/">Librem 5 | Android apps?</a></h2>
+                <div class="meta">2019-10-06 · Linux Phones</div>
+                <p>Will the Librem 5 be able to run android applications?</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/GTDzV4rxPwc/mqdefault.jpg" alt="Librem 5 | Stuff and Whatnot" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-stuff-whatnot/">Librem 5 | Stuff and Whatnot</a></h2>
+                <div class="meta">2019-10-01 · Linux Phones</div>
+                <p>Check out the latest software running on the Librem 5 dev kit.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/0tuLkga0dmY/mqdefault.jpg" alt="Is the Librem 5 Ready for Launch?" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-launch-ready/">Is the Librem 5 Ready for Launch?</a></h2>
+                <div class="meta">2019-09-24 · Linux Phones</div>
+                <p>Let's take a look at the progress over the last few weeks.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/LmlnwzqscfM/mqdefault.jpg" alt="Librem5 VS Sailfish OS" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem5-vs-sailfish-os/">Librem5 VS Sailfish OS</a></h2>
+                <div class="meta">2019-08-09 · Linux Phones</div>
+                <p>A comparison between the Librem5 and Sailfish OS.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/sBTqAG9jX2w/mqdefault.jpg" alt="Librem 5 | Software Improvements" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-software-improvements/">Librem 5 | Software Improvements</a></h2>
+                <div class="meta">2019-07-26 · Linux Phones</div>
+                <p>GTK, Settings, Keyboard. Stuff is looking better!</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/GBoXQNYujlM/mqdefault.jpg" alt="Librem 5 | News and OpenSuSE" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-news-and-opensuse/">Librem 5 | News and OpenSuSE</a></h2>
+                <div class="meta">2019-07-06 · Linux Phones</div>
+                <p>Let's chat about the Librem 5.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/4iI0tvIB8Mg/mqdefault.jpg" alt="Librem5 | Emulation + Audiobook player" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem5-emulation-audiobook-player/">Librem5 | Emulation + Audiobook player</a></h2>
+                <div class="meta">2019-07-01 · Linux Phones</div>
+                <p>Testing out some emulators and building an audiobook player.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/q_rU1WbJq-M/mqdefault.jpg" alt="Librem5 | Plasma Mobile" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem5-plasma-mobile/">Librem5 | Plasma Mobile</a></h2>
+                <div class="meta">2019-06-12 · Desktop Linux</div>
+                <p>Testing the new version of Plasma Mobile and a few games.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/33xCYejSGFA/mqdefault.jpg" alt="Gnome running on the Librem 5 Dev Kit" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/gnome-running-on-librem-5-dev-kit/">Gnome running on the Librem 5 Dev Kit</a></h2>
+                <div class="meta">2019-05-15 · Linux Phones</div>
+                <p>Testing different desktop environments on the dev kit.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/9l6UbcxFONE/mqdefault.jpg" alt="Linux Install Guide" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-install-guide/">Linux Install Guide</a></h2>
+                <div class="meta">2019-05-07 · Linux</div>
+                <p>Learn to install any version of Linux.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/9_z0XuElERM/mqdefault.jpg" alt="librem5 development kit" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem5-development-kit/">librem5 development kit</a></h2>
+                <div class="meta">2019-03-30 · Linux Phones</div>
+                <p>Playing with the Librem5 development kit.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/zxcj9fG2M2Q/mqdefault.jpg" alt="Librem 5 Development Kit [Onboard Screen]" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-development-kit-onboard-screen/">Librem 5 Development Kit [Onboard Screen]</a></h2>
+                <div class="meta">2019-03-13 · Linux Phones</div>
+                <p>The screen story.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/2XYBmAVvas0/mqdefault.jpg" alt="Mobile GNU+Linux History" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/mobile-gnu-linux-history/">Mobile GNU+Linux History</a></h2>
+                <div class="meta">2019-02-19 · Linux Phones</div>
+                <p>A look back at where we came from.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/hSGsBdji6QI/mqdefault.jpg" alt="Android and IOS Contender | Librem 5" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/android-and-ios-contender-librem-5/">Android and IOS Contender | Librem 5</a></h2>
+                <div class="meta">2019-02-08 · Linux Phones</div>
+                <p>It's about time.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/DjSNPqgZpdo/mqdefault.jpg" alt="Librem 5 Dev Kit | USB-C Hub" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-dev-kit-usb-c-hub/">Librem 5 Dev Kit | USB-C Hub</a></h2>
+                <div class="meta">2019-01-29 · Linux Phones</div>
+                <p>Playing with the Librem 5 dev kit.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/JMCWlRyVzgQ/mqdefault.jpg" alt="Librem 5 Development Kit [Booting]" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-development-kit-booting/">Librem 5 Development Kit [Booting]</a></h2>
+                <div class="meta">2019-01-23 · Linux Phones</div>
+                <p>A look at the Librem 5 dev kit booting up</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/OatW6iNy6ts/mqdefault.jpg" alt="Alternative Librem GUI | KDE Plasma Mobile" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/alternative-librem-gui-kde-plasma-mobile/">Alternative Librem GUI | KDE Plasma Mobile</a></h2>
+                <div class="meta">2019-01-16 · Linux Phones</div>
+                <p>A quick look at Plasma Mobile.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/Ye3Vvxr9LJ4/mqdefault.jpg" alt="Librem 5 Development Kit [First Look]" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem-5-development-kit-first-look/">Librem 5 Development Kit [First Look]</a></h2>
+                <div class="meta">2019-01-08 · Linux Phones</div>
+                <p>Setting up the Librem 5 Dev kit</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/Hkl8N_zXM_A/mqdefault.jpg" alt="librem5 Interface overview" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/librem5-interface-overview/">librem5 Interface overview</a></h2>
+                <div class="meta">2019-01-01 · Linux Phones</div>
+                <p>Playing with the latest snapshot from the Librem5 dev VM.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/Ok_plRtZyac/mqdefault.jpg" alt="Linux stdout stderr" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-stdout-stderr/">Linux stdout stderr</a></h2>
+                <div class="meta">2018-11-27 · Linux</div>
+                <p>Standard out and standard error overview</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/UIfmuhzQVEE/mqdefault.jpg" alt="Tip calculator | Codecademy walkthrough E03" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/tip-calculator-codecademy-walkthrough-e03/">Tip calculator | Codecademy walkthrough E03</a></h2>
+                <div class="meta">2018-10-31 · Programming</div>
+                <p>Going over the Tip calculator project</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/Zr3f5xfmo9s/mqdefault.jpg" alt="Python | Codecademy walkthrough E02" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/python-codecademy-walkthrough-e02/">Python | Codecademy walkthrough E02</a></h2>
+                <div class="meta">2018-10-29 · Programming</div>
+                <p>Going over the basics of python again.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/hhkmyqRYBD4/mqdefault.jpg" alt="Python | Codecademy walkthrough E01" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/python-codecademy-walkthrough-e01/">Python | Codecademy walkthrough E01</a></h2>
+                <div class="meta">2018-10-28 · Programming</div>
+                <p>Going over the basics of python again.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/dZ8uVVQYif0/mqdefault.jpg" alt="Correcting Commands" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/correcting-commands/">Correcting Commands</a></h2>
+                <div class="meta">2018-08-26 · Linux</div>
+                <p>Fixing typos in Bash.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/-gL4wrAQEic/mqdefault.jpg" alt="Building a Custom Distro with Kiwi" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/building-a-custom-distro-with-kiwi/">Building a Custom Distro with Kiwi</a></h2>
+                <div class="meta">2018-08-13 · Linux</div>
+                <p>Learn how to build your own custom Linux distribution using SUSE's Kiwi tool</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/XtkoWirGMSk/mqdefault.jpg" alt="Let's install | OpenSuSE Leap 15.0" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/lets-install-opensuse-leap-15/">Let's install | OpenSuSE Leap 15.0</a></h2>
+                <div class="meta">2018-06-01 · Linux</div>
+                <p>Review and install.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/KQpoy6wWVEo/mqdefault.jpg" alt="Manjaro in a Chroot" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/manjaro-in-a-chroot/">Manjaro in a Chroot</a></h2>
+                <div class="meta">2018-06-01 · Linux</div>
+                <p>Now you can use Manjaro in Ubuntu, OpenSuSE, Fedora, ...</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/IdbwYYpQcAM/mqdefault.jpg" alt="Linux Distro VS Desktop Environment" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/linux-distro-vs-desktop-environment/">Linux Distro VS Desktop Environment</a></h2>
+                <div class="meta">2018-05-18 · Desktop Linux</div>
+                <p>Linux 101</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/zcK8IeLO748/mqdefault.jpg" alt="Chroot into Docker" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/chroot-into-docker/">Chroot into Docker</a></h2>
+                <div class="meta">2018-04-06 · Linux</div>
+                <p>Get any Linux OS via Docker pull.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/WnM4VslzfGg/mqdefault.jpg" alt="OneClick Install: The new beautiful way & the terminal way." loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/oneclick-install-the-new-beautiful-way-and-the-terminal-way/">OneClick Install: The new beautiful way & the terminal way.</a></h2>
+                <div class="meta">2018-03-25 · Linux</div>
+                <p>OpenSuSE just got more beautiful.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/JnwO_SgjPeU/mqdefault.jpg" alt="initrd ramdisk 101" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/initrd-ramdisk-101/">initrd ramdisk 101</a></h2>
+                <div class="meta">2018-03-18 · Linux</div>
+                <p>Let's talk about the initrd</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/mElnFVlmha0/mqdefault.jpg" alt="UEFI Real Quick" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/uefi-real-quick/">UEFI Real Quick</a></h2>
+                <div class="meta">2018-03-13 · Linux</div>
+                <p>Stop being afraid of UEFI.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/U1bTlEtxjhE/mqdefault.jpg" alt="Let's install OpenSuSE on the GPD WIN" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/lets-install-opensuse-on-the-gpd-win/">Let's install OpenSuSE on the GPD WIN</a></h2>
+                <div class="meta">2018-03-04 · Hardware</div>
+                <p>What's small and runs Linux?</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/UTgi0gDlNlA/mqdefault.jpg" alt="SuSE and Yast" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/suse-and-yast/">SuSE and Yast</a></h2>
+                <div class="meta">2018-03-02 · Linux</div>
+                <p>Yast (Yet another Setup Tool)</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/0DKDol1B1bo/mqdefault.jpg" alt="I Wrote a Desktop Environment in Pygame/Python" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/desktop-environment-pygame-python/">I Wrote a Desktop Environment in Pygame/Python</a></h2>
+                <div class="meta">2018-02-17 · Desktop Linux</div>
+                <p>I'm open-sourcing my Desktop Environment. It's still in pre-alpha but I figured I should release it before Wayland completely deprecates X11.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/RSN2oRC8HiM/mqdefault.jpg" alt="Recover Forgotten Password" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/recover-forgotten-password/">Recover Forgotten Password</a></h2>
+                <div class="meta">2018-02-09 · Linux</div>
+                <p>How to reset roots password on Ubuntu, OpenSuSE, Redhat, /etc</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/JI-_Cj_mg60/mqdefault.jpg" alt="Neural Network Trained on Campfire Audio" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/neural-network-trained-on-campfire-audio/">Neural Network Trained on Campfire Audio</a></h2>
+                <div class="meta">2018-02-06 · AI/ML</div>
+                <p>Using TensorFlow WaveNet to generate campfire audio with a neural network</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/Ho5bahp95gs/mqdefault.jpg" alt="Upgrading to Opensuse Tumbleweed" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/upgrading-to-opensuse-tumbleweed/">Upgrading to Opensuse Tumbleweed</a></h2>
+                <div class="meta">2018-01-31 · Linux</div>
+                <p>This is an online upgrade.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/d3CMhZhFPAg/mqdefault.jpg" alt="6 ways to reboot Linux" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/6-ways-to-reboot-linux/">6 ways to reboot Linux</a></h2>
+                <div class="meta">2018-01-17 · Linux</div>
+                <p>Reboot? Multiple methods to restart your Linux system.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/HnDN18Gc3Ig/mqdefault.jpg" alt="How to Recover From a Full Root Filesystem" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/recover-from-full-root-filesystem/">How to Recover From a Full Root Filesystem</a></h2>
+                <div class="meta">2018-01-10 · Linux</div>
+                <p>If you want to find big file(s) in Linux... Watch this.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/5GBsdsGheOU/mqdefault.jpg" alt="Open World Hack | OOT" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/open-world-hack-oot/">Open World Hack | OOT</a></h2>
+                <div class="meta">2018-01-08 · Gaming</div>
+                <p>Exploring cheat codes for open world gameplay in Ocarina of Time.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/9aeU3JoJnuE/mqdefault.jpg" alt="rm -rf ubuntu... fixable?" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/rm-rf-ubuntu-fixable/">rm -rf ubuntu... fixable?</a></h2>
+                <div class="meta">2018-01-01 · Linux</div>
+                <p>Messing with Ubuntu 16.04</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/n_OJwa9CWRc/mqdefault.jpg" alt="How to Kill Processes in Linux" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/how-to-kill-processes-in-linux/">How to Kill Processes in Linux</a></h2>
+                <div class="meta">2017-12-30 · Linux</div>
+                <p>Learn how to kill processes in Linux using various command line tools.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/xv3kgsm4wk0/mqdefault.jpg" alt="Basic x11 (Linux GUI)..." loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/basic-x11-linux-gui/">Basic x11 (Linux GUI)...</a></h2>
+                <div class="meta">2017-12-28 · Desktop Linux</div>
+                <p>A quick look at using x11/xinit manually.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/VVm37hZz6WU/mqdefault.jpg" alt="Managing Linux Shell Processes" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/managing-linux-shell-processes/">Managing Linux Shell Processes</a></h2>
+                <div class="meta">2017-12-27 · Linux</div>
+                <p>How to manage stuff you start in a shell</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/zf781j4s3lA/mqdefault.jpg" alt="How To Chroot" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/how-to-chroot/">How To Chroot</a></h2>
+                <div class="meta">2017-12-14 · Linux</div>
+                <p>How to chroot (aka: Change root) into a different Linux os.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/mB1rcnuHPYk/mqdefault.jpg" alt="DeepDream Fractal Zoom" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/deepdream-fractal-zoom/">DeepDream Fractal Zoom</a></h2>
+                <div class="meta">2017-12-11 · AI/ML</div>
+                <p>Watch the video by \"Maths Town\". That's what I used as input for my Neural Network.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/qV3VH56Dw48/mqdefault.jpg" alt="fractals + deepdream.. Still training" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/fractals-deepdream-still-training/">fractals + deepdream.. Still training</a></h2>
+                <div class="meta">2017-12-10 · AI/ML</div>
+                <p>Watch the video by Maths Town. That's what I used as input.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/LAfboPzQL7Y/mqdefault.jpg" alt="zeldaMash" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/zeldamash/">zeldaMash</a></h2>
+                <div class="meta">2017-04-30 · AI/ML</div>
+                <p>Video was generated by a neural network trained on images of fire.... still needs a lot of work.</p>
+            </div>
+        </article>
+
+        <article class="post-card">
+            <img src="https://img.youtube.com/vi/xHc5NSS1PRE/mqdefault.jpg" alt="NN trained on Zelda music (Overfit example)" loading="lazy">
+            <div class="post-info">
+                <h2><a href="/blog/nn-trained-on-zelda-music-overfit-example/">NN trained on Zelda music (Overfit example)</a></h2>
+                <div class="meta">2017-04-16 · AI/ML</div>
+                <p>recurrent neural network trained on 15 Zelda songs.</p>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p><strong>David Hamner</strong> - GNU/Linux Stuff</p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

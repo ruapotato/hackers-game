@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>librem5 Interface overview - Hackers Game</title>
+    <meta name="description" content="Playing with the latest snapshot from the Librem5 dev VM.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem5, purism, linux phone, mobile, interface, phosh, gnome, gtk, ui, ux, dev kit">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/librem5-interface-overview/">
+    <meta property="og:title" content="librem5 Interface overview">
+    <meta property="og:description" content="Playing with the latest snapshot from the Librem5 dev VM.">
+    <meta property="og:image" content="https://img.youtube.com/vi/Hkl8N_zXM_A/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2019-01-01">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/librem5-interface-overview/">
+    <meta name="twitter:title" content="librem5 Interface overview">
+    <meta name="twitter:description" content="Playing with the latest snapshot from the Librem5 dev VM.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/Hkl8N_zXM_A/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/librem5-interface-overview/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "librem5 Interface overview",
+        "description": "Playing with the latest snapshot from the Librem5 dev VM.",
+        "image": "https://img.youtube.com/vi/Hkl8N_zXM_A/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2019-01-01",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/librem5-interface-overview/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "librem5 Interface overview",
+            "thumbnailUrl": "https://img.youtube.com/vi/Hkl8N_zXM_A/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/Hkl8N_zXM_A"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>librem5 Interface overview</h1>
+        <div class="meta">
+            <span>2019-01-01</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem5</span><span class="tag">purism</span><span class="tag">linux phone</span><span class="tag">mobile</span><span class="tag">interface</span><span class="tag">phosh</span><span class="tag">gnome</span><span class="tag">gtk</span><span class="tag">ui</span><span class="tag">ux</span><span class="tag">dev kit</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/Hkl8N_zXM_A"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="librem5 Interface overview">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>librem5 Interface overview</h1></p><p>Playing with the latest snapshot from the Librem5 dev VM.</p><p>This video provides an overview of the Librem 5 phone interface, exploring the user experience and design of Purism's Linux-based smartphone. The Librem 5 runs a fully open-source mobile operating system, demonstrating what a privacy-focused, Linux-powered mobile device looks like in practice.</p><p><h2>The Phosh Shell</h2></p><p>Phosh (Phone Shell) is the default graphical shell for the Librem 5. It's built on top of GNOME technologies and designed specifically for mobile use:</p><p><ul><li><strong>Touch-optimized UI</strong>: Large touch targets and gesture-based navigation</li><br><li><strong>Adaptive design</strong>: Applications can adapt between phone and desktop modes</li><br><li><strong>GTK-based</strong>: Uses standard GTK widgets with libhandy for mobile adaptations</li></p><p><h2>Interface Components</h2></p><p><li><strong>App drawer</strong>: Access to installed applications</li><br><li><strong>Top panel</strong>: System indicators, time, and notifications</li><br><li><strong>Bottom gestures</strong>: Swipe up to access the app drawer or switch apps</li><br><li><strong>Lock screen</strong>: Secure PIN entry with large touch-friendly buttons</li></p><p><h2>Development Environment</h2></p><p>The Librem 5 dev VM allows developers to test and develop applications before hardware availability. This virtual machine environment mirrors the phone's software stack, enabling:</p><p><li>Application testing</li><br><li>UI/UX experimentation</li><br><li>Driver and system software development</li></ul></p><p><h2>Comparison with Traditional Mobile OS</h2></p><p>Unlike Android's custom Java/Kotlin runtime or iOS's proprietary frameworks, the Librem 5 uses standard Linux desktop technologies adapted for mobile. This means developers familiar with GNOME/GTK development can easily create applications for the phone.</p><p><a href="https://youtube.com/watch?v=Hkl8N_zXM_A">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=librem5-interface-overview" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

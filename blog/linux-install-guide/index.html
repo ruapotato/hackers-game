@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Install Guide - Hackers Game</title>
+    <meta name="description" content="Learn to install any version of Linux.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="linux, installation, tutorial, beginner, guide, uefi, bios, gpt, mbr, ext4, btrfs, xfs">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/linux-install-guide/">
+    <meta property="og:title" content="Linux Install Guide">
+    <meta property="og:description" content="Learn to install any version of Linux.">
+    <meta property="og:image" content="https://img.youtube.com/vi/9l6UbcxFONE/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2019-05-07">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/linux-install-guide/">
+    <meta name="twitter:title" content="Linux Install Guide">
+    <meta name="twitter:description" content="Learn to install any version of Linux.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/9l6UbcxFONE/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/linux-install-guide/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux Install Guide",
+        "description": "Learn to install any version of Linux.",
+        "image": "https://img.youtube.com/vi/9l6UbcxFONE/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2019-05-07",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/linux-install-guide/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Linux Install Guide",
+            "thumbnailUrl": "https://img.youtube.com/vi/9l6UbcxFONE/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/9l6UbcxFONE"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Linux Install Guide</h1>
+        <div class="meta">
+            <span>2019-05-07</span> ·
+            <span>Linux</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">linux</span><span class="tag">installation</span><span class="tag">tutorial</span><span class="tag">beginner</span><span class="tag">guide</span><span class="tag">uefi</span><span class="tag">bios</span><span class="tag">gpt</span><span class="tag">mbr</span><span class="tag">ext4</span><span class="tag">btrfs</span><span class="tag">xfs</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/9l6UbcxFONE"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Linux Install Guide">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Linux Install Guide</h1></p><p>Learn to install any version of Linux.</p><p>This comprehensive guide walks you through the process of installing Linux on your computer. Whether you're a complete beginner or looking to try a new distribution, this tutorial covers the essential steps to get Linux up and running on your system.</p><p><h2>Before You Begin</h2></p><p><h3>Choosing a Distribution</h3></p><p>Popular choices for beginners:<br><ul><li><strong>Ubuntu</strong>: Excellent hardware support, large community</li><br><li><strong>Linux Mint</strong>: Familiar interface for Windows users</li><br><li><strong>Fedora</strong>: Up-to-date software, good for developers</li><br><li><strong>OpenSUSE</strong>: Enterprise-quality with user-friendly tools</li><br><li><strong>Manjaro</strong>: Access to Arch packages with easier setup</li></p><p><h3>System Requirements</h3></p><p>Most modern Linux distributions require:<br><li>2GB RAM minimum (4GB recommended)</li><br><li>20GB disk space minimum</li><br><li>64-bit processor</li><br><li>USB port for installation media</li></p><p><h2>Step 1: Download the ISO</h2></p><p>1. Visit the distribution's official website<br>2. Download the ISO file (usually 2-4GB)<br>3. Verify the checksum (optional but recommended)</p><p><h2>Step 2: Create Installation Media</h2></p><p><h3>Using a USB Drive</h3></p><p>You'll need a tool to write the ISO to USB:<br><li><strong>Janit</strong>: https://bitbucket.org/hackersgame/janit/src/master/</li><br><li><strong>Rufus</strong> (Windows)</li><br><li><strong>Etcher</strong> (cross-platform)</li><br><li><strong>dd</strong> (Linux command line)</li></p><p><h2>Step 3: Boot From USB</h2></p><p><h3>BIOS vs UEFI</h3></p><p><strong>BIOS Systems:</strong><br><li>Press F2, F12, Del, or Esc during startup</li><br><li>Select USB drive from boot menu</li><br><li>MBR partition table required</li></p><p><strong>UEFI Systems:</strong><br><li>Access UEFI settings (usually F2 or Del)</li><br><li>Disable Secure Boot if necessary</li><br><li>Select USB from boot options</li><br><li>GPT partition table supported</li></p><p><h2>Step 4: Partition Your Drive</h2></p><p><h3>Partition Schemes</h3></p><p><strong>MBR (Master Boot Record):</strong><br><li>Legacy BIOS systems</li><br><li>Maximum 4 primary partitions</li><br><li>2TB drive limit</li></p><p><strong>GPT (GUID Partition Table):</strong><br><li>UEFI systems</li><br><li>Unlimited partitions</li><br><li>Supports large drives</li></p><p><h3>Filesystem Options</h3></p><p><li><strong>ext4</strong>: Default for most distributions, reliable</li><br><li><strong>btrfs</strong>: Advanced features (snapshots, compression)</li><br><li><strong>xfs</strong>: Good for large files, high performance</li></ul></p><p><h3>Recommended Partitions</h3></p><p>1. <strong>EFI System Partition</strong> (UEFI only): 512MB, FAT32<br>2. <strong>Root (/)</strong>: 20-50GB, ext4<br>3. <strong>Home (/home)</strong>: Remaining space, ext4<br>4. <strong>Swap</strong>: Equal to RAM or 2-8GB</p><p><h2>Step 5: Installation</h2></p><p>Most installers guide you through:<br>1. Language and keyboard selection<br>2. Timezone configuration<br>3. User account creation<br>4. Package selection (if applicable)<br>5. Bootloader installation</p><p><h2>Step 6: Post-Installation</h2></p><p>After rebooting:<br>1. Update your system<br>2. Install additional drivers if needed<br>3. Configure your desktop environment<br>4. Install your preferred applications</p><p><h2>Dual-Boot with Windows</h2></p><p>If keeping Windows:<br>1. Shrink Windows partition first (from Windows)<br>2. Install Linux in the freed space<br>3. GRUB will detect both operating systems<br>4. Choose OS at boot time</p><p><a href="https://youtube.com/watch?v=9l6UbcxFONE">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=linux-install-guide" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

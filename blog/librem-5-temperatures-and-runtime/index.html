@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librem 5 | Temperatures and Runtime - Hackers Game</title>
+    <meta name="description" content="A quick look at the Librem5's runtime and temperatures.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem5, linux, phone, heat, uptime, battery, thermal, performance">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/librem-5-temperatures-and-runtime/">
+    <meta property="og:title" content="Librem 5 | Temperatures and Runtime">
+    <meta property="og:description" content="A quick look at the Librem5's runtime and temperatures.">
+    <meta property="og:image" content="https://img.youtube.com/vi/dTr6plNybok/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2020-01-22">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/librem-5-temperatures-and-runtime/">
+    <meta name="twitter:title" content="Librem 5 | Temperatures and Runtime">
+    <meta name="twitter:description" content="A quick look at the Librem5's runtime and temperatures.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/dTr6plNybok/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/librem-5-temperatures-and-runtime/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Librem 5 | Temperatures and Runtime",
+        "description": "A quick look at the Librem5's runtime and temperatures.",
+        "image": "https://img.youtube.com/vi/dTr6plNybok/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2020-01-22",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/librem-5-temperatures-and-runtime/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Librem 5 | Temperatures and Runtime",
+            "thumbnailUrl": "https://img.youtube.com/vi/dTr6plNybok/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/dTr6plNybok"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Librem 5 | Temperatures and Runtime</h1>
+        <div class="meta">
+            <span>2020-01-22</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem5</span><span class="tag">linux</span><span class="tag">phone</span><span class="tag">heat</span><span class="tag">uptime</span><span class="tag">battery</span><span class="tag">thermal</span><span class="tag">performance</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/dTr6plNybok"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Librem 5 | Temperatures and Runtime">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Librem 5 | Temperatures and Runtime</h1></p><p>A quick look at the Librem5's runtime and temperatures.</p><p>This video examines the thermal performance and battery life of the Librem 5 Linux phone, giving you an idea of what to expect in terms of heat management and how long the device can run on a single charge.</p><p><h2>Temperature Analysis</h2></p><p>The Librem 5's thermal characteristics are important to understand:</p><p><h3>Heat Sources</h3><br><ul><li><strong>i.MX 8M Quad processor</strong>: Main source of heat during intensive tasks</li><br><li><strong>Cellular modem</strong>: Generates heat during calls and data transfer</li><br><li><strong>WiFi/Bluetooth module</strong>: Contributes to overall thermal load</li><br><li><strong>Display</strong>: Adds to heat generation when at high brightness</li></p><p><h3>Thermal Management</h3><br><li>Passive cooling through the phone's body</li><br><li>Software-based throttling when temperatures get high</li><br><li>Hardware kill switches can disable heat-generating components</li></p><p><h2>Runtime and Battery Life</h2></p><p>Battery performance metrics covered in the video:</p><p><h3>Factors Affecting Runtime</h3><br><li>Screen brightness settings</li><br><li>Active radio connections (cellular, WiFi, Bluetooth)</li><br><li>Application usage patterns</li><br><li>Background processes</li></p><p><h3>Typical Usage Scenarios</h3><br><li>Standby time with radios active</li><br><li>Active use with web browsing</li><br><li>Media playback duration</li><br><li>Talk time on cellular calls</li></p><p><h2>Monitoring Tools</h2></p><p>Linux provides excellent tools for monitoring system health:</p><p><pre><code><h1>Check CPU temperature</h1><br>cat /sys/class/thermal/thermal_zone*/temp</p><p><h1>Monitor battery status</h1><br>upower -i /org/freedesktop/UPower/devices/battery_*</p><p><h1>Check system uptime</h1><br>uptime<br></code></pre></p><p><h2>Improvements Over Time</h2></p><p>Each hardware revision of the Librem 5 has brought thermal improvements:<br><li><strong>Dev kit</strong>: Initial thermal characteristics</li><br><li><strong>Birch/Chestnut</strong>: Improved thermal design</li><br><li><strong>Dogwood</strong>: Better heat dissipation</li><br><li><strong>Evergreen</strong>: Production thermal solution</li></p><p><h2>Practical Considerations</h2></p><p>For daily use:<br><li>Expect warmth during intensive tasks (normal for any phone)</li><br><li>Battery life continues to improve with software updates</li><br><li>Hardware kill switches can extend battery by disabling unused radios</li></ul></p><p><a href="https://youtube.com/watch?v=dTr6plNybok">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=librem-5-temperatures-and-runtime" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

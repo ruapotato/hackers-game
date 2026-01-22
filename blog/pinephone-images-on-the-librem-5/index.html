@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinephone Images on the Librem 5 - Hackers Game</title>
+    <meta name="description" content="Let's hack around with some Linux phone images.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem-5, pinephone, linux-phone, arch, opensuse, mobian, image-building, mobile-linux">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/pinephone-images-on-the-librem-5/">
+    <meta property="og:title" content="Pinephone Images on the Librem 5">
+    <meta property="og:description" content="Let's hack around with some Linux phone images.">
+    <meta property="og:image" content="https://img.youtube.com/vi/K_RpvXSuY2Q/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2020-06-30">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/pinephone-images-on-the-librem-5/">
+    <meta name="twitter:title" content="Pinephone Images on the Librem 5">
+    <meta name="twitter:description" content="Let's hack around with some Linux phone images.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/K_RpvXSuY2Q/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/pinephone-images-on-the-librem-5/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Pinephone Images on the Librem 5",
+        "description": "Let's hack around with some Linux phone images.",
+        "image": "https://img.youtube.com/vi/K_RpvXSuY2Q/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2020-06-30",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/pinephone-images-on-the-librem-5/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Pinephone Images on the Librem 5",
+            "thumbnailUrl": "https://img.youtube.com/vi/K_RpvXSuY2Q/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/K_RpvXSuY2Q"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Pinephone Images on the Librem 5</h1>
+        <div class="meta">
+            <span>2020-06-30</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem-5</span><span class="tag">pinephone</span><span class="tag">linux-phone</span><span class="tag">arch</span><span class="tag">opensuse</span><span class="tag">mobian</span><span class="tag">image-building</span><span class="tag">mobile-linux</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/K_RpvXSuY2Q"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Pinephone Images on the Librem 5">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Pinephone Images on the Librem 5</h1></p><p>Let's hack around with some Linux phone images.</p><p><h2>The Project</h2></p><p>In this video, I explore running various PinePhone operating system images on the Librem 5 hardware. This involves building custom images and adapting them to work on different Linux phone platforms, demonstrating the flexibility of open-source mobile Linux ecosystems.</p><p><h2>Why Cross-Platform Images?</h2></p><p>The Linux phone ecosystem has multiple hardware options:<br><ul><li><strong>Librem 5</strong> - Purism's privacy-focused phone</li><br><li><strong>PinePhone</strong> - Pine64's community phone</li></p><p>Having software that works across devices:<br><li>Expands user choice</li><br><li>Reduces fragmentation</li><br><li>Allows trying different distros on your hardware</li><br><li>Demonstrates open-source flexibility</li></ul></p><p><h2>Operating Systems Explored</h2></p><p><h3>Arch Linux ARM</h3><br>The Arch experience on mobile - rolling release, bleeding edge packages, AUR access.</p><p><h3>OpenSUSE</h3><br>Bringing the green chameleon to mobile Linux with Tumbleweed or Leap options.</p><p><h3>Mobian</h3><br>Debian-based mobile Linux with strong community support.</p><p><h2>Technical Approach</h2></p><p>The project involves:<br>1. Obtaining PinePhone OS images<br>2. Adapting device-specific configurations<br>3. Building images compatible with Librem 5 hardware<br>4. Testing and debugging the adaptations</p><p><h2>Build Script</h2></p><p>The build script for creating these images is available for those who want to experiment with their own Linux phone setups:</p><p>https://bitbucket.org/hackersgame/librem5_image_builder/src/master/</p><p><h2>Community</h2></p><p>Librem 5 Matrix chat for discussion and help:<br>https://developer.puri.sm/Librem5/Contact/Community.html</p><p><a href="https://youtube.com/watch?v=K_RpvXSuY2Q">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=pinephone-images-on-the-librem-5" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

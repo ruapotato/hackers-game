@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Containerization on Linux Phones - Hackers Game</title>
+    <meta name="description" content="Messing around with containerization with nspawn.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="linux phone, containers, nspawn, systemd, librem 5, containerization">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/containerization-on-linux-phones/">
+    <meta property="og:title" content="Containerization on Linux Phones">
+    <meta property="og:description" content="Messing around with containerization with nspawn.">
+    <meta property="og:image" content="https://img.youtube.com/vi/_86tEHCyMsY/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2021-10-11">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/containerization-on-linux-phones/">
+    <meta name="twitter:title" content="Containerization on Linux Phones">
+    <meta name="twitter:description" content="Messing around with containerization with nspawn.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/_86tEHCyMsY/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/containerization-on-linux-phones/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Containerization on Linux Phones",
+        "description": "Messing around with containerization with nspawn.",
+        "image": "https://img.youtube.com/vi/_86tEHCyMsY/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2021-10-11",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/containerization-on-linux-phones/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Containerization on Linux Phones",
+            "thumbnailUrl": "https://img.youtube.com/vi/_86tEHCyMsY/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/_86tEHCyMsY"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Containerization on Linux Phones</h1>
+        <div class="meta">
+            <span>2021-10-11</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">linux phone</span><span class="tag">containers</span><span class="tag">nspawn</span><span class="tag">systemd</span><span class="tag">librem 5</span><span class="tag">containerization</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/_86tEHCyMsY"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Containerization on Linux Phones">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Containerization on Linux Phones</h1></p><p>Messing around with containerization with nspawn on the Librem 5.</p><p>This video explores using systemd-nspawn for containerization on Linux phones. Containers provide a way to run isolated environments, which can be useful for running different distributions or applications that might have conflicting dependencies.</p><p><h2>Why Containerization on Phones?</h2></p><p>Running containers on a Linux phone opens up interesting possibilities:</p><p><ul><li><strong>Application isolation</strong> - Keep apps and their dependencies separate</li><br><li><strong>Multiple environments</strong> - Run different Linux distributions alongside PureOS</li><br><li><strong>Testing</strong> - Try new software without affecting the main system</li><br><li><strong>Development</strong> - Create reproducible build environments on mobile</li></p><p><h2>systemd-nspawn</h2></p><p>systemd-nspawn is a lightweight container solution that's part of systemd, making it well-suited for resource-constrained devices like phones. Unlike full Docker containers, nspawn provides a simpler, more direct approach to OS-level virtualization.</p><p><h2>Resources</h2></p><p><li><strong>Full blog post</strong>: https://www.hackers-game.com/2021/10/11/containerization-on-linux-phones/</li><br><li><strong>Source code</strong>: https://source.puri.sm/david.hamner/boxes</li></ul></p><p>The project demonstrates that Linux phones can leverage the same containerization technologies used on desktop and server Linux systems.</p><p><a href="https://youtube.com/watch?v=_86tEHCyMsY">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=containerization-on-linux-phones" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

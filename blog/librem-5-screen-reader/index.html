@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librem 5 Screen Reader - Hackers Game</title>
+    <meta name="description" content="Read and copy any text from any app on the Librem 5.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem 5, purism, accessibility, screen reader, linux phone, readit, ocr">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/librem-5-screen-reader/">
+    <meta property="og:title" content="Librem 5 Screen Reader">
+    <meta property="og:description" content="Read and copy any text from any app on the Librem 5.">
+    <meta property="og:image" content="https://img.youtube.com/vi/ioraJIPnQ-E/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2021-05-24">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/librem-5-screen-reader/">
+    <meta name="twitter:title" content="Librem 5 Screen Reader">
+    <meta name="twitter:description" content="Read and copy any text from any app on the Librem 5.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/ioraJIPnQ-E/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/librem-5-screen-reader/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Librem 5 Screen Reader",
+        "description": "Read and copy any text from any app on the Librem 5.",
+        "image": "https://img.youtube.com/vi/ioraJIPnQ-E/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2021-05-24",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/librem-5-screen-reader/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Librem 5 Screen Reader",
+            "thumbnailUrl": "https://img.youtube.com/vi/ioraJIPnQ-E/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/ioraJIPnQ-E"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Librem 5 Screen Reader</h1>
+        <div class="meta">
+            <span>2021-05-24</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem 5</span><span class="tag">purism</span><span class="tag">accessibility</span><span class="tag">screen reader</span><span class="tag">linux phone</span><span class="tag">readit</span><span class="tag">ocr</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/ioraJIPnQ-E"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Librem 5 Screen Reader">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Librem 5 Screen Reader</h1></p><p>Read and copy any text from any app on the Librem 5.</p><p>This video demonstrates a screen reader application for the Librem 5 that allows users to read and copy text from any application on the device.</p><p><h2>The Readit Application</h2></p><p>Readit is an OCR (Optical Character Recognition) tool that captures screen content and extracts text. This enables accessibility features and text extraction from applications that don't natively support text selection.</p><p><strong>Source Code</strong>: https://source.puri.sm/david.hamner/readit</p><p><h3>Features</h3></p><p><ul><li><strong>Screen capture</strong>: Takes a screenshot of the current screen</li><br><li><strong>OCR processing</strong>: Uses optical character recognition to identify text</li><br><li><strong>Text extraction</strong>: Converts image text to selectable, copyable text</li><br><li><strong>Universal compatibility</strong>: Works with any application's display</li></p><p><h3>Use Cases</h3></p><p><li>Extract text from images or PDFs</li><br><li>Copy text from applications without copy/paste support</li><br><li>Accessibility for users who need text-to-speech</li><br><li>Quick note-taking from any screen content</li></ul></p><p><h2>How It Works</h2></p><p>1. Activate Readit through the app or a keyboard shortcut<br>2. The current screen is captured<br>3. OCR engine processes the image<br>4. Recognized text is presented for selection and copying</p><p><h2>Accessibility on Linux Phones</h2></p><p>The Librem 5's open platform enables custom accessibility solutions like Readit. Unlike locked-down mobile operating systems, developers can create deep system integrations to assist users with different needs.</p><p><h2>Related Content</h2></p><p>Clip from Explore Gadgets: https://youtu.be/Ll5jQgsHk88</p><p><a href="https://youtube.com/watch?v=ioraJIPnQ-E">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=librem-5-screen-reader" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

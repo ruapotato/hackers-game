@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librem 5 Dev Kit | USB-C Hub - Hackers Game</title>
+    <meta name="description" content="Playing with the Librem 5 dev kit.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem 5, linux phone, usb-c, dev kit, purism, peripherals, docking">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/librem-5-dev-kit-usb-c-hub/">
+    <meta property="og:title" content="Librem 5 Dev Kit | USB-C Hub">
+    <meta property="og:description" content="Playing with the Librem 5 dev kit.">
+    <meta property="og:image" content="https://img.youtube.com/vi/DjSNPqgZpdo/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2019-01-29">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/librem-5-dev-kit-usb-c-hub/">
+    <meta name="twitter:title" content="Librem 5 Dev Kit | USB-C Hub">
+    <meta name="twitter:description" content="Playing with the Librem 5 dev kit.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/DjSNPqgZpdo/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/librem-5-dev-kit-usb-c-hub/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Librem 5 Dev Kit | USB-C Hub",
+        "description": "Playing with the Librem 5 dev kit.",
+        "image": "https://img.youtube.com/vi/DjSNPqgZpdo/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2019-01-29",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/librem-5-dev-kit-usb-c-hub/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Librem 5 Dev Kit | USB-C Hub",
+            "thumbnailUrl": "https://img.youtube.com/vi/DjSNPqgZpdo/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/DjSNPqgZpdo"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Librem 5 Dev Kit | USB-C Hub</h1>
+        <div class="meta">
+            <span>2019-01-29</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem 5</span><span class="tag">linux phone</span><span class="tag">usb-c</span><span class="tag">dev kit</span><span class="tag">purism</span><span class="tag">peripherals</span><span class="tag">docking</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/DjSNPqgZpdo"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Librem 5 Dev Kit | USB-C Hub">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Librem 5 Dev Kit | USB-C Hub</h1></p><p>Playing with the Librem 5 dev kit and exploring USB-C hub connectivity.</p><p>This video showcases early development hardware for the Librem 5 Linux phone, specifically testing USB-C hub functionality.</p><p><h2>USB-C Hub Testing</h2></p><p>The video demonstrates connecting a USB-C hub to the Librem 5 development kit:</p><p><ul><li>Hub detection and initialization</li><br><li>Connected peripheral recognition</li><br><li>Power delivery through the hub</li><br><li>Data transfer capabilities</li></p><p><h2>Why USB-C Matters</h2></p><p>USB-C connectivity is crucial for a modern Linux phone:</p><p><li><strong>Convergence</strong>: Connect to external displays for desktop mode</li><br><li><strong>Peripherals</strong>: Use keyboards, mice, and storage devices</li><br><li><strong>Charging</strong>: Fast charging and power delivery</li><br><li><strong>Docking</strong>: Full desktop experience with a single cable</li></p><p><h2>Development Kit I/O</h2></p><p>The Librem 5 dev kit allowed testing of:</p><p><li>USB-C alternate modes (DisplayPort, etc.)</li><br><li>USB hub functionality</li><br><li>Power delivery negotiation</li><br><li>Driver compatibility with various peripherals</li></ul></p><p><h2>Convergence Vision</h2></p><p>One of the Librem 5's key features is convergence - the ability to use the phone as a full desktop computer when connected to a monitor, keyboard, and mouse. Testing USB-C hub functionality on the dev kit was essential for validating this vision.</p><p>This early testing helped ensure that USB-C hub support would work reliably on the production Librem 5 phones.</p><p><a href="https://youtube.com/watch?v=DjSNPqgZpdo">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=librem-5-dev-kit-usb-c-hub" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

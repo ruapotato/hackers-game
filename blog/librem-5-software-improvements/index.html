@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librem 5 | Software Improvements - Hackers Game</title>
+    <meta name="description" content="GTK, Settings, Keyboard. Stuff is looking better!">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="librem 5, purism, linux phone, gtk, mobile linux, keyboard, settings, development, usb-c">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/librem-5-software-improvements/">
+    <meta property="og:title" content="Librem 5 | Software Improvements">
+    <meta property="og:description" content="GTK, Settings, Keyboard. Stuff is looking better!">
+    <meta property="og:image" content="https://img.youtube.com/vi/sBTqAG9jX2w/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2019-07-26">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/librem-5-software-improvements/">
+    <meta name="twitter:title" content="Librem 5 | Software Improvements">
+    <meta name="twitter:description" content="GTK, Settings, Keyboard. Stuff is looking better!">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/sBTqAG9jX2w/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/librem-5-software-improvements/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Librem 5 | Software Improvements",
+        "description": "GTK, Settings, Keyboard. Stuff is looking better!",
+        "image": "https://img.youtube.com/vi/sBTqAG9jX2w/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2019-07-26",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/librem-5-software-improvements/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Librem 5 | Software Improvements",
+            "thumbnailUrl": "https://img.youtube.com/vi/sBTqAG9jX2w/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/sBTqAG9jX2w"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Librem 5 | Software Improvements</h1>
+        <div class="meta">
+            <span>2019-07-26</span> ·
+            <span>Linux Phones</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">librem 5</span><span class="tag">purism</span><span class="tag">linux phone</span><span class="tag">gtk</span><span class="tag">mobile linux</span><span class="tag">keyboard</span><span class="tag">settings</span><span class="tag">development</span><span class="tag">usb-c</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/sBTqAG9jX2w"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Librem 5 | Software Improvements">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Librem 5 | Software Improvements</h1></p><p>GTK, Settings, Keyboard. Stuff is looking better!</p><p>This video covers the latest software improvements on the Librem 5 Linux phone, showcasing updates to the GTK interface, settings application, and keyboard functionality.</p><p><h2>GTK Improvements</h2></p><p>The GTK toolkit has received significant optimizations for mobile use:</p><p><ul><li><strong>Touch responsiveness</strong>: Improved touch event handling</li><br><li><strong>Widget sizing</strong>: Better scaling for mobile screen sizes</li><br><li><strong>Animation performance</strong>: Smoother transitions and effects</li><br><li><strong>Memory usage</strong>: Reduced memory footprint for mobile constraints</li></p><p><h2>Settings Application</h2></p><p>The Settings app has been enhanced with:</p><p><li>Mobile-optimized layout</li><br><li>New configuration options</li><br><li>Better organization of settings panels</li><br><li>Improved accessibility</li></p><p><h2>Keyboard Improvements</h2></p><p>The virtual keyboard has seen major updates:</p><p><li><strong>Layout optimization</strong>: Keys sized appropriately for touch typing</li><br><li><strong>Haptic feedback</strong>: Better tactile response</li><br><li><strong>Prediction</strong>: Word prediction and autocomplete</li><br><li><strong>Language support</strong>: Multiple keyboard layouts</li></p><p><h2>Development Progress</h2></p><p>Each software update brings the Librem 5 closer to daily driver status. The development kit continues to receive regular updates, with improvements in:</p><p><li>Boot time optimization</li><br><li>Application responsiveness</li><br><li>System stability</li><br><li>Power management</li></p><p><h2>USB-C Functionality</h2></p><p>Updates to USB-C support enable:</p><p><li>Convergence mode (connect to external display)</li><br><li>File transfer</li><br><li>Charging while using peripherals</li><br><li>USB accessories</li></ul></p><p><h2>The Path Forward</h2></p><p>Software improvements demonstrate Purism's commitment to making the Librem 5 a viable smartphone platform. The open development model allows the community to follow progress and contribute improvements.</p><p><a href="https://youtube.com/watch?v=sBTqAG9jX2w">Watch on YouTube</a></p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=librem-5-software-improvements" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>
