@@ -54,14 +54,19 @@ const blogPosts = [
         "date": "2025-10-03",
         "category": "Linux Phones",
         "tags": [
-            "linux phone",
+            "linux-phone",
             "flx1s",
             "furilabs",
-            "mobile linux"
+            "mobile-linux",
+            "furi-os",
+            "debian",
+            "hardware-kill-switch",
+            "foss",
+            "privacy-phone"
         ],
         "videoId": "gdS_Kpwrrgw",
         "excerpt": "Check out the FLX1s from Furilabs",
-        "content": "# Wow! A New Linux Phone! FLX1s\n\nCheck out the FLX1s, a new contender in the Linux phone arena from Furilabs.\n\n:tv: [Watch on YouTube](https://youtube.com/watch?v=gdS_Kpwrrgw)"
+        "content": "# Wow! A New Linux Phone! FLX1s\n\nCheck out the FLX1s, a new contender in the Linux phone arena from Furilabs.\n\n## The FLX1s\n\nThe FLX1s is a new Linux smartphone from **Furilabs**, offering a fresh option for those seeking a privacy-respecting, open-source mobile device.\n\n**Get one:** [FLX1s on Furilabs Store](https://furilabs.com/shop/flx1s/)\n\n## Key Features\n\n### Furi OS\n\nThe FLX1s runs **Furi OS**, which is based on Debian Linux. This means:\n\n- Full Debian package ecosystem available\n- Familiar Linux environment\n- Active community support\n\n### Hardware Kill Switches\n\nLike other privacy-focused Linux phones, the FLX1s includes hardware kill switches for enhanced security and privacy control.\n\n### Developer Friendly\n\n- **Python on Phone** - Write and run Python scripts directly on your device\n- **Full Linux Terminal** - Complete command-line access\n- **Open Source** - FOSS (Free and Open Source Software) at its core\n\n### Carrier Support\n\nThe video confirms T-Mobile compatibility, showing the phone works on major carriers.\n\n## Alternatives Mentioned\n\nThe FLX1s joins a growing ecosystem of Linux phones:\n\n- Librem 5\n- PinePhone Pro\n\n## De-Googled Experience\n\nFor those looking for an Android alternative or iPhone alternative without big tech surveillance, the FLX1s offers a de-Googled smartphone experience while still supporting some Android apps on Linux.\n\n## Full Review\n\nFor a complete review with more details:\n[FLX1s Review Blog Post](https://www.hackers-game.com/2025/10/06/flx1s-a-new-contender-in-the-linux-phone-arena/)\n\n[Watch on YouTube](https://youtube.com/watch?v=gdS_Kpwrrgw)"
     },
     {
         "id": "linux-phone-upgrade-comet-plus-1",
@@ -149,16 +154,18 @@ const blogPosts = [
         "date": "2025-02-01",
         "category": "Linux Phones",
         "tags": [
-            "music video",
-            "digital freedom",
-            "open source",
+            "music-video",
+            "digital-freedom",
+            "open-source",
             "mobile",
-            "linux phone",
-            "ai generated"
+            "linux-phone",
+            "ai-generated",
+            "coding",
+            "geek-pop"
         ],
         "videoId": "0Q6BbMiVtjg",
         "excerpt": "Something a bit different. Here is a song I wrote about phones in 2025.",
-        "content": "# Your Phone is Terrible | Music Video\n\nSomething a bit different. Here is a song I wrote about phones in 2025.\n\n**Lyrics:**\n\n[Intro]\nDigital freedom's calling, can you hear it?\n\n[Verse 1]\nGot a phone that's locked down tight\nThey say it's for our own delight\nBut when I try to code at night\nAll my dreams just take flight\n\n[Pre-Chorus]\nThey're selling all our data for some gold\nOur stories bought and packaged, then they're sold\nThey say we're just predictable, they say we fit their mold\nBut honey, that ain't the future I want to hold\n\n[Chorus]\nBreak free from these walled gardens\n(Time to break away)\nWrite code without their pardons\n(Let's code our way)\nPython, Rust, or whatever we choose\nThese are our dreams, we refuse to lose\n\n[Verse 2]\nWant to build a kernel new?\nThey say that's something we can't do\nBut freedom's what we're fighting for\nSo let's kick down every door\n\n[Chorus]\nBreak free from these walled gardens\n(Time to break away)\nWrite code without their pardons\n(Let's code our way)\nPython, Rust, or whatever we choose\nThese are our dreams, we refuse to lose\n\n[Bridge]\nI'm not asking for the stars\nJust the freedom to go far\nLet us write our own story\nIn our own territory\n\n[Chorus - Final]\nBreak free from these walled gardens\n(Time to break away)\nWrite code without their pardons\n(Let's code our way)\nThis is our digital revolution\nTime to find our own solution\n'Cause these are our dreams\nAnd we refuse to lose\n\n[Outro]\nThe code is ours to write\nThe future's looking bright\n\n[Watch on YouTube](https://youtube.com/watch?v=0Q6BbMiVtjg)"
+        "content": "# Your Phone is Terrible | Music Video\n\nSomething a bit different. Here is a song I wrote about phones in 2025.\n\n## About This Project\n\nThis music video is a creative commentary on the state of smartphones in 2025 - locked down devices that treat users as products rather than owners.\n\n### Credits\n\n- **Written and Edited by:** David Hamner\n- **Performed by:** [Suno AI](https://suno.com/)\n- **AI Images/Videos:**\n  - [Qwen Chat](https://chat.qwenlm.ai/)\n  - [Vidu](https://www.vidu.com/)\n  - ProteusV0.4\n\n## Lyrics\n\n**[Intro]**\nDigital freedom's calling, can you hear it?\n\n**[Verse 1]**\nGot a phone that's locked down tight\nThey say it's for our own delight\nBut when I try to code at night\nAll my dreams just take flight\n\n**[Pre-Chorus]**\nThey're selling all our data for some gold\nOur stories bought and packaged, then they're sold\nThey say we're just predictable, they say we fit their mold\nBut honey, that ain't the future I want to hold\n\n**[Chorus]**\nBreak free from these walled gardens\n(Time to break away)\nWrite code without their pardons\n(Let's code our way)\nPython, Rust, or whatever we choose\nThese are our dreams, we refuse to lose\n\n**[Verse 2]**\nWant to build a kernel new?\nThey say that's something we can't do\nBut freedom's what we're fighting for\nSo let's kick down every door\n\n**[Chorus]**\nBreak free from these walled gardens\n(Time to break away)\nWrite code without their pardons\n(Let's code our way)\nPython, Rust, or whatever we choose\nThese are our dreams, we refuse to lose\n\n**[Bridge]**\nI'm not asking for the stars\nJust the freedom to go far\nLet us write our own story\nIn our own territory\n\n**[Chorus - Final]**\nBreak free from these walled gardens\n(Time to break away)\nWrite code without their pardons\n(Let's code our way)\nThis is our digital revolution\nTime to find our own solution\n'Cause these are our dreams\nAnd we refuse to lose\n\n**[Outro]**\nThe code is ours to write\nThe future's looking bright\n\n[Watch on YouTube](https://youtube.com/watch?v=0Q6BbMiVtjg)"
     },
     {
         "id": "linux-phone-takeover-ai-revolution",
@@ -268,18 +275,21 @@ const blogPosts = [
         "id": "whisper-large-v3-turbo-tested",
         "title": "Whisper Large V3 Turbo | Tested",
         "date": "2024-10-18",
-        "category": "Linux",
+        "category": "AI/ML",
         "tags": [
             "whisper",
             "speech-recognition",
             "ai",
             "openai",
             "transcription",
-            "machine-learning"
+            "machine-learning",
+            "asr",
+            "llm",
+            "huggingface"
         ],
         "videoId": "R5bfClvmmqc",
         "excerpt": "How good is Whisper Large V3. Very!",
-        "content": "# Whisper Large V3 Turbo | Tested\n\nHow good is Whisper Large V3 Turbo? Very!\n\nThis video tests OpenAI's Whisper Large V3 Turbo model for speech-to-text transcription. The model is available on Hugging Face and offers impressive accuracy for automated transcription tasks.\n\n[Watch on YouTube](https://youtube.com/watch?v=R5bfClvmmqc)"
+        "content": "# Whisper Large V3 Turbo | Tested\n\nHow good is Whisper Large V3 Turbo? Very!\n\nThis video tests OpenAI's Whisper Large V3 Turbo model for speech-to-text transcription. The model demonstrates impressive accuracy for automated transcription tasks.\n\n## What is Whisper?\n\n**Whisper** is OpenAI's automatic speech recognition (ASR) system. It's trained on a massive dataset of diverse audio and can:\n\n- Transcribe speech to text\n- Translate speech from other languages to English\n- Identify the language being spoken\n- Handle various accents and audio conditions\n\n## The V3 Turbo Model\n\nWhisper Large V3 Turbo is an optimized version of the large model that offers:\n\n- Faster inference times\n- High accuracy transcription\n- Support for multiple languages\n\n### Model Access\n\nThe model is available on Hugging Face:\n[Whisper Large V3 Turbo on Hugging Face](https://huggingface.co/openai/whisper-large-v3-turbo)\n\n## Testing Results\n\nThe video demonstrates the model's capabilities through practical transcription tests, showing how well it handles real-world audio content.\n\n## My Implementation\n\nA custom implementation for using Whisper is available:\n[Whisper To Text on GitHub](https://github.com/ruapotato/Whisper_To_Text/)\n\n## Use Cases\n\n- **Content creators** - Automatically generate subtitles and captions\n- **Accessibility** - Make audio content accessible to deaf and hard-of-hearing users\n- **Note taking** - Transcribe meetings, lectures, and interviews\n- **Search** - Make audio content searchable through text transcripts\n\n## Part of the AI Landscape\n\nWhisper is just one piece of the rapidly evolving AI landscape, alongside large language models (LLMs) from OpenAI (ChatGPT), Anthropic (Claude), Meta (Llama), and others.\n\n[Watch on YouTube](https://youtube.com/watch?v=R5bfClvmmqc)"
     },
     {
         "id": "neural-network-meets-falling-sand-game",
@@ -543,33 +553,39 @@ const blogPosts = [
         "id": "system-admins-multi-tool",
         "title": "The System Admin's Multi-tool",
         "date": "2020-12-29",
-        "category": "Linux",
+        "category": "Hardware",
         "tags": [
             "sysadmin",
             "linux",
             "tools",
             "installation",
-            "multi-boot"
+            "multi-boot",
+            "kvm",
+            "usb",
+            "keyboard",
+            "python"
         ],
         "videoId": "H55tQc5wYEs",
         "excerpt": "Control or install just about any Linux OS, from one device.",
-        "content": "# The System Admin's Multi-tool\n\nControl or install just about any Linux OS, from one device.\n\nThis video demonstrates a versatile tool that system administrators can use to manage and install various Linux distributions. Whether you need to deploy a new server, troubleshoot an existing system, or maintain multiple machines, this multi-tool approach streamlines the process by consolidating everything into a single device.\n\n[Watch on YouTube](https://youtube.com/watch?v=H55tQc5wYEs)"
+        "content": "# The System Admin's Multi-tool\n\nControl or install just about any Linux OS, from one device.\n\nThis video demonstrates a versatile hardware tool that system administrators can use to manage and install various Linux distributions. Whether you need to deploy a new server, troubleshoot an existing system, or maintain multiple machines, this multi-tool approach streamlines the process by consolidating everything into a single device.\n\n## What It Does\n\nThe system admin's multi-tool combines several capabilities:\n\n- **KVM (Keyboard, Video, Mouse) functionality** - Control remote systems as if you were sitting in front of them\n- **USB boot capability** - Boot any system from your device with multiple Linux distributions ready to go\n- **Keyboard emulation** - Send keystrokes to target systems for automation and setup\n\n## Technical Details\n\nThe project involves:\n\n- **Python scripting** - Custom code to manage the multi-tool functionality\n- **USB device emulation** - Making the device appear as different USB peripherals\n- **Multiple Linux distributions** - Having various distros ready to deploy\n\n## Use Cases\n\n- **Server deployment** - Quickly install Linux on new servers\n- **System recovery** - Boot into a live environment to rescue broken systems\n- **Remote administration** - Manage systems without needing physical keyboard/monitor switches\n- **Consistent tooling** - Carry your entire toolkit in one portable device\n\n## Interactive Version\n\nFor more details and interactive content, check out the full blog post:\n[The System Admin's Multi-tool](https://www.hackers-game.com/2020/12/29/the-system-admins-multi-tool/)\n\n[Watch on YouTube](https://youtube.com/watch?v=H55tQc5wYEs)"
     },
     {
         "id": "terminal-touch-interface-multilsh",
         "title": "Terminal Touch Interface | Multilsh",
         "date": "2020-12-21",
-        "category": "Linux",
+        "category": "Linux Phones",
         "tags": [
             "terminal",
             "touch-interface",
             "multilsh",
             "cli",
-            "user-interface"
+            "user-interface",
+            "linux-phone",
+            "librem-5"
         ],
         "videoId": "rv5YBCzd4Wo",
         "excerpt": "A touch-friendly terminal interface using Multilsh",
-        "content": "# Terminal Touch Interface | Multilsh\n\nThis video demonstrates Multilsh, a touch-friendly terminal interface for Linux.\n\nMultilsh provides an alternative way to interact with the command line using touch gestures, making terminal usage more accessible on touchscreen devices and tablets running Linux.\n\n[Watch on YouTube](https://youtube.com/watch?v=rv5YBCzd4Wo)"
+        "content": "# Terminal Touch Interface | Multilsh\n\nThis video demonstrates Multilsh, a touch-friendly terminal interface for Linux.\n\nMultilsh provides an alternative way to interact with the command line using touch gestures, making terminal usage more accessible on touchscreen devices and tablets running Linux - particularly useful for Linux phones like the Librem 5.\n\n## The Problem\n\nTraditional terminal interfaces are designed for keyboards and mice. On touch devices like Linux phones, typing commands can be cumbersome with on-screen keyboards, and navigating command history or completing commands requires awkward taps.\n\n## The Solution: Multilsh\n\nMultilsh reimagines the terminal interface for touch:\n\n- **Touch-optimized controls** - Large, tap-friendly buttons and gestures\n- **Terminal keyboard integration** - Designed to work well with on-screen keyboards\n- **Full terminal functionality** - All the power of a standard shell\n\n## Source Code\n\nThe project is open source and available for you to use and contribute to:\n\n**Repository:** [Multilsh on Bitbucket](https://bitbucket.org/hackersgame/multilsh/src/master/)\n\n## Why This Matters\n\nAs Linux phones become more viable for daily use, we need interfaces that work well with touch input. Multilsh is one approach to making the command line accessible to Linux phone users without sacrificing the power that terminal users expect.\n\n## Full Documentation\n\nFor complete details and documentation:\n[Terminal Touch Interface Blog Post](https://www.hackers-game.com/2020/12/21/terminal-touch-interface-multilsh/)\n\n[Watch on YouTube](https://youtube.com/watch?v=rv5YBCzd4Wo)"
     },
     {
         "id": "3d-printing-a-phone-case",
@@ -613,17 +629,20 @@ const blogPosts = [
         "id": "robocalls-fight-bots-with-bots",
         "title": "Robocalls | Fight Bots with Bots",
         "date": "2020-09-08",
-        "category": "Linux",
+        "category": "Home Automation",
         "tags": [
             "robocalls",
             "automation",
             "voip",
             "phone",
-            "bot"
+            "bot",
+            "ivr",
+            "librem-5",
+            "audio"
         ],
         "videoId": "SFS0YTQl4vY",
         "excerpt": "Let a robot answer your phone for you.",
-        "content": "# Robocalls | Fight Bots with Bots\n\nLet a robot answer your phone for you.\n\nThis video demonstrates how to use automation to combat robocalls by having a bot answer your phone and handle unwanted calls automatically.\n\n[Watch on YouTube](https://youtube.com/watch?v=SFS0YTQl4vY)"
+        "content": "# Robocalls | Fight Bots with Bots\n\nLet a robot answer your phone for you.\n\nThis video demonstrates how to use automation to combat robocalls by having a bot answer your phone and handle unwanted calls automatically. If they're going to use robots to call you, why not use a robot to answer?\n\n## The Solution: Callen\n\nThe project featured in this video is called **Callen**, a bot designed to intercept and handle robocalls.\n\n**Source Code:** [Callen on Bitbucket](https://bitbucket.org/hackersgame/callen/)\n\n## How It Works\n\nThe system uses:\n\n- **IVR (Interactive Voice Response)** - Automated menu systems to interact with callers\n- **Audio processing** - Handling incoming audio from callers\n- **VoIP integration** - Working with phone systems\n- **Librem 5 integration** - Tested and demonstrated on the Librem 5 Linux phone\n\n## Features\n\n- Automatically answers incoming calls\n- Can detect and handle robocalls\n- Wastes robocallers' time with automated responses\n- Protects your time and attention from spam calls\n\n## Why This Matters\n\nRobocalls have become an epidemic, with billions of spam calls made every year. Traditional blocking methods are reactive - you have to receive the call first before you can block the number. This approach is proactive, letting a bot handle the call so you never have to.\n\nBy making robocalling less profitable (wasting their time with bots), we can help reduce the incentive for these spam operations.\n\n[Watch on YouTube](https://youtube.com/watch?v=SFS0YTQl4vY)"
     },
     {
         "id": "linux-boot-process",
@@ -711,15 +730,17 @@ const blogPosts = [
         "date": "2020-06-24",
         "category": "Linux",
         "tags": [
-            "linux history",
+            "linux-history",
             "distro",
             "bootable",
             "rootdisk",
-            "qemu"
+            "qemu",
+            "gnu-linux",
+            "hj-lu"
         ],
         "videoId": "b8-G9JjgknA",
         "excerpt": "The first GNU+Linux distro.",
-        "content": "# The First Distro | H.J.Lu's bootable rootdisk for Linux\n\nThe first GNU+Linux distro.\n\nYou can download and test it for yourself. Run it with qemu using the command:\n\n```\nqemu-system-i386 -drive file=./HU985-5R.img,if=floppy,format=raw\n```\n\n[Watch on YouTube](https://youtube.com/watch?v=b8-G9JjgknA)"
+        "content": "# The First Distro | H.J.Lu's bootable rootdisk for Linux\n\nThe first GNU+Linux distro.\n\nThis video explores the very first Linux distribution - H.J. Lu's bootable rootdisk. Before Ubuntu, before Red Hat, before Slackware, there was this simple floppy disk image that allowed people to boot into a working Linux system.\n\n## Historical Significance\n\nH.J. Lu's bootable rootdisk represents a pivotal moment in Linux history. It was one of the first ways for people to actually try Linux without having to compile everything themselves from Linus Torvalds' kernel source code.\n\n## Try It Yourself\n\nYou can download and test this piece of computing history for yourself!\n\n**Download:** [HU985-5R.ZIP from PC Corner](https://www.pcorner.com/list/LINUX/HU985-5R.ZIP/INFO/)\n\n### Running with QEMU\n\nTo run the historic bootable rootdisk, use QEMU with the following command:\n\n```bash\nqemu-system-i386 -drive file=./HU985-5R.img,if=floppy,format=raw\n```\n\nThis boots the floppy image in an emulated i386 system, letting you experience what early Linux adopters would have seen.\n\n## What to Expect\n\nThis is a minimal system from the early 1990s. Don't expect a graphical interface or modern conveniences. What you'll find is:\n\n- A basic shell environment\n- Core Unix utilities\n- The ability to explore one of the first complete, bootable Linux systems\n\n## Why This Matters\n\nUnderstanding where Linux came from helps us appreciate how far it has come. From a single floppy disk to powering everything from smartphones to supercomputers, Linux's journey is remarkable.\n\n[Watch on YouTube](https://youtube.com/watch?v=b8-G9JjgknA)"
     },
     {
         "id": "copyleft-smartphone",
@@ -858,11 +879,16 @@ const blogPosts = [
             "gnu-linux",
             "smartphones",
             "mobile",
-            "open-source"
+            "open-source",
+            "pinephone",
+            "librem-5",
+            "ubports",
+            "sailfish",
+            "maemo"
         ],
         "videoId": "xhCbN3OOFxA",
         "excerpt": "GNU/Linux phones!",
-        "content": "# User Empowered Smartphones\n\nGNU/Linux phones!\n\nA look at user-empowered smartphones running GNU/Linux, giving users full control over their mobile devices.\n\n[Watch on YouTube](https://youtube.com/watch?v=xhCbN3OOFxA)"
+        "content": "# User Empowered Smartphones\n\nGNU/Linux phones!\n\nA look at user-empowered smartphones running GNU/Linux, giving users full control over their mobile devices.\n\n## The Linux Phone Landscape\n\nThis video provides an overview of the GNU/Linux smartphone ecosystem, covering the various projects working to bring true Linux to mobile devices.\n\n### Devices Covered\n\n- **PinePhone** - Pine64's affordable Linux phone, designed for the community\n- **Librem 5** - Purism's privacy-focused smartphone with hardware kill switches\n\n### Operating Systems and Projects\n\n- **UBports** - Continuing Ubuntu Touch development\n- **Sailfish OS** - Jolla's Linux-based mobile OS\n- **Maemo/Leste** - Continuation of Nokia's Maemo platform\n- **LuneOS** - Open webOS successor\n- **Plasma Mobile** - KDE's mobile interface\n\n## Why Linux Phones Matter\n\nUser-empowered smartphones are about:\n\n- **Digital freedom** - You own your device and control what runs on it\n- **Privacy** - No mandatory data collection or tracking\n- **Copyleft** - GPL-licensed software you can study, modify, and share\n- **Longevity** - Community support beyond manufacturer end-of-life\n\n## Resources\n\nThe video references several YouTube channels covering Linux phone development and news, making it a great starting point for anyone interested in following the mobile Linux community.\n\n### Project: Triggers\n\nThe video also mentions a project called Triggers:\n[Triggers on Bitbucket](https://bitbucket.org/hackersgame/triggers/src)\n\n## The Future of Mobile\n\nLinux phones represent an alternative vision for mobile computing - one where users are in control, software is free and open, and privacy is a default rather than an afterthought.\n\n[Watch on YouTube](https://youtube.com/watch?v=xhCbN3OOFxA)"
     },
     {
         "id": "robot-librem-hacking",
@@ -874,11 +900,15 @@ const blogPosts = [
             "librem-5",
             "hacking",
             "robotics",
-            "keyboard"
+            "keyboard",
+            "purism",
+            "raspberry-pi",
+            "python",
+            "gpio"
         ],
         "videoId": "j_PzGz8dePY",
         "excerpt": "Screen-capture, keyboard input, and a hacky way to install stuff. Plus, hear about the robot I'm working on!",
-        "content": "# Robot and Librem 5 Hacking\n\nScreen-capture, keyboard input, and a hacky way to install stuff. Stick around to the end to hear about the robot I'm working on!\n\n## On-Screen Keyboard\n\nOut of the box, the Librem 5 has an on-screen keyboard that looks and feels good. You do have the option to switch out the default for some alternatives.\n\nAt the moment, the default keyboard alternative is the only one I know about. The default is a bit better-looking though.\n\n## Bluetooth Keyboard\n\nBluetooth is also a good option to connect a keyboard. Using this mini keyboard/mouse thing, I'm able to enter text in X11 windows as well as native Wayland windows.\n\n## The Robot Project\n\nI've been working on a robotics project that integrates with the Librem 5. The phone's GPIO and USB capabilities make it an interesting platform for hardware hacking.\n\n📺 [Watch on YouTube](https://youtube.com/watch?v=j_PzGz8dePY)"
+        "content": "# Robot and Librem 5 Hacking\n\nScreen-capture, keyboard input, and a hacky way to install stuff. Stick around to the end to hear about the robot I'm working on!\n\n## Keyboard Input Options\n\n### On-Screen Keyboard\n\nOut of the box, the Librem 5 has an on-screen keyboard that looks and feels good. You do have the option to switch out the default for some alternatives.\n\nAt the moment, the default keyboard alternative is the only one I know about. The default is a bit better-looking though.\n\n### Bluetooth Keyboard\n\nBluetooth is also a good option to connect a keyboard. Using this mini keyboard/mouse thing, I'm able to enter text in X11 windows as well as native Wayland windows.\n\n## Screen Capture\n\nThe video covers methods for capturing the screen on the Librem 5, which is useful for creating tutorials, debugging, and sharing what you're working on.\n\n## Installing Apps\n\nA \"hacky\" method for installing applications is demonstrated, along with information about Community Apps available for the Librem 5.\n\n**Wiki Resource:** [Librem 5 List of Apps in Development](https://forums.puri.sm/t/librem-5-list-of-apps-in-development/7111)\n\n## The Robot Project\n\nThe video also covers a robotics project that integrates with the Librem 5. The phone's GPIO and USB capabilities make it an interesting platform for hardware hacking.\n\n**Project Resources:**\n- **X86 Code:** [CatToy on Bitbucket](https://bitbucket.org/hackersgame/cattoy/)\n- **Raspberry Pi Code:** [Laser Control Module](https://bitbucket.org/hackersgame/laser-control-module/)\n\nThe robot project uses Python and integrates with the Raspberry Pi for hardware control, demonstrating how GNU/Linux phones can be used as controllers or interfaces for robotics projects.\n\n[Watch on YouTube](https://youtube.com/watch?v=j_PzGz8dePY)"
     },
     {
         "id": "librem-5-server-apps",
@@ -1304,49 +1334,57 @@ const blogPosts = [
         "id": "tip-calculator-codecademy-walkthrough-e03",
         "title": "Tip calculator | Codecademy walkthrough E03",
         "date": "2018-10-31",
-        "category": "Linux",
+        "category": "Programming",
         "tags": [
             "codecademy",
             "python",
             "programming",
             "tutorial",
-            "beginner"
+            "beginner",
+            "tip-calculator",
+            "project"
         ],
         "videoId": "UIfmuhzQVEE",
         "excerpt": "Going over the Tip calculator project",
-        "content": "# Tip calculator | Codecademy walkthrough E03\n\nGoing over the Tip calculator project.\n\nThis is episode 3 of the Codecademy walkthrough series, where we work through the Tip calculator project. This tutorial covers the basics of building a simple tip calculator as part of learning programming fundamentals.\n\n[Watch on YouTube](https://youtube.com/watch?v=UIfmuhzQVEE)"
+        "content": "# Tip calculator | Codecademy walkthrough E03\n\nGoing over the Tip calculator project.\n\nThis is episode 3 of the Codecademy walkthrough series, where we work through the Tip calculator project. This tutorial covers the basics of building a simple tip calculator as part of learning programming fundamentals.\n\n## The Project\n\nThe Tip Calculator is one of the first practical projects in the Codecademy Python course. It combines several concepts learned in previous episodes:\n\n- **Variables** - Storing the meal cost, tax rate, and tip percentage\n- **Mathematical operations** - Calculating totals and percentages\n- **User input** - Getting values from the user\n- **Output formatting** - Displaying the results in a readable format\n\n## What You'll Learn\n\nBuilding a tip calculator teaches you:\n\n1. **Working with numbers** - Both integers and floating-point numbers for currency calculations\n2. **Basic arithmetic** - Addition, multiplication, and percentage calculations\n3. **Variable assignment** - Storing intermediate results\n4. **Practical programming** - Creating something useful from basic concepts\n\n## The Calculation\n\nA typical tip calculator needs to:\n\n1. Take the meal cost as input\n2. Calculate the tax amount\n3. Calculate the tip amount\n4. Add everything together for the total bill\n\n## Why Start with Projects?\n\nProjects like the tip calculator are important because they show you how individual programming concepts come together to solve real problems. It's one thing to learn about variables and math operators in isolation; it's another to use them together to build something practical.\n\n[Watch on YouTube](https://youtube.com/watch?v=UIfmuhzQVEE)"
     },
     {
         "id": "python-codecademy-walkthrough-e02",
         "title": "Python | Codecademy walkthrough E02",
         "date": "2018-10-29",
-        "category": "Linux",
+        "category": "Programming",
         "tags": [
             "python",
             "programming",
             "codecademy",
             "tutorial",
-            "beginner"
+            "beginner",
+            "variables",
+            "integer-division",
+            "multiline-strings"
         ],
         "videoId": "Zr3f5xfmo9s",
         "excerpt": "Going over the basics of python again.",
-        "content": "# Python | Codecademy walkthrough E02\n\nGoing over the basics of python again.\n\nTopics covered in this episode:\n- Modifying variables\n- Integer division\n- Multiline strings\n\n:tv: [Watch on YouTube](https://youtube.com/watch?v=Zr3f5xfmo9s)"
+        "content": "# Python | Codecademy walkthrough E02\n\nGoing over the basics of python again.\n\nThis is episode 2 of the Codecademy walkthrough series, continuing our exploration of Python fundamentals.\n\n## Topics Covered in This Episode\n\n- **Modifying Variables** - Learn how to update and change variable values after they've been assigned. This includes reassignment, incrementing/decrementing, and compound assignment operators.\n\n- **Integer Division** - Understanding the difference between regular division and integer (floor) division in Python. In Python 3, the `//` operator performs integer division, while `/` performs true division.\n\n- **Multiline Strings** - How to create strings that span multiple lines using triple quotes (`'''` or `\"\"\"`). This is useful for documentation strings (docstrings), formatted text output, and storing longer text content.\n\n## Building on Episode 1\n\nThis episode builds directly on the concepts from Episode 1, showing how variables can be manipulated and how Python handles different types of data operations. Understanding these fundamentals is crucial before moving on to more complex topics like control flow and functions.\n\n[Watch on YouTube](https://youtube.com/watch?v=Zr3f5xfmo9s)"
     },
     {
         "id": "python-codecademy-walkthrough-e01",
         "title": "Python | Codecademy walkthrough E01",
         "date": "2018-10-28",
-        "category": "Linux",
+        "category": "Programming",
         "tags": [
             "python",
             "programming",
             "tutorial",
             "codecademy",
-            "beginners"
+            "beginners",
+            "python3",
+            "variables",
+            "type-casting"
         ],
         "videoId": "hhkmyqRYBD4",
         "excerpt": "Going over the basics of python again.",
-        "content": "# Python | Codecademy walkthrough E01\n\nGoing over the basics of Python again.\n\nThis is the first episode of a walkthrough series covering Python fundamentals using the Codecademy platform. The video covers the essential building blocks of Python programming, making it a great resource for beginners or those looking to refresh their knowledge of the language.\n\n[Watch on YouTube](https://youtube.com/watch?v=hhkmyqRYBD4)"
+        "content": "# Python | Codecademy walkthrough E01\n\nGoing over the basics of Python again.\n\nThis is the first episode of a walkthrough series covering Python fundamentals using the Codecademy platform. The video covers the essential building blocks of Python programming, making it a great resource for beginners or those looking to refresh their knowledge of the language.\n\n## Topics Covered\n\nThis episode introduces the foundational concepts of Python programming:\n\n- **Variables** - How to declare and use variables to store data\n- **Type Casting** - Converting between different data types (strings, integers, floats)\n- **Python 2 vs Python 3** - Understanding the differences between versions\n- **Basic Syntax** - Getting started with Python's clean, readable syntax\n\n## Why Codecademy?\n\nCodecademy provides an interactive learning environment that's perfect for beginners. The platform lets you write and execute code directly in your browser, providing immediate feedback as you learn.\n\nThis walkthrough series follows along with the Codecademy Python course, providing additional explanations and real-world context for the concepts being taught.\n\n[Watch on YouTube](https://youtube.com/watch?v=hhkmyqRYBD4)"
     },
     {
         "id": "correcting-commands",
@@ -1506,11 +1544,15 @@ const blogPosts = [
             "bios",
             "boot",
             "firmware",
-            "linux installation"
+            "linux-installation",
+            "efi",
+            "grub",
+            "partition",
+            "legacy"
         ],
         "videoId": "mElnFVlmha0",
         "excerpt": "Stop being afraid of UEFI.",
-        "content": "# UEFI Real Quick\n\nStop being afraid of UEFI.\n\nA quick introduction to understanding UEFI and how it differs from traditional BIOS, making Linux installations and dual-booting easier to understand.\n\n[Watch on YouTube](https://youtube.com/watch?v=mElnFVlmha0)"
+        "content": "# UEFI Real Quick\n\nStop being afraid of UEFI.\n\nA quick introduction to understanding UEFI and how it differs from traditional BIOS, making Linux installations and dual-booting easier to understand.\n\n## What is UEFI?\n\n**UEFI** (Unified Extensible Firmware Interface) is the modern replacement for the traditional BIOS (Basic Input/Output System). It's the firmware that initializes your hardware and boots your operating system.\n\n## UEFI vs Legacy BIOS\n\n| Feature | Legacy BIOS | UEFI |\n|---------|-------------|------|\n| Partition table | MBR | GPT |\n| Boot partition | Not required | EFI System Partition (ESP) |\n| Disk size limit | 2TB | Much larger |\n| Boot speed | Slower | Faster |\n| Security | Basic | Secure Boot support |\n\n## Key Concepts\n\n### EFI System Partition (ESP)\n\nUEFI systems require a special FAT32 partition (usually mounted at `/boot/efi`) to store bootloader files. This is where GRUB and other boot managers live.\n\n### GRUB and UEFI\n\nGRUB (GRand Unified Bootloader) works with UEFI to provide boot menus and manage multiple operating systems. Understanding how GRUB integrates with UEFI is essential for:\n\n- Dual-booting Linux and Windows\n- Troubleshooting boot issues\n- Installing Linux on modern hardware\n\n### Legacy Mode\n\nMany UEFI systems can emulate legacy BIOS mode for compatibility. However, it's generally better to use native UEFI mode for new installations.\n\n## Why This Matters\n\nMany Linux users avoid UEFI because it seems complicated. This video breaks down the essentials so you can:\n\n- Confidently install Linux on UEFI systems\n- Understand boot problems when they occur\n- Set up dual-boot configurations\n\nDon't let UEFI intimidate you - it's actually quite straightforward once you understand the basics.\n\n[Watch on YouTube](https://youtube.com/watch?v=mElnFVlmha0)"
     },
     {
         "id": "lets-install-opensuse-on-the-gpd-win",
@@ -1536,16 +1578,18 @@ const blogPosts = [
         "date": "2018-03-02",
         "category": "Linux",
         "tags": [
-            "Yast",
+            "yast",
             "opensuse",
             "yast2",
             "howto",
             "linux",
-            "system tool"
+            "system-tool",
+            "configuration",
+            "sysadmin"
         ],
         "videoId": "UTgi0gDlNlA",
         "excerpt": "Yast (Yet another Setup Tool)",
-        "content": "# SuSE and Yast\n\nYast (Yet another Setup Tool)\n\nA comprehensive look at SuSE Linux's powerful configuration and setup utility. YaST is the central tool for installing and configuring openSUSE and SUSE Linux Enterprise, providing a unified interface for system administration tasks.\n\n[Watch on YouTube](https://youtube.com/watch?v=UTgi0gDlNlA)"
+        "content": "# SuSE and Yast\n\nYast (Yet another Setup Tool)\n\nA comprehensive look at SuSE Linux's powerful configuration and setup utility. YaST is the central tool for installing and configuring openSUSE and SUSE Linux Enterprise, providing a unified interface for system administration tasks.\n\n## What is YaST?\n\n**YaST** stands for \"Yet another Setup Tool\" - it's a comprehensive system configuration and installation tool that has been part of SUSE Linux since its early days. It provides both graphical (YaST2) and text-based interfaces for managing nearly every aspect of your system.\n\n## Features Covered\n\nYaST provides modules for:\n\n- **Software Management** - Install, update, and remove packages\n- **Hardware Configuration** - Set up printers, sound cards, graphics, and more\n- **Network Configuration** - Configure network interfaces, firewall, and services\n- **User Management** - Create and manage user accounts and groups\n- **System Services** - Enable, disable, and configure system services\n- **Boot Loader** - Configure GRUB and boot options\n- **Partitioning** - Manage disk partitions and filesystems\n- **Security** - Configure security settings and policies\n\n## Why YaST Matters\n\nYaST sets openSUSE and SUSE apart from other distributions by providing a centralized, consistent interface for system administration. Rather than hunting through different configuration files and tools, administrators can use YaST to manage everything from one place.\n\nWhether you're a beginner who wants a GUI for configuration or an experienced admin who appreciates the efficiency of a unified tool, YaST offers something for everyone.\n\n[Watch on YouTube](https://youtube.com/watch?v=UTgi0gDlNlA)"
     },
     {
         "id": "desktop-environment-pygame-python",
@@ -1577,13 +1621,15 @@ const blogPosts = [
             "ubuntu",
             "opensuse",
             "redhat",
+            "fedora",
             "root",
             "security",
-            "system-administration"
+            "system-administration",
+            "grub"
         ],
         "videoId": "RSN2oRC8HiM",
         "excerpt": "How to reset roots password on Ubuntu, OpenSuSE, Redhat, /etc",
-        "content": "# Recover Forgotten Password\n\nHow to reset root's password on Ubuntu, OpenSuSE, Redhat, and other Linux distributions.\n\nThis tutorial walks through the process of recovering a forgotten root password on various Linux systems. The technique involves booting into single-user mode or using the GRUB bootloader to gain access and reset the password.\n\nThis is an essential skill for system administrators who need to regain access to systems where the root password has been lost or forgotten.\n\n[Watch on YouTube](https://youtube.com/watch?v=RSN2oRC8HiM)"
+        "content": "# Recover Forgotten Password\n\nHow to reset root's password on Ubuntu, OpenSuSE, Redhat, and other Linux distributions.\n\nThis tutorial walks through the process of recovering a forgotten root password on various Linux systems. The technique involves booting into single-user mode or using the GRUB bootloader to gain access and reset the password.\n\n## Distributions Covered\n\nThis guide works for multiple Linux distributions:\n\n- **Ubuntu** - Debian-based systems\n- **OpenSuSE** - SUSE Linux Enterprise family\n- **Red Hat / Fedora / CentOS** - Red Hat family distributions\n\n## The Recovery Process\n\nThe general approach involves:\n\n1. **Access the GRUB bootloader** - Interrupt the normal boot process to access GRUB\n2. **Edit the boot parameters** - Modify the kernel command line to boot into single-user mode or a rescue shell\n3. **Remount the filesystem** - Ensure the root filesystem is mounted with write permissions\n4. **Change the password** - Use the `passwd` command to set a new root password\n5. **Reboot normally** - Exit the rescue environment and boot into your system with the new password\n\n## Important Security Note\n\nThis technique demonstrates why physical security of your machines is important. Anyone with physical access to a Linux machine can potentially reset the root password using this method unless additional security measures (like encrypted disks or GRUB passwords) are in place.\n\nThis is an essential skill for system administrators who need to regain access to systems where the root password has been lost or forgotten.\n\n[Watch on YouTube](https://youtube.com/watch?v=RSN2oRC8HiM)"
     },
     {
         "id": "neural-network-trained-on-campfire-audio",
@@ -1613,11 +1659,14 @@ const blogPosts = [
             "tumbleweed",
             "linux",
             "upgrade",
-            "rolling-release"
+            "rolling-release",
+            "zypper",
+            "dup",
+            "leap"
         ],
         "videoId": "Ho5bahp95gs",
         "excerpt": "This is an online upgrade.",
-        "content": "# Upgrading to Opensuse Tumbleweed\n\nThis is an online upgrade.\n\nThis video walks through the process of upgrading to openSUSE Tumbleweed, a rolling release distribution that provides the latest stable versions of all software.\n\nThe upgrade process follows the official openSUSE documentation for performing an online upgrade to Tumbleweed.\n\n[Watch on YouTube](https://youtube.com/watch?v=Ho5bahp95gs)"
+        "content": "# Upgrading to Opensuse Tumbleweed\n\nThis is an online upgrade.\n\nThis video walks through the process of upgrading to openSUSE Tumbleweed, a rolling release distribution that provides the latest stable versions of all software.\n\n## What is Tumbleweed?\n\n**openSUSE Tumbleweed** is a rolling release distribution, meaning you get continuous updates rather than periodic major version releases. Once you're on Tumbleweed, you stay current with the latest packages through regular updates.\n\n## Upgrading from Leap\n\nThe video demonstrates upgrading from openSUSE Leap (versions like 42.1, 42.2, 42.3) to Tumbleweed. This is an \"online upgrade\" - you perform the upgrade while the system is running, without needing installation media.\n\n## The Upgrade Process\n\n### Using zypper dup\n\nThe key command for distribution upgrades in openSUSE is:\n\n```bash\nzypper dup\n```\n\nThis performs a \"distribution upgrade\" that handles the transition from Leap to Tumbleweed.\n\n### Steps Overview\n\n1. **Update repository URLs** - Point to Tumbleweed repositories\n2. **Refresh repositories** - `zypper ref`\n3. **Perform distribution upgrade** - `zypper dup`\n4. **Reboot** into your new Tumbleweed system\n\n## Official Documentation\n\nFor the complete, up-to-date upgrade instructions:\n[openSUSE Tumbleweed Upgrade Guide](https://en.opensuse.org/openSUSE:Tumbleweed_upgrade)\n\n## Bonus: OBS Studio on Tumbleweed\n\nThe video also references installing OBS Studio on openSUSE:\n[OBS Studio Installation Instructions](https://github.com/jp9000/obs-studio/wiki/Install-Instructions#opensuse-installation-unofficial)\n\n## Why Tumbleweed?\n\n- **Always current** - Get the latest kernel, desktop environment, and applications\n- **Stable rolling release** - OpenQA automated testing ensures stability\n- **No major upgrades** - Just keep updating, no need for version jumps\n\n[Watch on YouTube](https://youtube.com/watch?v=Ho5bahp95gs)"
     },
     {
         "id": "6-ways-to-reboot-linux",
@@ -1652,11 +1701,13 @@ const blogPosts = [
             "troubleshooting",
             "filesystem",
             "disk-space",
-            "recovery"
+            "recovery",
+            "du",
+            "sort"
         ],
         "videoId": "HnDN18Gc3Ig",
         "excerpt": "If you want to find big file(s) in Linux... Watch this.",
-        "content": "# How to Recover From a Full Root Filesystem\n\nIf you want to find big files in Linux, watch this.\n\nA full root filesystem can bring a Linux system to its knees, preventing normal operations and even blocking you from logging in. This video walks through the process of identifying and removing large files that are consuming disk space, helping you recover your system and get back to normal operations.\n\n[Watch on YouTube](https://youtube.com/watch?v=HnDN18Gc3Ig)"
+        "content": "# How to Recover From a Full Root Filesystem\n\nIf you want to find big files in Linux, watch this.\n\nA full root filesystem can bring a Linux system to its knees, preventing normal operations and even blocking you from logging in. This video walks through the process of identifying and removing large files that are consuming disk space, helping you recover your system and get back to normal operations.\n\n## The Problem\n\nWhen your root filesystem (`/`) fills up completely, you may experience:\n\n- Unable to log in to the system\n- Services failing to start or crashing\n- Unable to create new files or save data\n- System instability and errors\n\n## Finding Big Files\n\nThe key commands covered in this tutorial:\n\n### Using `du` (Disk Usage)\n\nThe `du` command shows disk usage for files and directories:\n\n```bash\ndu -h /path/to/check\n```\n\n### Sorting by Size\n\nCombine `du` with `sort` to find the largest files and directories:\n\n```bash\ndu -h / | sort -h\n```\n\nThis pipes the output of `du` into `sort` with the `-h` flag for human-readable sizes, showing the largest items at the bottom.\n\n### Quick Recovery Steps\n\n1. Identify what's consuming space using `du` and `sort`\n2. Look in common problem areas: `/var/log`, `/tmp`, `/home`\n3. Remove or compress large unnecessary files\n4. Consider setting up log rotation to prevent future issues\n\n## Prevention Tips\n\n- Monitor disk space regularly with `df -h`\n- Set up alerts for low disk space\n- Configure log rotation for application and system logs\n- Use separate partitions for `/var` and `/home` to prevent root filesystem issues\n\n[Watch on YouTube](https://youtube.com/watch?v=HnDN18Gc3Ig)"
     },
     {
         "id": "open-world-hack-oot",
@@ -1687,11 +1738,16 @@ const blogPosts = [
             "linux",
             "terminal",
             "recovery",
-            "rm-rf"
+            "rm-rf",
+            "grub",
+            "dpkg",
+            "initrd",
+            "hacking",
+            "opensuse"
         ],
         "videoId": "9aeU3JoJnuE",
         "excerpt": "Messing with Ubuntu 16.04",
-        "content": "# rm -rf ubuntu... fixable?\n\nMessing with Ubuntu 16.04\n\nIn this video, we explore what happens when you run the infamous rm -rf command on an Ubuntu system and whether the damage can be recovered.\n\n[Watch on YouTube](https://youtube.com/watch?v=9aeU3JoJnuE)"
+        "content": "# rm -rf ubuntu... fixable?\n\nMessing with Ubuntu 16.04\n\nIn this video, we explore what happens when you run the infamous `rm -rf` command on an Ubuntu system and whether the damage can be recovered. This is an educational experiment to understand Linux system internals and recovery techniques.\n\n## The Experiment\n\nThe video demonstrates the destructive power of `rm -rf` (remove recursively with force) and attempts various recovery methods to bring the system back to life.\n\n## Topics Explored\n\n- **The `rm -rf` command** - Understanding why this command is so dangerous and what it actually does to your filesystem\n- **GRUB bootloader** - How the bootloader is affected and recovery options\n- **dpkg and package management** - Working with Debian's package manager for system repair\n- **initrd (Initial RAM Disk)** - Understanding the boot process and how initrd is used\n- **Cross-distribution hacking** - Attempting to use tools from openSUSE (zypper, rpm) to repair an Ubuntu system\n\n## The \"Frankenstein OS\" Approach\n\nPart of the experiment involves trying to create a hybrid system by mixing components from different distributions - what the video calls a \"FrankensteinOS\" or \"abomination\" - to see if a destroyed Ubuntu system can be revived using parts from other Linux distributions.\n\n## Key Takeaways\n\n- Always have backups before running dangerous commands\n- Understanding system internals helps with recovery\n- The Linux boot process involves multiple components that must work together\n- Sometimes it's faster to reinstall than to repair\n\n## Warning\n\nThis video is for educational purposes. Never run `rm -rf /` on a production system or any system you care about!\n\n[Watch on YouTube](https://youtube.com/watch?v=9aeU3JoJnuE)"
     },
     {
         "id": "how-to-kill-processes-in-linux",
@@ -1808,17 +1864,20 @@ const blogPosts = [
         "id": "zeldamash",
         "title": "zeldaMash",
         "date": "2017-04-30",
-        "category": "Gaming",
+        "category": "AI/ML",
         "tags": [
-            "neural network",
+            "neural-network",
             "zelda",
             "music",
-            "AI",
-            "deepdream"
+            "ai",
+            "deepdream",
+            "rnn",
+            "machine-learning",
+            "generative-art"
         ],
         "videoId": "LAfboPzQL7Y",
         "excerpt": "Video was generated by a neural network trained on images of fire.... still needs a lot of work.",
-        "content": "# zeldaMash\n\nVideo was generated by a neural network trained on images of fire - still needs a lot of work.\n\nThis project combines two neural network experiments:\n\nThe visuals were created using Google's DeepDream algorithm, trained on images of fire to create surreal, dream-like imagery.\n\nThe music was generated by a recurrent neural network trained on 15 Zelda songs, creating an AI-composed soundtrack that captures elements of the classic game series.\n\nThis was an early experiment in AI-generated multimedia content.\n\n[Watch on YouTube](https://youtube.com/watch?v=LAfboPzQL7Y)"
+        "content": "# zeldaMash\n\nVideo was generated by a neural network trained on images of fire - still needs a lot of work.\n\nThis project combines two neural network experiments to create an AI-generated audiovisual experience.\n\n## The Visual Component: DeepDream\n\nThe visuals were created using **Google's DeepDream** algorithm. DeepDream works by running an image classification neural network in reverse - instead of identifying what's in an image, it enhances patterns the network \"sees,\" creating surreal, dream-like imagery.\n\nFor this project, the network was trained on images of fire, resulting in flame-like patterns appearing throughout the video.\n\n**Based on:** [Google DeepDream](https://github.com/google/deepdream)\n\n## The Audio Component: Recurrent Neural Network\n\nThe music was generated by a **recurrent neural network (RNN)** trained on 15 Zelda songs. RNNs are particularly good at learning sequential data like music, as they can remember context from earlier in a sequence.\n\nThe network learned patterns from classic Legend of Zelda compositions and generated new music that captures elements of the game series' iconic sound.\n\n**Based on:** [Biaxial RNN Music Composition](https://github.com/hexahedria/biaxial-rnn-music-composition)\n\n## An Early AI Experiment\n\nThis was an early experiment in AI-generated multimedia content, exploring:\n\n- **Generative art** - Using neural networks to create visual art\n- **Music generation** - AI composition based on training data\n- **Combining modalities** - Merging AI-generated audio and video\n\nWhile the creator notes it \"still needs a lot of work,\" this project represents the kind of experimentation that eventually led to today's more sophisticated AI art and music generation tools.\n\n[Watch on YouTube](https://youtube.com/watch?v=LAfboPzQL7Y)"
     },
     {
         "id": "nn-trained-on-zelda-music-overfit-example",
