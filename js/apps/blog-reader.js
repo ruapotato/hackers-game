@@ -35,8 +35,14 @@ class BlogReaderApp {
         return windowId;
     }
 
-    showHome(windowId, contentEl) {
+    showHome(windowId, contentEl, updateUrl = true) {
         const instance = this.instances.get(windowId);
+
+        // Reset URL when going back to home
+        if (updateUrl && window.location.search.includes('blog=')) {
+            history.replaceState({}, 'David Hamner - GNU/Linux Stuff', window.location.pathname);
+            document.title = 'David Hamner - GNU/Linux Stuff';
+        }
 
         // Sort posts by date, newest first
         const sortedPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -271,11 +277,17 @@ class BlogReaderApp {
         this.setupHomeEvents(windowId, contentEl);
     }
 
-    showPost(windowId, contentEl, postId) {
+    showPost(windowId, contentEl, postId, updateUrl = true) {
         const post = blogPosts.find(p => p.id === postId);
         if (!post) {
             this.showHome(windowId, contentEl);
             return;
+        }
+
+        // Update URL for direct linking
+        if (updateUrl) {
+            history.replaceState({ blog: postId }, post.title, `?blog=${postId}`);
+            document.title = `${post.title} - David Hamner`;
         }
 
         // Update window title
@@ -298,6 +310,7 @@ class BlogReaderApp {
                         <div class="post-meta">
                             <span class="post-date">📅 ${this.formatDate(post.date)}</span>
                             ${post.videoId ? `<a href="https://youtube.com/watch?v=${post.videoId}" target="_blank" class="watch-video">📺 Watch Video</a>` : ''}
+                            <button class="share-btn" data-url="${window.location.origin}?blog=${post.id}">🔗 Copy Link</button>
                         </div>
                         <div class="post-tags">
                             ${post.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
@@ -376,6 +389,24 @@ class BlogReaderApp {
                 }
                 .watch-video:hover {
                     text-decoration: underline;
+                }
+                .share-btn {
+                    background: rgba(135, 167, 82, 0.2);
+                    border: 1px solid #87a752;
+                    color: #87a752;
+                    padding: 4px 12px;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    font-size: 0.85em;
+                    transition: all 0.2s;
+                }
+                .share-btn:hover {
+                    background: #87a752;
+                    color: #000;
+                }
+                .share-btn.copied {
+                    background: #87a752;
+                    color: #000;
                 }
                 .post-tags {
                     display: flex;
@@ -458,6 +489,22 @@ class BlogReaderApp {
                     `<span style="margin-right: 8px;">&#128240;</span>Blog - David Hamner`;
             }
         });
+
+        // Share button handler
+        const shareBtn = contentEl.querySelector('.share-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', () => {
+                const url = shareBtn.dataset.url;
+                navigator.clipboard.writeText(url).then(() => {
+                    shareBtn.textContent = '✓ Copied!';
+                    shareBtn.classList.add('copied');
+                    setTimeout(() => {
+                        shareBtn.textContent = '🔗 Copy Link';
+                        shareBtn.classList.remove('copied');
+                    }, 2000);
+                });
+            });
+        }
     }
 
     setupHomeEvents(windowId, contentEl) {
@@ -517,5 +564,50 @@ class BlogReaderApp {
     }
 }
 
+    // Open blog directly from URL - for direct linking
+    openFromUrl(postId) {
+        const { windowId, contentEl } = windowManager.createWindow({
+            title: 'Blog - David Hamner',
+            icon: '&#128240;',
+            width: 850,
+            height: 600,
+            x: 80,
+            y: 40,
+            app: 'blog-reader'
+        });
+
+        const instance = {
+            windowId,
+            currentPost: postId,
+            filter: 'all'
+        };
+
+        this.instances.set(windowId, instance);
+
+        // Show post without updating URL (it's already set)
+        this.showPost(windowId, contentEl, postId, false);
+
+        // Maximize on mobile or when opened via direct link
+        if (window.innerWidth < 1024) {
+            windowManager.toggleMaximize(windowId);
+        }
+
+        return windowId;
+    }
+}
+
 // Global instance
 const blogReaderApp = new BlogReaderApp();
+
+// Check for direct blog link on page load
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const blogId = urlParams.get('blog');
+
+    if (blogId) {
+        // Small delay to ensure window manager is ready
+        setTimeout(() => {
+            blogReaderApp.openFromUrl(blogId);
+        }, 100);
+    }
+});
