@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hackers Game</title>
+    <meta name="description" content="Learn about Hackers Game - an interactive cybersecurity education platform with hacking challenges and a virtual desktop experience.">
+    <meta name="keywords" content="hacking, cybersecurity, CTF, challenges, education, security">
+    <link rel="canonical" href="https://hackers-game.com/pages/about.html">
+    <style>
+        :root {
+            --bg: #1a1a2e;
+            --text: #eee;
+            --accent: #87a752;
+            --card-bg: #16213e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        nav {
+            background: #0f0f1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        nav a:hover { color: var(--accent); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--accent);
+        }
+        p { margin-bottom: 1rem; }
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .feature {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+        .feature h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">Hackers Game</span>
+        <div>
+            <a href="/">Desktop</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/challenges.html">Challenges</a>
+            <a href="/pages/blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>About Hackers Game</h1>
+
+        <div class="card">
+            <p>Hackers Game is an innovative, interactive platform designed to teach cybersecurity concepts through hands-on experience. Our unique approach combines a fully-functional virtual desktop environment with hacking challenges, creating an immersive learning experience.</p>
+        </div>
+
+        <h2>What Makes Us Different</h2>
+        <p>Unlike traditional cybersecurity courses, Hackers Game puts you in the hacker's seat. Our virtual desktop environment simulates a real operating system, complete with a terminal, file manager, and hidden secrets waiting to be discovered.</p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>Virtual Desktop</h3>
+                <p>A full MATE-style desktop environment running in your browser. Navigate files, use applications, and explore just like a real system.</p>
+            </div>
+            <div class="feature">
+                <h3>Unix Terminal</h3>
+                <p>A fully-functional command-line interface with common Unix commands. Practice real terminal skills in a safe environment.</p>
+            </div>
+            <div class="feature">
+                <h3>CTF Challenges</h3>
+                <p>Capture-the-flag style challenges ranging from password cracking to SQL injection. Find hidden flags throughout the system.</p>
+            </div>
+            <div class="feature">
+                <h3>No Installation</h3>
+                <p>Everything runs in your browser. No downloads, no VMs, no complicated setup. Just open and start hacking.</p>
+            </div>
+        </div>
+
+        <h2>Our Mission</h2>
+        <p>We believe cybersecurity education should be accessible, engaging, and practical. By gamifying the learning experience, we help aspiring security professionals develop real skills while having fun.</p>
+
+        <h2>Safe & Educational</h2>
+        <p>All challenges and simulations run entirely in your browser. No real systems are accessed or harmed. This is a safe space to learn offensive security techniques for defensive purposes.</p>
+
+        <div class="cta">
+            <a href="/" class="btn">Launch Desktop Experience</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hackers Game. Educational cybersecurity platform.</p>
+    </footer>
+</body>
+</html>

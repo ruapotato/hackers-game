@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenges - Hackers Game</title>
+    <meta name="description" content="Explore hacking challenges on Hackers Game - password cracking, SQL injection, network reconnaissance, cryptography, and more.">
+    <meta name="keywords" content="CTF, hacking challenges, cybersecurity, password cracking, SQL injection, cryptography">
+    <link rel="canonical" href="https://hackers-game.com/pages/challenges.html">
+    <style>
+        :root {
+            --bg: #1a1a2e;
+            --text: #eee;
+            --accent: #87a752;
+            --card-bg: #16213e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        nav {
+            background: #0f0f1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        nav a:hover { color: var(--accent); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        p { margin-bottom: 1rem; color: #aaa; }
+        .challenges {
+            display: grid;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .challenge {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.2s;
+        }
+        .challenge:hover {
+            transform: translateX(5px);
+        }
+        .challenge-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+        .difficulty {
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .easy { background: #2a5; color: #fff; }
+        .medium { background: #c80; color: #fff; }
+        .hard { background: #c22; color: #fff; }
+        .category {
+            margin-top: 3rem;
+        }
+        .category-title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+        }
+        .cta {
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">Hackers Game</span>
+        <div>
+            <a href="/">Desktop</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/challenges.html">Challenges</a>
+            <a href="/pages/blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Hacking Challenges</h1>
+        <p>Test your skills with our capture-the-flag style challenges. Each challenge teaches real-world cybersecurity concepts in a safe, simulated environment.</p>
+
+        <div class="category">
+            <h2 class="category-title">Cryptography</h2>
+            <div class="challenges">
+                <div class="challenge">
+                    <div class="challenge-header">
+                        <h2>Password Cracker</h2>
+                        <span class="difficulty easy">Easy</span>
+                    </div>
+                    <p>You've intercepted an MD5 hash. Use common password lists and your intuition to crack it.</p>
+                </div>
+                <div class="challenge">
+                    <div class="challenge-header">
+                        <h2>Cipher Cracker</h2>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <p>Decode an encrypted message using classical cipher analysis. Hint: Julius Caesar would approve.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Web Security</h2>
+            <div class="challenges">
+                <div class="challenge">
+                    <div class="challenge-header">
+                        <h2>SQL Injection</h2>
+                        <span class="difficulty medium">Medium</span>
+                    </div>
+                    <p>Exploit a vulnerable login form to bypass authentication. Learn why input validation matters.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Network</h2>
+            <div class="challenges">
+                <div class="challenge">
+                    <div class="challenge-header">
+                        <h2>Network Recon</h2>
+                        <span class="difficulty easy">Easy</span>
+                    </div>
+                    <p>Scan a virtual network to discover hidden services. Find the secret server with unusual ports.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">System</h2>
+            <div class="challenges">
+                <div class="challenge">
+                    <div class="challenge-header">
+                        <h2>Privilege Escalation</h2>
+                        <span class="difficulty hard">Hard</span>
+                    </div>
+                    <p>Gain root access to the virtual system. Explore files, read logs, and find your way to /root.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2 class="category-title">Hidden Challenges</h2>
+            <p>There are secret flags hidden throughout the desktop environment. Explore the virtual filesystem, check hidden files, read system logs, and uncover easter eggs!</p>
+        </div>
+
+        <div class="cta">
+            <a href="/" class="btn">Start Hacking</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hackers Game. Educational cybersecurity platform.</p>
+    </footer>
+</body>
+</html>

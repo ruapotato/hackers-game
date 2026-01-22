@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hackers Game</title>
+    <meta name="description" content="Cybersecurity articles, hacking tutorials, and updates from Hackers Game.">
+    <meta name="keywords" content="cybersecurity blog, hacking tutorials, security news, CTF writeups">
+    <link rel="canonical" href="https://hackers-game.com/pages/blog.html">
+    <style>
+        :root {
+            --bg: #1a1a2e;
+            --text: #eee;
+            --accent: #87a752;
+            --card-bg: #16213e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        nav {
+            background: #0f0f1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 2rem;
+        }
+        nav a:hover { color: var(--accent); }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        .posts {
+            display: grid;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .post {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .post:hover {
+            transform: translateY(-3px);
+        }
+        .post-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .post h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        .post h2 a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .post h2 a:hover {
+            color: var(--accent);
+        }
+        .post p {
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background: rgba(135, 167, 82, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        .featured {
+            border: 1px solid var(--accent);
+        }
+        .featured-badge {
+            background: var(--accent);
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #333;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="logo">Hackers Game</span>
+        <div>
+            <a href="/">Desktop</a>
+            <a href="/pages/about.html">About</a>
+            <a href="/pages/challenges.html">Challenges</a>
+            <a href="/pages/blog.html">Blog</a>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Blog</h1>
+
+        <div class="posts">
+            <article class="post featured">
+                <span class="featured-badge">Featured</span>
+                <div class="post-date">January 21, 2024</div>
+                <h2><a href="#">Introducing Hackers Game 2.0: A Virtual Desktop Experience</a></h2>
+                <p>We've completely rebuilt Hackers Game from the ground up. Say goodbye to WordPress and hello to a fully interactive MATE-style desktop environment running entirely in your browser. Explore files, use the terminal, and discover hidden challenges.</p>
+                <div class="post-tags">
+                    <span class="tag">announcement</span>
+                    <span class="tag">release</span>
+                    <span class="tag">desktop</span>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-date">January 15, 2024</div>
+                <h2><a href="#">Understanding SQL Injection: A Beginner's Guide</a></h2>
+                <p>SQL injection remains one of the most common web vulnerabilities. Learn how it works, why it's dangerous, and how to protect your applications. Includes hands-on examples from our challenges.</p>
+                <div class="post-tags">
+                    <span class="tag">tutorial</span>
+                    <span class="tag">web security</span>
+                    <span class="tag">SQL</span>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-date">January 10, 2024</div>
+                <h2><a href="#">The Art of Log Analysis: Finding Clues in System Logs</a></h2>
+                <p>System logs tell stories. Authentication attempts, sudo commands, network connections - it's all there. Learn how to read and analyze logs to uncover security incidents and system behavior.</p>
+                <div class="post-tags">
+                    <span class="tag">forensics</span>
+                    <span class="tag">sysadmin</span>
+                    <span class="tag">tutorial</span>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-date">January 5, 2024</div>
+                <h2><a href="#">Cracking Passwords: From MD5 to Modern Hashing</a></h2>
+                <p>Why do we hash passwords? Why is MD5 no longer secure? Explore the evolution of password storage and learn about rainbow tables, salting, and modern algorithms like bcrypt and Argon2.</p>
+                <div class="post-tags">
+                    <span class="tag">cryptography</span>
+                    <span class="tag">passwords</span>
+                    <span class="tag">security</span>
+                </div>
+            </article>
+
+            <article class="post">
+                <div class="post-date">December 28, 2023</div>
+                <h2><a href="#">Essential Linux Commands Every Hacker Should Know</a></h2>
+                <p>The terminal is your best friend. Master these essential commands: ls, cd, cat, grep, find, chmod, and more. With practical examples and tips for CTF competitions.</p>
+                <div class="post-tags">
+                    <span class="tag">linux</span>
+                    <span class="tag">terminal</span>
+                    <span class="tag">basics</span>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hackers Game. Educational cybersecurity platform.</p>
+    </footer>
+</body>
+</html>

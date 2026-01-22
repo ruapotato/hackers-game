@@ -1,0 +1,202 @@
+/* MATE/GNOME2 Desktop Environment Styles */
+
+:root {
+    /* MATE Ambiant-MATE inspired colors */
+    --panel-bg: linear-gradient(to bottom, #4a4a4a 0%, #3c3c3c 50%, #2e2e2e 100%);
+    --panel-border: #1a1a1a;
+    --panel-text: #e0e0e0;
+    --desktop-bg: #2c3e50;
+    --accent: #87a752;
+    --accent-hover: #9bc25e;
+    --window-bg: #f5f5f5;
+    --window-titlebar: linear-gradient(to bottom, #5a5a5a 0%, #4a4a4a 50%, #3a3a3a 100%);
+    --window-titlebar-active: linear-gradient(to bottom, #6a8a3a 0%, #5a7a2a 50%, #4a6a1a 100%);
+    --window-border: #2a2a2a;
+    --text-dark: #2e3436;
+    --text-light: #eeeeee;
+    --selection: #87a752;
+    --menu-bg: #3c3c3c;
+    --menu-hover: #4a5a3a;
+    --icon-text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    background: var(--desktop-bg);
+    user-select: none;
+}
+
+/* Desktop Background */
+#desktop {
+    position: fixed;
+    top: 28px; /* Below top panel */
+    left: 0;
+    right: 0;
+    bottom: 28px; /* Above bottom panel */
+    background: var(--desktop-bg);
+    background-image:
+        radial-gradient(ellipse at center, #34495e 0%, #2c3e50 50%, #1a252f 100%);
+    overflow: hidden;
+}
+
+/* Desktop Icons Grid */
+.desktop-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: calc(100% - 40px);
+    align-content: flex-start;
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.desktop-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.desktop-icon.selected {
+    background: rgba(135, 167, 82, 0.4);
+}
+
+.desktop-icon .icon {
+    font-size: 48px;
+    margin-bottom: 4px;
+    text-shadow: var(--icon-text-shadow);
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.5));
+}
+
+.desktop-icon .icon.special {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { filter: drop-shadow(0 0 5px #87a752) drop-shadow(0 2px 3px rgba(0,0,0,0.5)); }
+    50% { filter: drop-shadow(0 0 15px #87a752) drop-shadow(0 2px 3px rgba(0,0,0,0.5)); }
+}
+
+.desktop-icon span {
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: var(--icon-text-shadow);
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Windows Container */
+#windows-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+#windows-container > * {
+    pointer-events: auto;
+}
+
+/* Hidden utility */
+.hidden {
+    display: none !important;
+}
+
+/* Selection box for desktop icons */
+.selection-box {
+    position: absolute;
+    border: 1px solid var(--accent);
+    background: rgba(135, 167, 82, 0.2);
+    pointer-events: none;
+}
+
+/* Context Menu */
+.context-menu {
+    position: fixed;
+    background: var(--menu-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    min-width: 180px;
+    z-index: 10000;
+    padding: 4px 0;
+}
+
+.context-menu-item {
+    padding: 8px 16px;
+    color: var(--panel-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.context-menu-item:hover {
+    background: var(--menu-hover);
+}
+
+.context-menu-separator {
+    height: 1px;
+    background: #555;
+    margin: 4px 0;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5a5a5a;
+    border-radius: 6px;
+    border: 2px solid #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6a6a6a;
+}
+
+/* SEO content (only visible without JS) */
+.seo-content {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+    background: white;
+}
+
+.seo-content h1 {
+    margin-bottom: 20px;
+}
+
+.seo-content nav a {
+    margin-right: 20px;
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackers Game - Desktop</title>
+    <meta name="description" content="Hackers Game - An immersive hacker desktop experience">
+    <link rel="stylesheet" href="css/desktop.css">
+    <link rel="stylesheet" href="css/windows.css">
+    <link rel="stylesheet" href="css/apps.css">
+    <link rel="stylesheet" href="css/panel.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Panel (MATE style) -->
+    <div id="top-panel" class="panel">
+        <div class="panel-left">
+            <button id="app-menu-btn" class="panel-btn app-menu-btn">
+                <span class="menu-icon">&#9776;</span>
+                <span>Applications</span>
+            </button>
+            <button id="places-menu-btn" class="panel-btn">Places</button>
+        </div>
+        <div class="panel-center">
+            <div id="search-container">
+                <input type="text" id="global-search" placeholder="Search apps & content...">
+                <div id="search-results" class="hidden"></div>
+            </div>
+        </div>
+        <div class="panel-right">
+            <span id="clock"></span>
+        </div>
+    </div>
+
+    <!-- App Menu Dropdown -->
+    <div id="app-menu" class="dropdown-menu hidden">
+        <div class="menu-category">
+            <h3>Accessories</h3>
+            <div class="menu-item" data-app="terminal">
+                <span class="app-icon">&#9638;</span>
+                <span>Terminal</span>
+            </div>
+            <div class="menu-item" data-app="text-editor">
+                <span class="app-icon">&#128221;</span>
+                <span>Text Editor</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Internet</h3>
+            <div class="menu-item" data-app="browser">
+                <span class="app-icon">&#127760;</span>
+                <span>Web Browser</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>System</h3>
+            <div class="menu-item" data-app="file-manager">
+                <span class="app-icon">&#128193;</span>
+                <span>File Manager</span>
+            </div>
+            <div class="menu-item" data-app="settings">
+                <span class="app-icon">&#9881;</span>
+                <span>Settings</span>
+            </div>
+        </div>
+        <div class="menu-category">
+            <h3>Games</h3>
+            <div class="menu-item" data-app="hackers-game">
+                <span class="app-icon">&#128187;</span>
+                <span>Hackers Game</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Area -->
+    <div id="desktop">
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-icon" data-app="file-manager" data-path="/home">
+                <div class="icon">&#127968;</div>
+                <span>Home</span>
+            </div>
+            <div class="desktop-icon" data-app="file-manager" data-path="/home/documents">
+                <div class="icon">&#128193;</div>
+                <span>Documents</span>
+            </div>
+            <div class="desktop-icon" data-app="terminal">
+                <div class="icon">&#9638;</div>
+                <span>Terminal</span>
+            </div>
+            <div class="desktop-icon" data-app="browser">
+                <div class="icon">&#127760;</div>
+                <span>Browser</span>
+            </div>
+            <div class="desktop-icon" data-app="hackers-game">
+                <div class="icon special">&#128187;</div>
+                <span>Hackers Game</span>
+            </div>
+        </div>
+
+        <!-- Windows Container -->
+        <div id="windows-container"></div>
+    </div>
+
+    <!-- Bottom Panel / Taskbar -->
+    <div id="bottom-panel" class="panel">
+        <div id="taskbar"></div>
+        <div class="panel-right">
+            <button id="show-desktop-btn" class="panel-btn" title="Show Desktop">&#9632;</button>
+        </div>
+    </div>
+
+    <!-- Window Template (hidden) -->
+    <template id="window-template">
+        <div class="window">
+            <div class="window-titlebar">
+                <span class="window-title"></span>
+                <div class="window-controls">
+                    <button class="win-btn minimize" title="Minimize">&#8211;</button>
+                    <button class="win-btn maximize" title="Maximize">&#9633;</button>
+                    <button class="win-btn close" title="Close">&#10005;</button>
+                </div>
+            </div>
+            <div class="window-content"></div>
+            <div class="resize-handle resize-n"></div>
+            <div class="resize-handle resize-e"></div>
+            <div class="resize-handle resize-s"></div>
+            <div class="resize-handle resize-w"></div>
+            <div class="resize-handle resize-ne"></div>
+            <div class="resize-handle resize-se"></div>
+            <div class="resize-handle resize-sw"></div>
+            <div class="resize-handle resize-nw"></div>
+        </div>
+    </template>
+
+    <!-- SEO Content (hidden but crawlable) -->
+    <noscript>
+        <div class="seo-content">
+            <h1>Hackers Game</h1>
+            <p>Welcome to Hackers Game - an immersive desktop experience for hackers and security enthusiasts.</p>
+            <nav>
+                <a href="/pages/about.html">About</a>
+                <a href="/pages/blog.html">Blog</a>
+                <a href="/pages/challenges.html">Challenges</a>
+            </nav>
+        </div>
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="js/filesystem.js"></script>
+    <script src="js/window-manager.js"></script>
+    <script src="js/apps/file-manager.js"></script>
+    <script src="js/apps/terminal.js"></script>
+    <script src="js/apps/browser.js"></script>
+    <script src="js/apps/text-editor.js"></script>
+    <script src="js/apps/settings.js"></script>
+    <script src="js/apps/hackers-game.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/desktop.js"></script>
+</body>
+</html>

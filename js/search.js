@@ -1,0 +1,194 @@
+/**
+ * Global Search functionality
+ */
+
+class GlobalSearch {
+    constructor() {
+        this.searchInput = document.getElementById('global-search');
+        this.searchResults = document.getElementById('search-results');
+        this.debounceTimer = null;
+
+        this.searchIndex = this.buildIndex();
+        this.init();
+    }
+
+    buildIndex() {
+        return [
+            // Apps
+            { type: 'app', name: 'Terminal', desc: 'Command line interface', icon: '&#9638;', action: () => terminalApp.open() },
+            { type: 'app', name: 'File Manager', desc: 'Browse files and folders', icon: '&#128193;', action: () => fileManagerApp.open() },
+            { type: 'app', name: 'Web Browser', desc: 'Browse the internet', icon: '&#127760;', action: () => browserApp.open() },
+            { type: 'app', name: 'Text Editor', desc: 'Edit text files', icon: '&#128221;', action: () => textEditorApp.open() },
+            { type: 'app', name: 'Settings', desc: 'Desktop preferences', icon: '&#9881;', action: () => settingsApp.open() },
+            { type: 'app', name: 'Hackers Game', desc: 'Hacking challenges and games', icon: '&#128187;', action: () => hackersGameApp.open() },
+
+            // Files
+            { type: 'file', name: 'readme.txt', desc: '/home/hacker/documents/readme.txt', icon: '📄', action: () => textEditorApp.openFile('/home/hacker/documents/readme.txt') },
+            { type: 'file', name: 'notes.md', desc: '/home/hacker/documents/notes.md', icon: '📝', action: () => textEditorApp.openFile('/home/hacker/documents/notes.md') },
+            { type: 'file', name: 'exploit.py', desc: '/home/hacker/projects/exploit.py', icon: '🐍', action: () => textEditorApp.openFile('/home/hacker/projects/exploit.py') },
+            { type: 'file', name: 'auth.log', desc: '/var/log/auth.log', icon: '📊', action: () => textEditorApp.openFile('/var/log/auth.log') },
+            { type: 'file', name: 'passwd', desc: '/etc/passwd', icon: '📋', action: () => textEditorApp.openFile('/etc/passwd') },
+
+            // Folders
+            { type: 'folder', name: 'Home', desc: '/home/hacker', icon: '🏠', action: () => fileManagerApp.open('/home/hacker') },
+            { type: 'folder', name: 'Documents', desc: '/home/hacker/documents', icon: '📁', action: () => fileManagerApp.open('/home/hacker/documents') },
+            { type: 'folder', name: 'Projects', desc: '/home/hacker/projects', icon: '📁', action: () => fileManagerApp.open('/home/hacker/projects') },
+            { type: 'folder', name: 'System Logs', desc: '/var/log', icon: '📁', action: () => fileManagerApp.open('/var/log') },
+
+            // Commands (open terminal with command)
+            { type: 'command', name: 'ls -la', desc: 'List all files including hidden', icon: '💻', action: () => terminalApp.open() },
+            { type: 'command', name: 'nmap scan', desc: 'Network port scanner', icon: '💻', action: () => terminalApp.open() },
+            { type: 'command', name: 'neofetch', desc: 'System information', icon: '💻', action: () => terminalApp.open() },
+        ];
+    }
+
+    init() {
+        this.searchInput.addEventListener('input', (e) => {
+            clearTimeout(this.debounceTimer);
+            this.debounceTimer = setTimeout(() => {
+                this.search(e.target.value);
+            }, 150);
+        });
+
+        this.searchInput.addEventListener('focus', () => {
+            if (this.searchInput.value) {
+                this.search(this.searchInput.value);
+            }
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#search-container')) {
+                this.hideResults();
+            }
+        });
+
+        // Keyboard navigation
+        this.searchInput.addEventListener('keydown', (e) => {
+            const items = this.searchResults.querySelectorAll('.search-result-item');
+            const current = this.searchResults.querySelector('.search-result-item.selected');
+            let index = Array.from(items).indexOf(current);
+
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                if (index < items.length - 1) {
+                    items[index]?.classList.remove('selected');
+                    items[index + 1]?.classList.add('selected');
+                    items[index + 1]?.scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                if (index > 0) {
+                    items[index]?.classList.remove('selected');
+                    items[index - 1]?.classList.add('selected');
+                    items[index - 1]?.scrollIntoView({ block: 'nearest' });
+                }
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                const selected = this.searchResults.querySelector('.search-result-item.selected');
+                if (selected) {
+                    selected.click();
+                } else if (items.length > 0) {
+                    items[0].click();
+                }
+            } else if (e.key === 'Escape') {
+                this.hideResults();
+                this.searchInput.blur();
+            }
+        });
+    }
+
+    search(query) {
+        if (!query.trim()) {
+            this.hideResults();
+            return;
+        }
+
+        query = query.toLowerCase();
+
+        const results = this.searchIndex.filter(item =>
+            item.name.toLowerCase().includes(query) ||
+            item.desc.toLowerCase().includes(query)
+        );
+
+        this.showResults(results);
+    }
+
+    showResults(results) {
+        if (results.length === 0) {
+            this.searchResults.innerHTML = `
+                <div class="search-result-item" style="pointer-events: none;">
+                    <span class="result-icon">🔍</span>
+                    <div class="result-info">
+                        <div class="result-title">No results found</div>
+                        <div class="result-desc">Try a different search term</div>
+                    </div>
+                </div>
+            `;
+            this.searchResults.classList.remove('hidden');
+            return;
+        }
+
+        // Group by type
+        const groups = {
+            app: { label: 'Applications', items: [] },
+            file: { label: 'Files', items: [] },
+            folder: { label: 'Folders', items: [] },
+            command: { label: 'Commands', items: [] }
+        };
+
+        results.forEach(r => {
+            if (groups[r.type]) {
+                groups[r.type].items.push(r);
+            }
+        });
+
+        let html = '';
+        let firstItem = true;
+
+        Object.entries(groups).forEach(([type, group]) => {
+            if (group.items.length > 0) {
+                html += `<div class="search-result-category">${group.label}</div>`;
+                group.items.forEach(item => {
+                    html += `
+                        <div class="search-result-item ${firstItem ? 'selected' : ''}" data-index="${this.searchIndex.indexOf(item)}">
+                            <span class="result-icon">${item.icon}</span>
+                            <div class="result-info">
+                                <div class="result-title">${item.name}</div>
+                                <div class="result-desc">${item.desc}</div>
+                            </div>
+                        </div>
+                    `;
+                    firstItem = false;
+                });
+            }
+        });
+
+        this.searchResults.innerHTML = html;
+        this.searchResults.classList.remove('hidden');
+
+        // Add click handlers
+        this.searchResults.querySelectorAll('.search-result-item[data-index]').forEach(el => {
+            el.addEventListener('click', () => {
+                const index = parseInt(el.dataset.index);
+                const item = this.searchIndex[index];
+                if (item && item.action) {
+                    item.action();
+                    this.hideResults();
+                    this.searchInput.value = '';
+                    this.searchInput.blur();
+                }
+            });
+        });
+    }
+
+    hideResults() {
+        this.searchResults.classList.add('hidden');
+    }
+}
+
+// Initialize search when DOM is ready
+let globalSearch;
+document.addEventListener('DOMContentLoaded', () => {
+    globalSearch = new GlobalSearch();
+});
