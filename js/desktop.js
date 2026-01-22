@@ -215,7 +215,7 @@ class Desktop {
                 blogReaderApp.open();
                 break;
             case 'youtube':
-                browserApp.open('https://youtube.com/@DavidHamner');
+                window.open('https://youtube.com/@DavidHamner', '_blank');
                 break;
             case 'sandy-potato':
                 sandyPotatoApp.open();

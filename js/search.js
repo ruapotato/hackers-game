@@ -20,7 +20,7 @@ class GlobalSearch {
             { type: 'app', name: 'Terminal', desc: 'Command line interface', icon: '&#9638;', action: () => terminalApp.open() },
             { type: 'app', name: 'File Manager', desc: 'Browse files and folders', icon: '&#128193;', action: () => fileManagerApp.open() },
             { type: 'app', name: 'Web Browser', desc: 'Browse the internet', icon: '&#127760;', action: () => browserApp.open() },
-            { type: 'app', name: 'YouTube Channel', desc: 'David Hamner on YouTube', icon: '&#128250;', action: () => browserApp.open('https://youtube.com/@DavidHamner') },
+            { type: 'app', name: 'YouTube Channel', desc: 'David Hamner on YouTube', icon: '&#128250;', action: () => window.open('https://youtube.com/@DavidHamner', '_blank') },
             { type: 'app', name: 'Text Editor', desc: 'Edit text files', icon: '&#128221;', action: () => textEditorApp.open() },
             { type: 'app', name: 'Settings', desc: 'Desktop preferences', icon: '&#9881;', action: () => settingsApp.open() },
             { type: 'app', name: 'Sandy Potato', desc: 'Falling sand simulation game', icon: '🏖️', action: () => sandyPotatoApp.open() },

@@ -88,13 +88,18 @@ class CompizEffects {
                 activeWindow.classList.remove('wobbly-active');
                 activeWindow.style.transform = '';
 
-                // Add wobble animation on release
-                activeWindow.classList.add('wobble');
-                setTimeout(() => {
-                    if (activeWindow) {
-                        activeWindow.classList.remove('wobble');
-                    }
-                }, 400);
+                // Only wobble on release if there was significant movement
+                const speed = Math.sqrt(velocity.x * velocity.x + velocity.y * velocity.y);
+                if (speed > 8) {
+                    activeWindow.classList.add('wobble');
+                    const win = activeWindow;
+                    setTimeout(() => {
+                        win.classList.remove('wobble');
+                    }, 400);
+                }
+
+                // Reset velocity
+                velocity = { x: 0, y: 0 };
             }
             this.isDragging = false;
             activeWindow = null;
