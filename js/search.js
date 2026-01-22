@@ -13,33 +13,43 @@ class GlobalSearch {
     }
 
     buildIndex() {
-        return [
+        // Start with apps
+        const index = [
             // Apps
+            { type: 'app', name: 'Blog & Portfolio', desc: 'Read blog posts and view portfolio', icon: '&#128240;', action: () => blogReaderApp.open() },
             { type: 'app', name: 'Terminal', desc: 'Command line interface', icon: '&#9638;', action: () => terminalApp.open() },
             { type: 'app', name: 'File Manager', desc: 'Browse files and folders', icon: '&#128193;', action: () => fileManagerApp.open() },
             { type: 'app', name: 'Web Browser', desc: 'Browse the internet', icon: '&#127760;', action: () => browserApp.open() },
+            { type: 'app', name: 'YouTube Channel', desc: 'David Hamner on YouTube', icon: '&#128250;', action: () => browserApp.open('https://youtube.com/@DavidHamner') },
             { type: 'app', name: 'Text Editor', desc: 'Edit text files', icon: '&#128221;', action: () => textEditorApp.open() },
             { type: 'app', name: 'Settings', desc: 'Desktop preferences', icon: '&#9881;', action: () => settingsApp.open() },
             { type: 'app', name: 'Hackers Game', desc: 'Hacking challenges and games', icon: '&#128187;', action: () => hackersGameApp.open() },
 
-            // Files
-            { type: 'file', name: 'readme.txt', desc: '/home/hacker/documents/readme.txt', icon: '📄', action: () => textEditorApp.openFile('/home/hacker/documents/readme.txt') },
-            { type: 'file', name: 'notes.md', desc: '/home/hacker/documents/notes.md', icon: '📝', action: () => textEditorApp.openFile('/home/hacker/documents/notes.md') },
-            { type: 'file', name: 'exploit.py', desc: '/home/hacker/projects/exploit.py', icon: '🐍', action: () => textEditorApp.openFile('/home/hacker/projects/exploit.py') },
-            { type: 'file', name: 'auth.log', desc: '/var/log/auth.log', icon: '📊', action: () => textEditorApp.openFile('/var/log/auth.log') },
-            { type: 'file', name: 'passwd', desc: '/etc/passwd', icon: '📋', action: () => textEditorApp.openFile('/etc/passwd') },
-
             // Folders
             { type: 'folder', name: 'Home', desc: '/home/hacker', icon: '🏠', action: () => fileManagerApp.open('/home/hacker') },
-            { type: 'folder', name: 'Documents', desc: '/home/hacker/documents', icon: '📁', action: () => fileManagerApp.open('/home/hacker/documents') },
             { type: 'folder', name: 'Projects', desc: '/home/hacker/projects', icon: '📁', action: () => fileManagerApp.open('/home/hacker/projects') },
             { type: 'folder', name: 'System Logs', desc: '/var/log', icon: '📁', action: () => fileManagerApp.open('/var/log') },
 
-            // Commands (open terminal with command)
-            { type: 'command', name: 'ls -la', desc: 'List all files including hidden', icon: '💻', action: () => terminalApp.open() },
-            { type: 'command', name: 'nmap scan', desc: 'Network port scanner', icon: '💻', action: () => terminalApp.open() },
-            { type: 'command', name: 'neofetch', desc: 'System information', icon: '💻', action: () => terminalApp.open() },
+            // Commands
+            { type: 'command', name: 'about', desc: 'About David Hamner', icon: '💻', action: () => terminalApp.open() },
+            { type: 'command', name: 'skills', desc: 'View skills and resume', icon: '💻', action: () => terminalApp.open() },
+            { type: 'command', name: 'librem5', desc: 'Linux phone info', icon: '📱', action: () => terminalApp.open() },
         ];
+
+        // Add blog posts to search index
+        if (typeof blogPosts !== 'undefined') {
+            blogPosts.forEach(post => {
+                index.push({
+                    type: 'post',
+                    name: post.title,
+                    desc: post.excerpt.substring(0, 60) + '...',
+                    icon: post.videoId ? '📺' : '📝',
+                    action: () => blogReaderApp.open(post.id)
+                });
+            });
+        }
+
+        return index;
     }
 
     init() {

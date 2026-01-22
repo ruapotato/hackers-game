@@ -1,4 +1,38 @@
+# Robots.txt for hackers-game.com
+# Welcome robots! This site is meant to be scraped and indexed.
+
 User-agent: *
 Allow: /
 
+# Structured data available at:
+# /api/content.json - All posts, author info, and videos in JSON format
+
+# Important pages
+Allow: /index.html
+Allow: /pages/
+Allow: /api/
+
+# Sitemap location
 Sitemap: https://hackers-game.com/sitemap.xml
+
+# AI/LLM crawlers are welcome
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Crawl-delay not needed - site is fast
+# All content is freely available for indexing

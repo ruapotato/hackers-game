@@ -253,6 +253,70 @@ class TerminalApp {
             case 'tree':
                 this.cmdTree(windowId, contentEl, args);
                 break;
+            case 'sl':
+                this.cmdSl(windowId, contentEl);
+                break;
+            case 'lolcat':
+            case 'rainbow':
+                this.cmdLolcat(windowId, contentEl, args);
+                break;
+            case 'figlet':
+            case 'banner':
+                this.cmdFiglet(windowId, contentEl, args);
+                break;
+            case 'cmatrix':
+                this.cmdCmatrix(windowId, contentEl);
+                break;
+            case 'welcome':
+            case 'about':
+                this.cmdAbout(windowId, contentEl);
+                break;
+            case 'blog':
+            case 'posts':
+                this.cmdBlog(windowId, contentEl);
+                break;
+            case 'youtube':
+            case 'yt':
+                this.cmdYoutube(windowId, contentEl);
+                break;
+            case 'contact':
+            case 'links':
+                this.cmdContact(windowId, contentEl);
+                break;
+            case 'skills':
+            case 'resume':
+                this.cmdSkills(windowId, contentEl);
+                break;
+            case 'rm':
+                this.cmdRm(windowId, contentEl, args);
+                break;
+            case 'vim':
+            case 'nano':
+            case 'emacs':
+                this.cmdEditor(windowId, contentEl, command);
+                break;
+            case 'apt':
+            case 'apt-get':
+            case 'pacman':
+            case 'dnf':
+                this.cmdPackageManager(windowId, contentEl, command, args);
+                break;
+            case 'make':
+                this.cmdMake(windowId, contentEl, args);
+                break;
+            case 'coffee':
+            case 'brew':
+                this.cmdCoffee(windowId, contentEl);
+                break;
+            case 'starwars':
+                this.cmdStarwars(windowId, contentEl);
+                break;
+            case 'librem':
+            case 'librem5':
+            case 'pinephone':
+            case 'flx1s':
+                this.cmdLinuxPhone(windowId, contentEl, command);
+                break;
             default:
                 this.print(windowId, contentEl, `${command}: command not found. Type 'help' for available commands.`, 'term-red');
         }
@@ -270,6 +334,13 @@ class TerminalApp {
     cmdHelp(windowId, contentEl) {
         const help = `
 <span class="term-yellow">Available Commands:</span>
+
+<span class="term-cyan">About Me:</span>
+  about         - Who am I?
+  blog          - Recent blog posts
+  youtube       - Open YouTube channel
+  skills        - Skills & resume
+  contact       - Contact info & links
 
 <span class="term-cyan">Navigation:</span>
   ls [path]     - List directory contents (-a for hidden)
@@ -292,20 +363,29 @@ class TerminalApp {
   clear         - Clear terminal
   exit          - Close terminal
 
+<span class="term-cyan">Linux Phones:</span>
+  librem5       - About the Librem 5
+  pinephone     - About the PinePhone
+  flx1s         - About the FLX1s
+
 <span class="term-cyan">Hacking Tools:</span>
   hack          - Start hacking minigame
   nmap [host]   - Port scanner simulation
   ssh [user@host] - SSH connection simulation
   ping [host]   - Ping simulation
 
-<span class="term-cyan">Fun:</span>
+<span class="term-cyan">Fun & Easter Eggs:</span>
   neofetch      - System info with ASCII art
-  matrix        - Matrix rain effect
   cowsay [msg]  - Cow says message
   fortune       - Random fortune
-  man [cmd]     - Manual for command
+  sl            - Choo choo!
+  cmatrix       - Matrix effect
+  lolcat [text] - Rainbow text
+  coffee        - ☕
+  starwars      - A long time ago...
+  make love     - Try it!
 
-<span class="term-gray">Tip: Look for hidden files with 'ls -a' and explore /var/log</span>`;
+<span class="term-gray">Tip: Try 'ls -a' in /home/hacker and explore /var/log for secrets!</span>`;
         this.printHtml(windowId, contentEl, help);
     }
 
@@ -551,6 +631,252 @@ Knock, knock, Neo.
 
         const absPath = instance.fs.getAbsolutePath(path);
         this.printHtml(windowId, contentEl, `<span class="term-blue term-bold">${absPath}</span><br>${buildTree(absPath)}`);
+    }
+
+    // Easter egg commands
+    cmdSl(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-white">
+      ====        ________                ___________
+  _D _|  |_______/        \\__I_I_____===__|_________|
+   |(_)---  |   H\\________/ |   |        =|___ ___|
+   /     |  |   H  |  |     |   |         ||_| |_||
+  |      |  |   H  |__--------------------| [___] |
+  | ________|___H__/__|_____/[][]~\\_______|       |
+  |/ |   |-----------I_____I [][] []  D   |=======|__
+__/ =| o |=-~~\\  /~~\\  /~~\\  /~~\\ ____Y___________|__
+ |/-=|___|=    ||    ||    ||    |_____/~\\___/
+  \\_/      \\O=====O=====O=====O_/      \\_/
+</span>
+<span class="term-gray">You've been warned about typos!</span>`);
+    }
+
+    cmdLolcat(windowId, contentEl, args) {
+        const text = args.join(' ') || 'Hello, World!';
+        const colors = ['term-red', 'term-yellow', 'term-green', 'term-cyan', 'term-blue', 'term-magenta'];
+        const rainbow = text.split('').map((c, i) => `<span class="${colors[i % colors.length]}">${c}</span>`).join('');
+        this.printHtml(windowId, contentEl, rainbow);
+    }
+
+    cmdFiglet(windowId, contentEl, args) {
+        const text = args.join(' ') || 'Hello';
+        const letters = {
+            'A': ' █████╗ \\n██╔══██╗\\n███████║\\n██╔══██║\\n██║  ██║\\n╚═╝  ╚═╝',
+            'B': '██████╗ \\n██╔══██╗\\n██████╔╝\\n██╔══██╗\\n██████╔╝\\n╚═════╝ ',
+            'H': '██╗  ██╗\\n██║  ██║\\n███████║\\n██╔══██║\\n██║  ██║\\n╚═╝  ╚═╝',
+            'I': '██╗\\n██║\\n██║\\n██║\\n██║\\n╚═╝',
+            // Simplified - just show text big
+        };
+        this.printHtml(windowId, contentEl, `<span class="term-cyan term-bold" style="font-size: 16px; letter-spacing: 2px;">${text.toUpperCase()}</span>`);
+    }
+
+    cmdCmatrix(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-green">
+01001000 01000001 01000011 01001011
+10110010 01101001 11010101 00110111
+01001000 01000001 01000011 01001011
+11100110 10010011 01001110 11001010
+</span>
+<span class="term-gray">Full matrix effect available in Hackers Game app!</span>`);
+    }
+
+    cmdAbout(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-cyan term-bold">
+╔═══════════════════════════════════════════════════════════╗
+║                    DAVID HAMNER                          ║
+║                  GNU/Linux Stuff                         ║
+╚═══════════════════════════════════════════════════════════╝
+</span>
+<span class="term-white">Linux enthusiast, privacy advocate, and maker.</span>
+
+<span class="term-yellow">Expertise:</span>
+  • Linux Phones (Librem 5, PinePhone, FLX1s)
+  • Home Automation (Home Assistant, VOSK)
+  • 3D Printing & Hardware
+  • Python Development
+
+<span class="term-yellow">Find me:</span>
+  📺 youtube.com/@DavidHamner
+  🐙 github.com/ruapotato
+  🌐 hackers-game.com
+
+<span class="term-gray">Type 'blog' to see my posts, 'skills' for resume, or 'youtube' for videos.</span>`);
+    }
+
+    cmdBlog(windowId, contentEl) {
+        const posts = blogPosts.slice(0, 5).map((p, i) =>
+            `  ${i + 1}. <span class="term-cyan">${p.title}</span> (${p.date})`
+        ).join('\\n');
+        this.printHtml(windowId, contentEl, `
+<span class="term-yellow">Recent Blog Posts:</span>
+
+${posts}
+
+<span class="term-gray">Open the Blog app on the desktop to read full posts!</span>`);
+    }
+
+    cmdYoutube(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-red">▶ YouTube Channel: David Hamner</span>
+
+Popular videos:
+  📱 Linux Phone That Actually Works (FLX1s)
+  📱 Is the Librem 5 Ready for Launch?
+  📱 Librem 5 Gaming
+  🤖 Robot and Librem 5 Hacking
+  🏠 Home Automation with VOSK
+
+<span class="term-cyan">Opening browser...</span>`);
+        setTimeout(() => {
+            browserApp.open('https://youtube.com/@DavidHamner');
+        }, 1000);
+    }
+
+    cmdContact(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-yellow">Contact & Links:</span>
+
+  📺 YouTube:  <span class="term-cyan">youtube.com/@DavidHamner</span>
+  🐙 GitHub:   <span class="term-cyan">github.com/ruapotato</span>
+  🌐 Website:  <span class="term-cyan">hackers-game.com</span>
+
+<span class="term-gray">DMs open on YouTube for collaboration!</span>`);
+    }
+
+    cmdSkills(windowId, contentEl) {
+        const bar = (level) => {
+            const filled = Math.floor(level / 5);
+            const empty = 20 - filled;
+            return '<span class="term-green">' + '█'.repeat(filled) + '</span><span class="term-gray">' + '░'.repeat(empty) + '</span>';
+        };
+        this.printHtml(windowId, contentEl, `
+<span class="term-cyan term-bold">SKILLS & EXPERTISE</span>
+
+Linux Phones      ${bar(95)} 95%
+Home Automation   ${bar(85)} 85%
+3D Printing       ${bar(80)} 80%
+Embedded Linux    ${bar(75)} 75%
+Python            ${bar(85)} 85%
+System Admin      ${bar(80)} 80%
+
+<span class="term-yellow">Technologies:</span>
+  Librem 5, PinePhone, FLX1s, Home Assistant, VOSK,
+  OpenSCAD, Python, Bash, systemd, Wayland, GTK
+
+<span class="term-gray">See blog posts for project examples!</span>`);
+    }
+
+    cmdRm(windowId, contentEl, args) {
+        if (args.includes('-rf') && (args.includes('/') || args.includes('*'))) {
+            this.printHtml(windowId, contentEl, `
+<span class="term-red">⚠️  NICE TRY!</span>
+
+<span class="term-yellow">rm -rf / would delete everything... if this were real.</span>
+
+But this is a simulated environment, so your data is safe. 😉
+
+<span class="term-green">🏴 FLAG{n1c3_try_h4ck3r}</span>`);
+        } else {
+            this.print(windowId, contentEl, 'rm: simulated - no files were harmed', 'term-gray');
+        }
+    }
+
+    cmdEditor(windowId, contentEl, editor) {
+        const wars = {
+            'vim': 'Vim is clearly superior. :wq',
+            'nano': 'Nano - for when you just need to edit a file without a PhD.',
+            'emacs': 'Emacs - it\\'s not just an editor, it\\'s an operating system!'
+        };
+        this.printHtml(windowId, contentEl, `
+<span class="term-cyan">${editor.toUpperCase()}</span>
+
+${wars[editor] || 'A fine choice.'}
+
+<span class="term-gray">(Text Editor app is available on the desktop)</span>`);
+    }
+
+    cmdPackageManager(windowId, contentEl, pm, args) {
+        const action = args[0] || 'help';
+        if (action === 'install' && args[1] === 'girlfriend') {
+            this.print(windowId, contentEl, `E: Unable to locate package girlfriend`, 'term-red');
+        } else if (action === 'install') {
+            this.printHtml(windowId, contentEl, `
+<span class="term-cyan">Reading package lists... Done</span>
+<span class="term-cyan">Building dependency tree... Done</span>
+<span class="term-yellow">The following packages will be installed:</span>
+  ${args.slice(1).join(' ') || 'nothing'}
+<span class="term-gray">(This is a simulation - nothing was actually installed)</span>`);
+        } else {
+            this.print(windowId, contentEl, `${pm}: simulated package manager`, 'term-gray');
+        }
+    }
+
+    cmdMake(windowId, contentEl, args) {
+        if (args[0] === 'love') {
+            this.print(windowId, contentEl, "make: *** No rule to make target 'love'. Stop.", 'term-red');
+            this.print(windowId, contentEl, "(Try 'make sandwich' instead)", 'term-gray');
+        } else if (args[0] === 'sandwich') {
+            this.print(windowId, contentEl, "make: What? Make it yourself.", 'term-yellow');
+        } else if (args[0] === 'me' && args[1] === 'a' && args[2] === 'sandwich') {
+            this.print(windowId, contentEl, "🥪 Here's your sandwich!", 'term-green');
+        } else {
+            this.print(windowId, contentEl, "make: *** No targets specified and no makefile found. Stop.", 'term-red');
+        }
+    }
+
+    cmdCoffee(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-yellow">
+       ( (
+        ) )
+      ........
+      |      |]
+      \\      /
+       \`----'
+</span>
+<span class="term-white">Here's your coffee! ☕</span>
+<span class="term-gray">Error 418: I'm a teapot</span>`);
+    }
+
+    cmdStarwars(windowId, contentEl) {
+        this.printHtml(windowId, contentEl, `
+<span class="term-yellow">
+     .          .
+  .  *     .        .   *    .
+        .   .            *
+   *         STAR WARS       .
+      .    A long time ago   *
+  .     in a terminal far,
+     *    far away...        .
+        .            .    *
+   .         *    .
+</span>
+<span class="term-gray">For the full ASCII Star Wars experience:</span>
+<span class="term-cyan">telnet towel.blinkenlights.nl</span>
+<span class="term-gray">(On a real terminal, of course)</span>`);
+    }
+
+    cmdLinuxPhone(windowId, contentEl, phone) {
+        const phones = {
+            'librem': 'Librem 5 - The privacy-focused Linux phone by Purism. Hardware kill switches!',
+            'librem5': 'Librem 5 - The privacy-focused Linux phone by Purism. Hardware kill switches!',
+            'pinephone': 'PinePhone - The affordable Linux phone. Great for tinkering!',
+            'flx1s': 'FLX1s - A Linux phone that actually works as a phone!'
+        };
+        this.printHtml(windowId, contentEl, `
+<span class="term-cyan">📱 ${phone.toUpperCase()}</span>
+
+${phones[phone] || 'A Linux phone!'}
+
+<span class="term-yellow">My Linux Phone Content:</span>
+  • Reviews and unboxings
+  • App compatibility tests
+  • Hacking and development
+  • Real-world usage
+
+<span class="term-gray">Check the Blog app or YouTube channel for more!</span>`);
     }
 
     handleTabCompletion(windowId, input) {

@@ -1,0 +1,139 @@
+{
+  "site": {
+    "name": "Hackers Game",
+    "description": "David Hamner's portfolio - Linux phones, home automation, and open source development",
+    "author": "David Hamner",
+    "url": "https://hackers-game.com"
+  },
+  "author": {
+    "name": "David Hamner",
+    "title": "Linux Enthusiast & Developer",
+    "tagline": "GNU/Linux Stuff",
+    "bio": "I explore Linux phones, home automation, 3D printing, and open-source software. I believe in privacy, user freedom, and technology that respects its users.",
+    "links": {
+      "youtube": "https://youtube.com/@DavidHamner",
+      "github": "https://github.com/ruapotato",
+      "website": "https://hackers-game.com"
+    },
+    "skills": [
+      "Linux System Administration",
+      "Python Development",
+      "Embedded Systems",
+      "3D Printing & CAD",
+      "Home Automation",
+      "Mobile Linux Development"
+    ],
+    "expertise": [
+      {"area": "Linux Phones", "level": 95, "description": "Librem 5, PinePhone, FLX1s"},
+      {"area": "Home Automation", "level": 85, "description": "Home Assistant, VOSK, Python"},
+      {"area": "3D Printing", "level": 80, "description": "OpenSCAD, FDM printing"},
+      {"area": "Embedded Linux", "level": 75, "description": "ARM devices, GPIO, robotics"}
+    ]
+  },
+  "posts": [
+    {
+      "id": "linux-phone-that-works",
+      "title": "Linux Phone That Actually Works - FLX1s Review",
+      "date": "2024-01-15",
+      "category": "Linux Phones",
+      "tags": ["linux-phone", "flx1s", "fury-labs", "review", "mobile-linux"],
+      "videoUrl": "https://youtube.com/watch?v=lITN4HJ3M5Q",
+      "excerpt": "Today we're looking at the FLX1S by Fury Labs. It's one of those rare Linux devices that's actually good at being a phone.",
+      "content": "Today we're looking at the FLX1S by Fury Labs. It's one of those rare Linux devices that's actually good at being a phone. Let's take a look.\n\nWhat's in the Box:\n- The phone itself\n- Some cute stickers\n- Glass screen protector\n- A case\n- Free USB-C headphones\n\nFirst Impressions:\nQuick note on the screen protector - it's glass. Mine cracked in shipping. I'd love to see a film screen protector option instead.\n\nLet me save you some confusion: On day one, I thought the side button was the power button. Turns out there are hardware kill switches!\n\nThe Good:\n- Actually works as a phone\n- Hardware kill switches for privacy\n- Real Linux - not Android\n- Good build quality"
+    },
+    {
+      "id": "librem-5-launch-ready",
+      "title": "Is the Librem 5 Ready for Launch?",
+      "date": "2019-09-24",
+      "category": "Linux Phones",
+      "tags": ["linux-phone", "librem-5", "purism", "review", "development"],
+      "videoUrl": "https://youtube.com/watch?v=0tuLkga0dmY",
+      "excerpt": "Progress on the dev kit has been absolutely crazy. September 15th was the last time I had to flash it - just nine days before the initial launch.",
+      "content": "Progress on the dev kit has been absolutely crazy at the moment. September 15th was the last time I had to flash the dev kit - just nine days before the initial launch of the Librem 5.\n\nAfter flashing, it was clear that this version was not ready for the public. For example, on the lockscreen when you enter your PIN code, the key presses remain highlighted - a bit of a security fail.\n\nIs it ready? Not quite for daily driver use, but the progress is undeniable. The foundation is solid, and things are improving rapidly."
+    },
+    {
+      "id": "librem-5-gaming",
+      "title": "Librem 5 | Gaming",
+      "date": "2019-12-01",
+      "category": "Linux Phones",
+      "tags": ["linux-phone", "librem-5", "gaming", "open-source"],
+      "videoUrl": "https://youtube.com/watch?v=a1ENmWmwE8k",
+      "excerpt": "Sebastian, one of the badass devs over at Purism, messed around with some common open-source games on the Librem 5.",
+      "content": "Sebastian, one of the badass devs over at Purism, messed around with some common open-source games on the Librem 5. Let's check out what he got running.\n\nSeveral open-source games have been tested:\n- Classic 2D games work well\n- Some 3D games run with tweaks\n- Touch controls need adaptation\n\nGaming on a Linux phone is possible! It's not going to replace your Switch, but for casual open-source games, it's actually pretty decent."
+    },
+    {
+      "id": "robot-librem-hacking",
+      "title": "Robot and Librem 5 Hacking",
+      "date": "2019-11-15",
+      "category": "Linux Phones",
+      "tags": ["linux-phone", "librem-5", "hacking", "robotics", "keyboard"],
+      "videoUrl": "https://youtube.com/watch?v=j_PzGz8dePY",
+      "excerpt": "Screen-capture, keyboard input, and a hacky way to install stuff. Plus, hear about the robot I'm working on!",
+      "content": "Screen-capture, keyboard input, and a hacky way to install stuff. Stick around to the end to hear about the robot I'm working on!\n\nOut of the box, the Librem 5 has an on-screen keyboard that looks and feels good. Bluetooth is also a good option to connect a keyboard.\n\nI've been working on a robotics project that integrates with the Librem 5. The phone's GPIO and USB capabilities make it an interesting platform for hardware hacking."
+    },
+    {
+      "id": "home-automation-vosk",
+      "title": "Home Automation: Home Assistant, VOSK, and Python",
+      "date": "2022-01-03",
+      "category": "Home Automation",
+      "tags": ["linux", "home-assistant", "python", "vosk", "voice-control"],
+      "excerpt": "I have wanted to violate intellectual property in Star Trek since my youth. There is just something cool about barking orders at your computer.",
+      "content": "I have wanted to violate intellectual property in Star Trek since my youth. There is just something cool about barking orders at your computer.\n\nThis project combines:\n- Home Assistant - The open-source home automation platform\n- VOSK - Offline speech recognition that actually works\n- Python - Gluing it all together\n\nUnlike cloud-based solutions, VOSK runs entirely offline. Your voice commands stay on your local network. No Amazon, no Google, no privacy concerns.\n\n\"Computer, lights on\" actually works now. Living the dream."
+    },
+    {
+      "id": "containerization-linux-phones",
+      "title": "Containerization on Linux Phones",
+      "date": "2021-10-11",
+      "category": "Linux Phones",
+      "tags": ["linux-phone", "librem-5", "containers", "systemd-nspawn", "security"],
+      "excerpt": "Playing around with systemd-nspawn and the Librem 5. This could be used to run containerized apps that can't access your private files.",
+      "content": "Playing around with systemd-nspawn and the Librem 5. This could be used to run containerized apps that can't access your private files.\n\nMobile security is a mess. Apps want access to everything. But what if we could sandbox untrusted apps in containers?\n\nUnlike Docker, systemd-nspawn is built into systemd - which the Librem 5 already uses. It's lightweight and perfect for this use case.\n\nUse cases:\n- Run untrusted apps without access to your contacts/photos\n- Test software in isolation\n- Keep work and personal data separated"
+    },
+    {
+      "id": "linux-filesystem-3d",
+      "title": "GNU/Linux Filesystem in 3D",
+      "date": "2021-03-08",
+      "category": "Linux",
+      "tags": ["linux", "filesystem", "education", "3d", "visualization"],
+      "excerpt": "Explaining how to use the command line and nuances of absolute vs. relative paths is hard. I built a 3D visualization.",
+      "content": "Explaining how to use the command line and nuances of absolute vs. relative paths is rather hard to describe and wrap your brain around.\n\nI built a 3D visualization of the Linux filesystem hierarchy. You can literally fly through /usr, /etc, /home and see how it all connects.\n\nKey directories:\n/ - Root (everything starts here)\n/bin - Essential binaries\n/etc - Configuration files\n/home - User home directories\n/usr - User programs\n/var - Variable data (logs, etc)\n/tmp - Temporary files"
+    },
+    {
+      "id": "3d-printing-phone-case",
+      "title": "3D Printing a Phone Case",
+      "date": "2020-11-16",
+      "category": "Hardware",
+      "tags": ["3d-printing", "librem-5", "diy", "hardware", "linux-phone"],
+      "excerpt": "Designing and 3D printing a custom case for the Librem 5 Linux phone.",
+      "content": "Designing and 3D printing a custom case for the Librem 5 Linux phone.\n\nThe Librem 5 is a niche device. Cases aren't exactly flooding the market. Time to make my own.\n\nThe Process:\n1. Measure - Calipers are your friend\n2. Design - OpenSCAD for parametric modeling\n3. Print - TPU for flexibility\n4. Iterate - First print is never perfect\n\nTook 3 iterations to get the fit right. The final version has cutouts for all ports, kill switch access, and camera bump accommodation."
+    }
+  ],
+  "videos": [
+    {
+      "title": "Linux Phone That Actually Works",
+      "videoId": "lITN4HJ3M5Q",
+      "url": "https://youtube.com/watch?v=lITN4HJ3M5Q"
+    },
+    {
+      "title": "Is the Librem 5 ready for launch?",
+      "videoId": "0tuLkga0dmY",
+      "url": "https://youtube.com/watch?v=0tuLkga0dmY"
+    },
+    {
+      "title": "Librem 5 | Stuff and Whatnot",
+      "videoId": "GTDzV4rxPwc",
+      "url": "https://youtube.com/watch?v=GTDzV4rxPwc"
+    },
+    {
+      "title": "Robot and Librem 5 Hacking",
+      "videoId": "j_PzGz8dePY",
+      "url": "https://youtube.com/watch?v=j_PzGz8dePY"
+    },
+    {
+      "title": "Librem 5 | Gaming",
+      "videoId": "a1ENmWmwE8k",
+      "url": "https://youtube.com/watch?v=a1ENmWmwE8k"
+    }
+  ],
+  "lastUpdated": "2024-01-21T00:00:00Z"
+}

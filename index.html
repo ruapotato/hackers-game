@@ -3,8 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackers Game - Desktop</title>
-    <meta name="description" content="Hackers Game - An immersive hacker desktop experience">
+    <title>David Hamner - GNU/Linux Stuff</title>
+    <meta name="description" content="David Hamner's portfolio - Linux phones, home automation, and open source development. An immersive desktop experience.">
+    <meta name="keywords" content="David Hamner, Linux phones, Librem 5, PinePhone, FLX1s, home automation, Home Assistant, VOSK, open source, GNU Linux">
+    <meta name="author" content="David Hamner">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hackers-game.com/">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hackers-game.com/">
+    <meta property="og:title" content="David Hamner - GNU/Linux Stuff">
+    <meta property="og:description" content="Linux phones, home automation, and open source development. Portfolio and blog.">
+    <meta property="og:site_name" content="Hackers Game">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="David Hamner - GNU/Linux Stuff">
+    <meta name="twitter:description" content="Linux phones, home automation, and open source development.">
+
+    <!-- Structured Data for AI/Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "David Hamner",
+        "url": "https://hackers-game.com",
+        "description": "Linux enthusiast, privacy advocate, and maker. Exploring Linux phones, home automation, 3D printing, and open-source software.",
+        "sameAs": [
+            "https://youtube.com/@DavidHamner",
+            "https://github.com/ruapotato"
+        ],
+        "knowsAbout": [
+            "Linux Phones",
+            "Librem 5",
+            "PinePhone",
+            "FLX1s",
+            "Home Automation",
+            "Home Assistant",
+            "VOSK",
+            "Python",
+            "3D Printing",
+            "Open Source Software"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hackers Game",
+        "url": "https://hackers-game.com",
+        "description": "David Hamner's portfolio - An immersive MATE-style desktop experience showcasing Linux phone content and tech projects.",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner"
+        }
+    }
+    </script>
+
+    <!-- API endpoint for structured content -->
+    <link rel="alternate" type="application/json" href="/api/content.json" title="Site Content API">
+
     <link rel="stylesheet" href="css/desktop.css">
     <link rel="stylesheet" href="css/windows.css">
     <link rel="stylesheet" href="css/apps.css">
@@ -37,6 +97,13 @@
     <!-- App Menu Dropdown -->
     <div id="app-menu" class="dropdown-menu hidden">
         <div class="menu-category">
+            <h3>Featured</h3>
+            <div class="menu-item" data-app="blog-reader">
+                <span class="app-icon">&#128240;</span>
+                <span>Blog & Portfolio</span>
+            </div>
+        </div>
+        <div class="menu-category">
             <h3>Accessories</h3>
             <div class="menu-item" data-app="terminal">
                 <span class="app-icon">&#9638;</span>
@@ -52,6 +119,10 @@
             <div class="menu-item" data-app="browser">
                 <span class="app-icon">&#127760;</span>
                 <span>Web Browser</span>
+            </div>
+            <div class="menu-item" data-app="youtube">
+                <span class="app-icon">&#128250;</span>
+                <span>YouTube Channel</span>
             </div>
         </div>
         <div class="menu-category">
@@ -78,13 +149,13 @@
     <div id="desktop">
         <!-- Desktop Icons -->
         <div class="desktop-icons">
-            <div class="desktop-icon" data-app="file-manager" data-path="/home">
+            <div class="desktop-icon" data-app="blog-reader">
+                <div class="icon special">&#128240;</div>
+                <span>Blog</span>
+            </div>
+            <div class="desktop-icon" data-app="file-manager" data-path="/home/hacker">
                 <div class="icon">&#127968;</div>
                 <span>Home</span>
-            </div>
-            <div class="desktop-icon" data-app="file-manager" data-path="/home/documents">
-                <div class="icon">&#128193;</div>
-                <span>Documents</span>
             </div>
             <div class="desktop-icon" data-app="terminal">
                 <div class="icon">&#9638;</div>
@@ -94,8 +165,12 @@
                 <div class="icon">&#127760;</div>
                 <span>Browser</span>
             </div>
+            <div class="desktop-icon" data-app="youtube">
+                <div class="icon">&#128250;</div>
+                <span>YouTube</span>
+            </div>
             <div class="desktop-icon" data-app="hackers-game">
-                <div class="icon special">&#128187;</div>
+                <div class="icon">&#128187;</div>
                 <span>Hackers Game</span>
             </div>
         </div>
@@ -150,6 +225,7 @@
 
     <!-- Scripts -->
     <script src="js/filesystem.js"></script>
+    <script src="js/blog-data.js"></script>
     <script src="js/window-manager.js"></script>
     <script src="js/apps/file-manager.js"></script>
     <script src="js/apps/terminal.js"></script>
@@ -157,6 +233,7 @@
     <script src="js/apps/text-editor.js"></script>
     <script src="js/apps/settings.js"></script>
     <script src="js/apps/hackers-game.js"></script>
+    <script src="js/apps/blog-reader.js"></script>
     <script src="js/search.js"></script>
     <script src="js/desktop.js"></script>
 </body>

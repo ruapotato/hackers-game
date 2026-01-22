@@ -14,13 +14,10 @@ class Desktop {
         this.setupContextMenu();
         this.applySettings();
 
-        // Welcome - auto-open terminal on first visit
-        if (!localStorage.getItem('hackers-game-visited')) {
-            localStorage.setItem('hackers-game-visited', 'true');
-            setTimeout(() => {
-                terminalApp.open();
-            }, 500);
-        }
+        // Welcome - auto-open blog reader on visit
+        setTimeout(() => {
+            blogReaderApp.open();
+        }, 300);
     }
 
     setupClock() {
@@ -213,6 +210,12 @@ class Desktop {
                 break;
             case 'hackers-game':
                 hackersGameApp.open();
+                break;
+            case 'blog-reader':
+                blogReaderApp.open();
+                break;
+            case 'youtube':
+                browserApp.open('https://youtube.com/@DavidHamner');
                 break;
             default:
                 console.warn('Unknown app:', appName);
