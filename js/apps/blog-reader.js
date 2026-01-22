@@ -562,7 +562,6 @@ class BlogReaderApp {
             day: 'numeric'
         });
     }
-}
 
     // Open blog directly from URL - for direct linking
     openFromUrl(postId) {
