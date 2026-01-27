@@ -71,7 +71,7 @@ const blogPosts = [
     {
         "id": "flx1s-linux-phone-review",
         "title": "FLX1S by Fury Labs: A Linux Phone That Actually Works as a Phone",
-        "date": "2025-07-15",
+        "date": "2026-01-05",
         "category": "Linux Phones",
         "tags": [
             "linux phones",
