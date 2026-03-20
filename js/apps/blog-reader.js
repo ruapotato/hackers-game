@@ -482,6 +482,18 @@ class BlogReaderApp {
                 .post-body strong {
                     color: #fff;
                 }
+                .post-body .app-link {
+                    color: #87a752;
+                    text-decoration: none;
+                    border: 1px solid #87a752;
+                    padding: 2px 8px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
+                .post-body .app-link:hover {
+                    background: #87a752;
+                    color: #000;
+                }
                 .video-embed {
                     margin-top: 30px;
                     padding-top: 20px;
@@ -520,6 +532,18 @@ class BlogReaderApp {
                 });
             });
         }
+
+        // App link handlers - open URLs in desktop browser app
+        contentEl.querySelectorAll('.app-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const app = link.dataset.app;
+                const url = link.dataset.url;
+                if (app === 'browser' && typeof browserApp !== 'undefined') {
+                    browserApp.open(url);
+                }
+            });
+        });
     }
 
     setupHomeEvents(windowId, contentEl) {
@@ -557,6 +581,8 @@ class BlogReaderApp {
             // Lists
             .replace(/^- (.*$)/gm, '<li>$1</li>')
             .replace(/(<li>.*<\/li>\n?)+/g, '<ul>$&</ul>')
+            // App links - [app:browser:URL](text) opens in desktop browser app
+            .replace(/\[app:browser:(https?:\/\/[^\]]+)\]\(([^)]+)\)/g, '<a href="#" class="app-link" data-app="browser" data-url="$1">$2</a>')
             // Links
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>')
             // Paragraphs

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Language Embeddings: 66.5% on Google Analogies with 1/3 the Data - Hackers Game</title>
+    <meta name="description" content="300-dimensional word vectors trained from scratch on ~2B tokens of freely-licensed text. Beats the original word2vec by 5.5 points using 1/3 the data. Every dataset DFSG-compliant, every weight reproducible.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="word-embeddings, word2vec, NLP, free-software, DFSG, machine-learning, embeddings, open-source">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/free-language-embeddings/">
+    <meta property="og:title" content="Free Language Embeddings: 66.5% on Google Analogies with 1/3 the Data">
+    <meta property="og:description" content="300-dimensional word vectors trained from scratch on ~2B tokens of freely-licensed text. Beats the original word2vec by 5.5 points using 1/3 the data. Every dataset DFSG-compliant, every weight reproducible.">
+    <meta property="og:image" content="https://hackers-game.com/images/og-default.png">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2026-03-20">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/free-language-embeddings/">
+    <meta name="twitter:title" content="Free Language Embeddings: 66.5% on Google Analogies with 1/3 the Data">
+    <meta name="twitter:description" content="300-dimensional word vectors trained from scratch on ~2B tokens of freely-licensed text. Beats the original word2vec by 5.5 points using 1/3 the data. Every dataset DFSG-compliant, every weight reproducible.">
+    <meta name="twitter:image" content="https://hackers-game.com/images/og-default.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/free-language-embeddings/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Free Language Embeddings: 66.5% on Google Analogies with 1/3 the Data",
+        "description": "300-dimensional word vectors trained from scratch on ~2B tokens of freely-licensed text. Beats the original word2vec by 5.5 points using 1/3 the data. Every dataset DFSG-compliant, every weight reproducible.",
+        "image": "https://hackers-game.com/images/og-default.png",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2026-03-20",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/free-language-embeddings/"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Free Language Embeddings: 66.5% on Google Analogies with 1/3 the Data</h1>
+        <div class="meta">
+            <span>2026-03-20</span> ·
+            <span>AI/ML</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">word-embeddings</span><span class="tag">word2vec</span><span class="tag">NLP</span><span class="tag">free-software</span><span class="tag">DFSG</span><span class="tag">machine-learning</span><span class="tag">embeddings</span><span class="tag">open-source</span>
+        </div>
+        
+
+        
+
+        <div class="content">
+            <p><h1>Free Language Embeddings (V34)</h1></p><p>300-dimensional word vectors trained from scratch on ~2B tokens of freely-licensed text using a single RTX 3090.</p><p><strong>66.5% on Google analogies</strong> — beating the original word2vec (61% on 6B tokens) by 5.5 points with 1/3 the data.</p><p><h2>Model Details</h2></p><p><ul><li><strong>Architecture</strong>: Dynamic masking word2vec skip-gram</li><br><li><strong>Dimensions</strong>: 300</li><br><li><strong>Vocabulary</strong>: 100,000 whole words</li><br><li><strong>Training data</strong>: ~2B tokens, all DFSG-compliant</li><br><li><strong>Training hardware</strong>: Single NVIDIA RTX 3090</li><br><li><strong>Training time</strong>: ~4 days (2M steps)</li><br><li><strong>License</strong>: GPL-3.0</li><br><li><strong>Parameters</strong>: 60M (30M target + 30M context embeddings)</li></p><p><h2>What Makes This Different</h2></p><p><strong>Free as in freedom.</strong> Every dataset is DFSG-compliant. Every weight is reproducible. GPL-3.0 licensed. The goal: word embeddings you could <code>apt install</code> from Debian main.</p><p><strong>Dynamic masking.</strong> Randomly masks context positions during training, forcing the model to extract signal from partial views. The result: geometry that crystallizes during cosine LR decay — analogies jump from 1.2% to 66.5% in the second half of training.</p><p><strong>Whole-word vocabulary.</strong> No subword tokenization. Subwords break word2vec geometry completely — they don't carry enough meaning individually for co-occurrence statistics to produce useful structure.</p><p><h2>Training Data</h2></p><p>All training data meets the Debian Free Software Guidelines for redistribution, modification, and use. No web scrapes, no proprietary datasets.</p><p><li><strong>Wikipedia</strong> (30%) — CC BY-SA 3.0</li><br><li><strong>Project Gutenberg</strong> (20%) — Public domain</li><br><li><strong>arXiv</strong> (20%) — Various open access</li><br><li><strong>Stack Exchange</strong> (16%) — CC BY-SA 4.0</li><br><li><strong>US Government Publishing Office</strong> (10%) — Public domain (US gov)</li><br><li><strong>RFCs</strong> (2.5%) — IETF Trust</li><br><li><strong>Linux kernel docs, Arch Wiki, TLDP, GNU manuals, man pages</strong> (1.5%) — GPL/GFDL</li></p><p><h2>Benchmark Results</h2></p><p>| Model | Data | Google Analogies |<br>|-------|------|-----------------|<br>| <strong>fle V34 (this model)</strong> | <strong>~2B tokens</strong> | <strong>66.5%</strong> |<br>| word2vec (Mikolov 2013) | 6B tokens | 61.0% |<br>| GloVe (small) | 6B tokens | 71.0% |<br>| Google word2vec | 6B tokens | 72.7% |<br>| GloVe (Pennington 2014) | 840B tokens | 75.6% |<br>| FastText (Bojanowski 2017) | 16B tokens | 77.0% |</p><p>Breakdown: semantic 61.4%, syntactic 69.2%. Comparatives 91.7%, plurals 86.8%, capitals 82.6%.</p><p><h2>Examples</h2></p><p><pre><code>$ python fle.py king - man + woman<br>  → queen                0.7387<br>  → princess             0.6781<br>  → monarch              0.5546</p><p>$ python fle.py paris - france + germany<br>  → berlin               0.8209<br>  → vienna               0.7862<br>  → munich               0.7850</p><p>$ python fle.py --similar cat<br>  kitten               0.7168<br>  cats                  0.6849<br>  tabby                 0.6572<br>  dog                   0.5919</p><p>$ python fle.py ubuntu - debian + redhat<br>  centos               0.6261<br>  linux                0.6016<br>  rhel                 0.5949</p><p>$ python fle.py brain<br>  cerebral             0.6665<br>  cerebellum           0.6022<br>  nerves               0.5748<br></code></pre></p><p><h2>Quick Start</h2></p><p><pre><code>pip install huggingface_hub numpy<br>python -c "<br>from huggingface_hub import hf_hub_download<br>hf_hub_download('hackersgame/Free_Language_Embeddings', 'fle_v34.npz', local_dir='.')<br>hf_hub_download('hackersgame/Free_Language_Embeddings', 'fle.py', local_dir='.')<br>"</p><p>python fle.py king - man + woman<br>python fle.py --similar cat<br>python fle.py   # interactive mode<br></code></pre></p><p><h2>Python API</h2></p><p><pre><code>from fle import FLE</p><p>fle = FLE()                                  # loads fle_v34.npz<br>vec = fle["cat"]                             # 300d numpy array<br>fle.similar("cat", n=10)                     # nearest neighbors<br>fle.analogy("king", "man", "woman")          # king:man :: woman:?<br>fle.similarity("cat", "dog")                 # cosine similarity<br>fle.query("king - man + woman")              # vector arithmetic<br></code></pre></p><p><h2>Interactive Demos</h2></p><p>Explore the embeddings yourself:</p><p><li><a href="Embedding Spectrogram">app:browser:https://ruapotato.github.io/Free-Language-Embeddings/spectrogram.html</a> — PCA waves, sine fits, cosine surfaces across V28/V33/V34/Google</li><br><li><a href="3D Semantic Directions">app:browser:https://ruapotato.github.io/Free-Language-Embeddings/semantic_3d.html</a> — See how semantic axes align in the learned geometry</li><br><li><a href="Training Dashboard">app:browser:https://ruapotato.github.io/Free-Language-Embeddings/dashboard.html</a> — Loss curves and training metrics</li></p><p><h2>The Journey</h2></p><p>This project started as a language model experiment, spent 24 versions discovering that prediction tasks — not reconstruction — create geometric structure in vector spaces, then focused on pushing word embeddings as far as possible on free data.</p><p><h3>Key Lessons</h3></p><p>1. <strong>Prediction creates geometry, reconstruction doesn't.</strong> Autoencoding gives "swiss cheese" space — meaningless between encodings.<br>2. <strong>Whole-word vocabulary is critical.</strong> Subword tokenization breaks word2vec geometry completely.<br>3. <strong>Dual objectives create richer geometry.</strong> Two complementary gradients on shared embeddings produce substantially richer structure.<br>4. <strong>Dynamic masking unlocks crystallization.</strong> V34 did nothing for 50% of training, then geometry exploded as LR dropped.<br>5. <strong>Small data can win.</strong> 2B tokens beats 6B when the training signal is right.</p><p><h2>Resources</h2></p><p><li><strong>Hugging Face</strong>: https://huggingface.co/hackersgame/Free_Language_Embeddings</li><br><li><strong>Source code</strong>: https://github.com/ruapotato/Free-Language-Embeddings</li></ul></p><p><h2>Citation</h2></p><p><pre><code>@misc{hamner2026fle,<br>  title={Free Language Embeddings: Dynamic Masking Word2Vec on DFSG-Compliant Data},<br>  author={David Hamner},<br>  year={2026},<br>  url={https://github.com/ruapotato/Free-Language-Embeddings}<br>}<br></code></pre></p><p>GPL-3.0 — Built by David Hamner.</p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=free-language-embeddings" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>
