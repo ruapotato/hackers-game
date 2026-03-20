@@ -13,6 +13,14 @@ excerpt: "300-dimensional word vectors trained from scratch on ~2B tokens of fre
 
 **66.5% on Google analogies** — beating the original word2vec (61% on 6B tokens) by 5.5 points with 1/3 the data.
 
+## Interactive Demos
+
+Explore the embeddings yourself:
+
+- [app:browser:https://ruapotato.github.io/Free-Language-Embeddings/spectrogram.html](Embedding Spectrogram) — PCA waves, sine fits, cosine surfaces across V28/V33/V34/Google
+- [app:browser:https://ruapotato.github.io/Free-Language-Embeddings/semantic_3d.html](3D Semantic Directions) — See how semantic axes align in the learned geometry
+- [app:browser:https://ruapotato.github.io/Free-Language-Embeddings/dashboard.html](Training Dashboard) — Loss curves and training metrics
+
 ## Model Details
 
 - **Architecture**: Dynamic masking word2vec skip-gram
@@ -44,16 +52,14 @@ All training data meets the Debian Free Software Guidelines for redistribution, 
 - **RFCs** (2.5%) — IETF Trust
 - **Linux kernel docs, Arch Wiki, TLDP, GNU manuals, man pages** (1.5%) — GPL/GFDL
 
-## Benchmark Results
+## Benchmark Results (Google Analogies)
 
-| Model | Data | Google Analogies |
-|-------|------|-----------------|
-| **fle V34 (this model)** | **~2B tokens** | **66.5%** |
-| word2vec (Mikolov 2013) | 6B tokens | 61.0% |
-| GloVe (small) | 6B tokens | 71.0% |
-| Google word2vec | 6B tokens | 72.7% |
-| GloVe (Pennington 2014) | 840B tokens | 75.6% |
-| FastText (Bojanowski 2017) | 16B tokens | 77.0% |
+- **fle V34 (this model)** — 66.5% on ~2B tokens
+- **word2vec (Mikolov 2013)** — 61.0% on 6B tokens
+- **GloVe (small)** — 71.0% on 6B tokens
+- **Google word2vec** — 72.7% on 6B tokens
+- **GloVe (Pennington 2014)** — 75.6% on 840B tokens
+- **FastText (Bojanowski 2017)** — 77.0% on 16B tokens
 
 Breakdown: semantic 61.4%, syntactic 69.2%. Comparatives 91.7%, plurals 86.8%, capitals 82.6%.
 
@@ -114,14 +120,6 @@ fle.analogy("king", "man", "woman")          # king:man :: woman:?
 fle.similarity("cat", "dog")                 # cosine similarity
 fle.query("king - man + woman")              # vector arithmetic
 ```
-
-## Interactive Demos
-
-Explore the embeddings yourself:
-
-- [app:browser:https://ruapotato.github.io/Free-Language-Embeddings/spectrogram.html](Embedding Spectrogram) — PCA waves, sine fits, cosine surfaces across V28/V33/V34/Google
-- [app:browser:https://ruapotato.github.io/Free-Language-Embeddings/semantic_3d.html](3D Semantic Directions) — See how semantic axes align in the learned geometry
-- [app:browser:https://ruapotato.github.io/Free-Language-Embeddings/dashboard.html](Training Dashboard) — Loss curves and training metrics
 
 ## The Journey
 
