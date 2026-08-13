@@ -533,14 +533,23 @@ class BlogReaderApp {
             });
         }
 
-        // App link handlers - open URLs in desktop browser app
+        // App link handlers.
+        //
+        // These open a NEW TAB rather than the in-app browser window, and that
+        // is deliberate. The in-app browser is an iframe, so any site sending
+        // X-Frame-Options: DENY or a frame-ancestors CSP simply refuses to
+        // load and the reader gets "github.com refused to connect" with no
+        // way forward. GitHub does exactly that, and it cannot be detected
+        // from here: a cross-origin frame fires its load event either way and
+        // its contents cannot be inspected. So there is no reliable fallback
+        // to write, only a choice, and a link that always works beats a frame
+        // that sometimes does.
         contentEl.querySelectorAll('.app-link').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const app = link.dataset.app;
                 const url = link.dataset.url;
-                if (app === 'browser' && typeof browserApp !== 'undefined') {
-                    browserApp.open(url);
+                if (url) {
+                    window.open(url, '_blank', 'noopener,noreferrer');
                 }
             });
         });

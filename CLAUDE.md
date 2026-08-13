@@ -64,7 +64,17 @@ To link to a URL that opens in the desktop's browser app (instead of a new tab),
 [app:browser:https://example.com/demo](Link Text)
 ```
 
-This renders as a styled button that opens the URL in the in-app browser window.
+This renders as a styled button. **It opens a new tab**, not the in-app browser
+window, and that is deliberate: the in-app browser is an iframe, so any site
+sending `X-Frame-Options: DENY` or a `frame-ancestors` CSP refuses to load and
+the reader sees "refused to connect" with no way forward. GitHub does this.
+It cannot be detected in JavaScript either, because a cross-origin frame fires
+its load event whether or not it rendered and its contents cannot be inspected
+— so there is no fallback to write, only a choice.
+
+The in-app browser is still the right thing for a site you have *checked* loads
+in a frame (255.one does). Use a desktop icon or menu entry with
+`data-app="browser" data-url="..."` for that, and check it before shipping it.
 
 ## Adding a New Desktop App
 
