@@ -76,7 +76,15 @@ class Desktop {
         appMenu.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', () => {
                 const app = item.dataset.app;
-                this.launchApp(app);
+                const url = item.dataset.url;
+
+                // Same pattern as data-path on file-manager icons: an entry may
+                // name a destination as well as an app, so it opens there.
+                if (app === 'browser' && url) {
+                    browserApp.open(url);
+                } else {
+                    this.launchApp(app);
+                }
                 appMenu.classList.add('hidden');
                 appMenuBtn.classList.remove('active');
             });
@@ -104,9 +112,12 @@ class Desktop {
             icon.addEventListener('dblclick', () => {
                 const app = icon.dataset.app;
                 const path = icon.dataset.path;
+                const url = icon.dataset.url;
 
                 if (app === 'file-manager' && path) {
                     fileManagerApp.open(path);
+                } else if (app === 'browser' && url) {
+                    browserApp.open(url);
                 } else {
                     this.launchApp(app);
                 }
