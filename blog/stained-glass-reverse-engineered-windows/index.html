@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stained Glass: Reverse-Engineered Windows on Debian and Wine - Hackers Game</title>
+    <meta name="description" content="Stained Glass is an open source, Windows-like operating system built on Debian, the Linux kernel and Wine. Here's what it is, how it differs from ReactOS, and how it's being built.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="stained glass, wine, windows, debian, reactos, desktop linux, open source, ai agents, claude">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/stained-glass-reverse-engineered-windows/">
+    <meta property="og:title" content="Stained Glass: Reverse-Engineered Windows on Debian and Wine">
+    <meta property="og:description" content="Stained Glass is an open source, Windows-like operating system built on Debian, the Linux kernel and Wine. Here's what it is, how it differs from ReactOS, and how it's being built.">
+    <meta property="og:image" content="https://img.youtube.com/vi/WEEd3b-GIPE/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2026-11-08">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/stained-glass-reverse-engineered-windows/">
+    <meta name="twitter:title" content="Stained Glass: Reverse-Engineered Windows on Debian and Wine">
+    <meta name="twitter:description" content="Stained Glass is an open source, Windows-like operating system built on Debian, the Linux kernel and Wine. Here's what it is, how it differs from ReactOS, and how it's being built.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/WEEd3b-GIPE/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/stained-glass-reverse-engineered-windows/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Stained Glass: Reverse-Engineered Windows on Debian and Wine",
+        "description": "Stained Glass is an open source, Windows-like operating system built on Debian, the Linux kernel and Wine. Here's what it is, how it differs from ReactOS, and how it's being built.",
+        "image": "https://img.youtube.com/vi/WEEd3b-GIPE/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2026-11-08",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/stained-glass-reverse-engineered-windows/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Stained Glass: Reverse-Engineered Windows on Debian and Wine",
+            "thumbnailUrl": "https://img.youtube.com/vi/WEEd3b-GIPE/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/WEEd3b-GIPE"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Stained Glass: Reverse-Engineered Windows on Debian and Wine</h1>
+        <div class="meta">
+            <span>2026-11-08</span> ·
+            <span>Desktop Linux</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">stained glass</span><span class="tag">wine</span><span class="tag">windows</span><span class="tag">debian</span><span class="tag">reactos</span><span class="tag">desktop linux</span><span class="tag">open source</span><span class="tag">ai agents</span><span class="tag">claude</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/WEEd3b-GIPE"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Stained Glass: Reverse-Engineered Windows on Debian and Wine">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Stained Glass: Reverse-Engineered Windows on Debian and Wine</h1></p><p>This is not Windows. Neither is this, or this one. They're all different looks of one operating system, called Stained Glass.</p><p>Stained Glass is an attempt to build an open source, Windows-like operating system. It's sort of in the vein of ReactOS mixed with Wine. ReactOS and Stained Glass share a goal, but they go about it in completely different ways.</p><p><h2>Stained Glass vs. ReactOS</h2></p><p>ReactOS starts at the kernel and builds its way out, implementing as close to an NT operating system as it can. Stained Glass starts from Debian, the Linux kernel and Wine, and builds out from those. That gives you a rock solid kernel and really good driver support for the basics: graphics cards, network cards, Wi-Fi, storage. ReactOS has to write all of that again, on its own kernel.</p><p>For those who don't know, Wine is a translation layer. It takes Windows system calls and translates them into their Linux equivalents. At the time of the video, Stained Glass carried about 2,500 patches on top of Wine:</p><p><ul><li>roughly 900,000 new lines of code</li><br><li>across more than 400 of Wine's libraries</li><br><li>around 20,000 Windows functions written or filled in</li><br><li>more than 7,000 stubs (functions stock Wine only pretended to have) made real</li></ul></p><p><h2>The Basics a Windows Machine Takes for Granted</h2></p><p>Stock Wine has no system-wide registry separate from each user's, and not much of a security model at all. So a lot of the early work went into the basics: a real login screen, separate user accounts that each start from a copy of the default user profile, administrators and standard users, and a consent prompt when something needs an administrator.</p><p><h2>A New Shell</h2></p><p>The shell is completely new. It takes the Wine desktop and turns it into a real desktop environment: Start menu, taskbar, File Explorer, Settings, Control Panel, Task Manager. Under the hood it's a Wayland compositor of its own, and every window, Windows or Linux, is its own window on it. Linux apps and Windows apps sit side by side on the same taskbar, and you stop thinking about which is which.</p><p><h2>Installing It</h2></p><p>Installation is a lot more Windows than Linux. Boot the ISO and you can try it live or install it. The installer will look very familiar if you've ever installed Windows 10: pick a disk, click Next. Underneath, it's installing Debian onto a Btrfs file system. The first start walks you through region, keyboard, network and privacy settings, and there's your desktop.</p><p><h2>Apps: Linux and Windows in One Store</h2></p><p>There's an app store that installs both Linux apps and Windows apps: around 180 Windows apps and nearly 200 Linux apps at the time of the video. When an app has both a Linux build and a Windows build, it's one card, and it suggests the Linux one. The Windows installer runs quietly, the Linux package comes straight from Debian, and you click Open.</p><p>You're not limited to the store either. Double-click a downloaded Debian package and it installs like any Linux package. Double-click a Windows installer and it installs like it would on Windows. Downloads are scanned for viruses as they land, with ClamAV built in.</p><p>And yes, Microsoft Office: Word installs, signs in and runs, and OneDrive syncs with its status right there in File Explorer.</p><p><h2>Office Hardware and Networks</h2></p><p>There's a lot of work in the printer and USB layers. Linux doesn't have great support for some of the devices offices actually run on, like label printers and document scanners. Stained Glass takes the Windows side of things and pipes it straight to the USB device, so things like Dymo Connect and Ambir scanners just work.</p><p>It can act as a domain controller or join an existing one, which makes it a drop-in replacement for a Windows machine on an office network.</p><p><h2>Updates and Rollback</h2></p><p>Updates come the Linux way under the hood. Every Stained Glass component is a Debian package, and every installation has its own repository. When anything changes, a new package is built and pushed, and your machine picks it up as an update, just like a normal Windows update. Because it's Btrfs, every update takes a restore point first. If an update ever goes bad, you roll back right from the boot menu.</p><p>It has zero tracking. It doesn't collect or send any diagnostic data. It's effectively fully open source. Not every Windows app behaves, and when one doesn't, there's a built-in way to report it that gathers the logs for you.</p><p><h2>How It's Being Built</h2></p><p>I architected the basic structure: how Debian gets layered with Wine, Wine with Wayland, and Wayland with X11. Then I've had AI agents, mostly Claude Opus, working around the clock. They implement the pieces Wine is missing, install real Windows apps, and fix the bugs they run into. Every fix comes with a test that proves it.</p><p><h2>The Fun Parts</h2></p><p>It's not just a copy of a Windows desktop. Like any good Linux desktop, it has wobbly windows. And since it's Stained Glass, there's a live stained glass desktop background that shapes itself around your windows. You can mix and match the look, from classic to rounded to glass. And you can talk to it: press Start + H and type with your voice, all on your own machine.</p><p><h2>Try It</h2></p><p>It's far from a complete operating system, but it's good enough that I daily drive it on my laptop. My suggestion: install Linux apps where they exist, and fall back to Windows apps where you need them. At the time of the video it only supports UEFI, and Secure Boot has to be off.</p><p>If you're adventurous enough to give it a go, the ISO is at <a href="https://freesoft.page">freesoft.page</a>. Bug reports are welcome.</p><p>The follow-up video, answering your questions about how Windows apps run, gaming, and why a whole new desktop, is <a href="https://hackers-game.com/?blog=stained-glass-windows-on-linux">here</a>.</p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=stained-glass-reverse-engineered-windows" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,23 +1,25 @@
-/* MATE/GNOME2 Desktop Environment Styles */
+/* Stained Glass-style Desktop Environment */
 
 :root {
-    /* MATE Ambiant-MATE inspired colors */
-    --panel-bg: linear-gradient(to bottom, #4a4a4a 0%, #3c3c3c 50%, #2e2e2e 100%);
-    --panel-border: #1a1a1a;
-    --panel-text: #e0e0e0;
-    --desktop-bg: #2c3e50;
-    --accent: #87a752;
-    --accent-hover: #9bc25e;
-    --window-bg: #f5f5f5;
-    --window-titlebar: linear-gradient(to bottom, #5a5a5a 0%, #4a4a4a 50%, #3a3a3a 100%);
-    --window-titlebar-active: linear-gradient(to bottom, #6a8a3a 0%, #5a7a2a 50%, #4a6a1a 100%);
-    --window-border: #2a2a2a;
-    --text-dark: #2e3436;
-    --text-light: #eeeeee;
-    --selection: #87a752;
-    --menu-bg: #3c3c3c;
-    --menu-hover: #4a5a3a;
-    --icon-text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    /* Stained Glass OS: dark taskbar and Start, light windows, purple accent */
+    --taskbar-h: 40px;
+    --panel-bg: rgba(24, 20, 30, 0.86);
+    --panel-border: #000;
+    --panel-text: #f2f2f2;
+    --desktop-bg: #16121c;
+    --accent: #7a2fc0;
+    --accent-hover: #8c43d4;
+    --accent-light: #b784ef;
+    --window-bg: #ffffff;
+    --window-titlebar: #ffffff;
+    --window-titlebar-active: #ffffff;
+    --window-border: rgba(0, 0, 0, 0.25);
+    --text-dark: #1d1a22;
+    --text-light: #f4f2f7;
+    --selection: #7a2fc0;
+    --menu-bg: rgba(30, 26, 37, 0.94);
+    --menu-hover: rgba(255, 255, 255, 0.10);
+    --icon-text-shadow: 0 1px 3px rgba(0,0,0,0.9);
 }
 
 * {
@@ -27,7 +29,7 @@
 }
 
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
     font-size: 14px;
     overflow: hidden;
     height: 100vh;
@@ -39,18 +41,34 @@ body {
 /* Desktop Background */
 #desktop {
     position: fixed;
-    top: 28px; /* Below top panel */
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 28px; /* Above bottom panel */
+    bottom: var(--taskbar-h); /* above the taskbar */
     background: var(--desktop-bg);
-    background-image:
-        radial-gradient(ellipse at center, #34495e 0%, #2c3e50 50%, #1a252f 100%);
+    background-image: none;
     overflow: hidden;
+}
+
+/* The stained glass wallpaper (js/stained-glass.js) */
+#glass-wallpaper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.desktop-icon .icon .sg-mark {
+    width: 44px;
+    height: 44px;
+    margin: 2px;
 }
 
 /* Desktop Icons Grid */
 .desktop-icons {
+    z-index: 1;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -67,18 +85,20 @@ body {
     flex-direction: column;
     align-items: center;
     width: 80px;
-    padding: 8px;
-    border-radius: 4px;
+    padding: 6px 4px;
+    border: 1px solid transparent;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.1s;
 }
 
 .desktop-icon:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.22);
 }
 
 .desktop-icon.selected {
-    background: rgba(135, 167, 82, 0.4);
+    background: rgba(183, 132, 239, 0.32);
+    border-color: rgba(183, 132, 239, 0.6);
 }
 
 .desktop-icon .icon {
@@ -93,8 +113,8 @@ body {
 }
 
 @keyframes pulse {
-    0%, 100% { filter: drop-shadow(0 0 5px #87a752) drop-shadow(0 2px 3px rgba(0,0,0,0.5)); }
-    50% { filter: drop-shadow(0 0 15px #87a752) drop-shadow(0 2px 3px rgba(0,0,0,0.5)); }
+    0%, 100% { filter: drop-shadow(0 0 5px #b784ef) drop-shadow(0 2px 3px rgba(0,0,0,0.5)); }
+    50% { filter: drop-shadow(0 0 15px #b784ef) drop-shadow(0 2px 3px rgba(0,0,0,0.5)); }
 }
 
 .desktop-icon span {
@@ -113,6 +133,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 2;
     pointer-events: none;
 }
 

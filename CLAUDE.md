@@ -1,6 +1,6 @@
 # Hackers Game - Developer Guide
 
-A retro desktop-environment web app (hackers-game.com) serving as David Hamner's portfolio. Built with vanilla JS — no frameworks.
+A desktop-environment web app (hackers-game.com) serving as David Hamner's portfolio, styled after his Stained Glass OS (https://freesoft.page): stained glass wallpaper (js/stained-glass.js), one 40px taskbar at the bottom with the four-pane Start mark, a Start menu with purple tiles, flat light title bars, purple accent #7a2fc0. Built with vanilla JS — no frameworks.
 
 ## Project Structure
 

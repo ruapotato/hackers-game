@@ -64,7 +64,7 @@ class SettingsApp {
                         <div class="settings-option">
                             <label>Theme</label>
                             <select id="setting-theme">
-                                <option value="dark" ${this.settings.theme === 'dark' ? 'selected' : ''}>Dark (MATE)</option>
+                                <option value="dark" ${this.settings.theme === 'dark' ? 'selected' : ''}>Dark</option>
                                 <option value="light" ${this.settings.theme === 'light' ? 'selected' : ''}>Light</option>
                                 <option value="hacker" ${this.settings.theme === 'hacker' ? 'selected' : ''}>Hacker Green</option>
                             </select>
@@ -83,7 +83,8 @@ class SettingsApp {
                         <div class="settings-option">
                             <label>Wallpaper</label>
                             <select id="setting-wallpaper">
-                                <option value="default" ${this.settings.wallpaper === 'default' ? 'selected' : ''}>Default Gradient</option>
+                                <option value="default" ${this.settings.wallpaper === 'default' ? 'selected' : ''}>Stained Glass</option>
+                                <option value="gradient" ${this.settings.wallpaper === 'gradient' ? 'selected' : ''}>Gradient</option>
                                 <option value="matrix" ${this.settings.wallpaper === 'matrix' ? 'selected' : ''}>Matrix</option>
                                 <option value="solid" ${this.settings.wallpaper === 'solid' ? 'selected' : ''}>Solid Dark</option>
                             </select>
@@ -109,7 +110,7 @@ class SettingsApp {
                             <h3 style="margin-bottom: 10px;">Hackers Game Desktop</h3>
                             <p style="color: #666; margin-bottom: 20px;">Version 2.0</p>
                             <p style="margin-bottom: 15px;">
-                                An immersive MATE-style desktop experience for hackers and security enthusiasts.
+                                An immersive Stained Glass-style desktop experience for hackers and security enthusiasts.
                             </p>
                             <p style="color: #888; font-size: 12px;">
                                 Built with vanilla JavaScript. No frameworks, no dependencies.
@@ -182,7 +183,11 @@ class SettingsApp {
 
         // Apply wallpaper
         const desktop = document.getElementById('desktop');
-        if (this.settings.wallpaper === 'matrix') {
+        if (typeof stainedGlass !== 'undefined') stainedGlass.show(this.settings.wallpaper === 'default');
+        if (this.settings.wallpaper === 'default') {
+            desktop.style.backgroundImage = 'none';
+            desktop.style.backgroundColor = '#16121c';
+        } else if (this.settings.wallpaper === 'matrix') {
             desktop.style.backgroundImage = 'none';
             desktop.style.backgroundColor = '#000';
         } else if (this.settings.wallpaper === 'solid') {

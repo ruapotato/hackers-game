@@ -110,13 +110,13 @@ class BlogReaderApp {
                 .blog-reader {
                     height: 100%;
                     overflow-y: auto;
-                    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                    background: linear-gradient(135deg, #1e1a25 0%, #15121a 100%);
                     color: #eee;
                 }
                 .blog-header {
-                    background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%);
+                    background: linear-gradient(135deg, #2a1f3a 0%, #1e1a25 100%);
                     padding: 30px;
-                    border-bottom: 2px solid #87a752;
+                    border-bottom: 2px solid #b784ef;
                 }
                 .blog-hero {
                     text-align: center;
@@ -125,7 +125,7 @@ class BlogReaderApp {
                 .blog-hero h1 {
                     font-size: 2.2em;
                     margin: 0;
-                    color: #87a752;
+                    color: #b784ef;
                 }
                 .tagline {
                     font-size: 1.1em;
@@ -144,16 +144,16 @@ class BlogReaderApp {
                     justify-content: center;
                 }
                 .social-btn {
-                    background: rgba(135, 167, 82, 0.2);
-                    border: 1px solid #87a752;
-                    color: #87a752;
+                    background: rgba(183, 132, 239, 0.2);
+                    border: 1px solid #b784ef;
+                    color: #b784ef;
                     padding: 8px 20px;
                     border-radius: 20px;
                     text-decoration: none;
                     transition: all 0.2s;
                 }
                 .social-btn:hover {
-                    background: #87a752;
+                    background: #b784ef;
                     color: #000;
                 }
                 .expertise-bars {
@@ -181,7 +181,7 @@ class BlogReaderApp {
                 }
                 .expertise-fill {
                     height: 100%;
-                    background: linear-gradient(90deg, #87a752, #5a8a32);
+                    background: linear-gradient(90deg, #b784ef, #7a2fc0);
                     border-radius: 4px;
                     transition: width 0.5s ease-out;
                 }
@@ -204,12 +204,12 @@ class BlogReaderApp {
                     transition: all 0.2s;
                 }
                 .filter-btn:hover {
-                    border-color: #87a752;
-                    color: #87a752;
+                    border-color: #b784ef;
+                    color: #b784ef;
                 }
                 .filter-btn.active {
-                    background: #87a752;
-                    border-color: #87a752;
+                    background: #b784ef;
+                    border-color: #b784ef;
                     color: #000;
                 }
                 .blog-posts {
@@ -226,9 +226,9 @@ class BlogReaderApp {
                     transition: all 0.2s;
                 }
                 .blog-card:hover {
-                    border-color: #87a752;
+                    border-color: #b784ef;
                     transform: translateY(-2px);
-                    box-shadow: 0 5px 20px rgba(135, 167, 82, 0.2);
+                    box-shadow: 0 5px 20px rgba(183, 132, 239, 0.2);
                 }
                 .blog-card-header {
                     display: flex;
@@ -236,8 +236,8 @@ class BlogReaderApp {
                     margin-bottom: 10px;
                 }
                 .blog-category {
-                    background: rgba(135, 167, 82, 0.2);
-                    color: #87a752;
+                    background: rgba(183, 132, 239, 0.2);
+                    color: #b784ef;
                     padding: 3px 10px;
                     border-radius: 10px;
                     font-size: 0.8em;
@@ -335,15 +335,15 @@ class BlogReaderApp {
                 .blog-post-view {
                     height: 100%;
                     overflow-y: auto;
-                    background: #1a1a2e;
+                    background: #1e1a25;
                     color: #eee;
                 }
                 .back-btn {
                     position: sticky;
                     top: 0;
-                    background: #0f3460;
+                    background: #2a1f3a;
                     border: none;
-                    color: #87a752;
+                    color: #b784ef;
                     padding: 12px 20px;
                     cursor: pointer;
                     width: 100%;
@@ -366,7 +366,7 @@ class BlogReaderApp {
                     border-bottom: 1px solid #333;
                 }
                 .post-category {
-                    background: #87a752;
+                    background: #b784ef;
                     color: #000;
                     padding: 4px 12px;
                     border-radius: 12px;
@@ -392,9 +392,9 @@ class BlogReaderApp {
                     text-decoration: underline;
                 }
                 .share-btn {
-                    background: rgba(135, 167, 82, 0.2);
-                    border: 1px solid #87a752;
-                    color: #87a752;
+                    background: rgba(183, 132, 239, 0.2);
+                    border: 1px solid #b784ef;
+                    color: #b784ef;
                     padding: 4px 12px;
                     border-radius: 12px;
                     cursor: pointer;
@@ -402,17 +402,17 @@ class BlogReaderApp {
                     transition: all 0.2s;
                 }
                 .share-btn:hover {
-                    background: #87a752;
+                    background: #b784ef;
                     color: #000;
                 }
                 .share-btn.copied {
-                    background: #87a752;
+                    background: #b784ef;
                     color: #000;
                 }
                 .static-link {
-                    background: rgba(135, 167, 82, 0.2);
-                    border: 1px solid #87a752;
-                    color: #87a752;
+                    background: rgba(183, 132, 239, 0.2);
+                    border: 1px solid #b784ef;
+                    color: #b784ef;
                     padding: 4px 12px;
                     border-radius: 12px;
                     font-size: 0.85em;
@@ -420,7 +420,7 @@ class BlogReaderApp {
                     transition: all 0.2s;
                 }
                 .static-link:hover {
-                    background: #87a752;
+                    background: #b784ef;
                     color: #000;
                 }
                 .post-tags {
@@ -429,8 +429,8 @@ class BlogReaderApp {
                     flex-wrap: wrap;
                 }
                 .post-tags .tag {
-                    background: rgba(135, 167, 82, 0.2);
-                    color: #87a752;
+                    background: rgba(183, 132, 239, 0.2);
+                    color: #b784ef;
                     padding: 4px 10px;
                     border-radius: 10px;
                     font-size: 0.85em;
@@ -440,7 +440,7 @@ class BlogReaderApp {
                     font-size: 1.05em;
                 }
                 .post-body h2 {
-                    color: #87a752;
+                    color: #b784ef;
                     margin: 30px 0 15px;
                     font-size: 1.4em;
                 }
@@ -464,7 +464,7 @@ class BlogReaderApp {
                     padding: 2px 6px;
                     border-radius: 3px;
                     font-family: 'Ubuntu Mono', monospace;
-                    color: #87a752;
+                    color: #b784ef;
                 }
                 .post-body pre {
                     background: #0a0a15;
@@ -477,21 +477,21 @@ class BlogReaderApp {
                 .post-body pre code {
                     background: none;
                     padding: 0;
-                    color: #87a752;
+                    color: #b784ef;
                 }
                 .post-body strong {
                     color: #fff;
                 }
                 .post-body .app-link {
-                    color: #87a752;
+                    color: #b784ef;
                     text-decoration: none;
-                    border: 1px solid #87a752;
+                    border: 1px solid #b784ef;
                     padding: 2px 8px;
                     border-radius: 4px;
                     cursor: pointer;
                 }
                 .post-body .app-link:hover {
-                    background: #87a752;
+                    background: #b784ef;
                     color: #000;
                 }
                 .video-embed {
@@ -605,11 +605,13 @@ class BlogReaderApp {
     }
 
     formatDate(dateStr) {
+        // a bare YYYY-MM-DD is midnight UTC; show it in UTC so it isn't a day early west of Greenwich
         const date = new Date(dateStr);
         return date.toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'long',
-            day: 'numeric'
+            day: 'numeric',
+            timeZone: 'UTC'
         });
     }
 

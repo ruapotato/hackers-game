@@ -54,7 +54,7 @@
         "@type": "WebSite",
         "name": "Hackers Game",
         "url": "https://hackers-game.com",
-        "description": "David Hamner's portfolio - An immersive MATE-style desktop experience showcasing Linux phone content and tech projects.",
+        "description": "David Hamner's portfolio - An immersive Stained Glass-style desktop experience showcasing Linux phone content and tech projects.",
         "author": {
             "@type": "Person",
             "name": "David Hamner"
@@ -72,95 +72,59 @@
     <link rel="stylesheet" href="css/compiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Ubuntu+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Top Panel (MATE style) -->
-    <div id="top-panel" class="panel">
-        <div class="panel-left">
-            <button id="app-menu-btn" class="panel-btn app-menu-btn">
-                <span class="menu-icon">&#9776;</span>
-                <span>Applications</span>
-            </button>
-            <button id="places-menu-btn" class="panel-btn">Places</button>
+    <!-- Start menu (Stained Glass style) -->
+    <div id="app-menu" class="dropdown-menu start-menu hidden">
+        <div class="start-rail">
+            <div class="rail-btn" title="David Hamner">D</div>
+            <div class="rail-spacer"></div>
+            <div class="rail-btn menu-item" data-app="file-manager" title="Files">&#128193;</div>
+            <div class="rail-btn menu-item" data-app="settings" title="Settings">&#9881;</div>
         </div>
-        <div class="panel-center">
-            <div id="search-container">
-                <input type="text" id="global-search" placeholder="Search apps & content...">
-                <div id="search-results" class="hidden"></div>
+        <div class="start-list">
+            <div class="menu-category">
+                <h3>Featured</h3>
+                <div class="menu-item" data-app="blog-reader"><span class="app-icon">&#128240;</span><span>Blog &amp; Portfolio</span></div>
+                <div class="menu-item" data-app="browser" data-url="https://freesoft.page/"><span class="app-icon"><svg class="sg-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 0 20 6 14 12 8 6Z" fill="#7B2FBE"/><path d="M22 8 28 14 22 20 16 14Z" fill="#C42E8E"/><path d="M14 16 20 22 14 28 8 22Z" fill="#E8A200"/><path d="M6 8 12 14 6 20 0 14Z" fill="#12B5B0"/></svg></span><span>Stained Glass OS</span></div>
             </div>
-        </div>
-        <div class="panel-right">
-            <span id="clock"></span>
-        </div>
-    </div>
-
-    <!-- App Menu Dropdown -->
-    <div id="app-menu" class="dropdown-menu hidden">
-        <div class="menu-category">
-            <h3>Featured</h3>
-            <div class="menu-item" data-app="blog-reader">
-                <span class="app-icon">&#128240;</span>
-                <span>Blog & Portfolio</span>
+            <div class="menu-category">
+                <h3>Accessories</h3>
+                <div class="menu-item" data-app="terminal"><span class="app-icon">&#9638;</span><span>Terminal</span></div>
+                <div class="menu-item" data-app="text-editor"><span class="app-icon">&#128221;</span><span>Text Editor</span></div>
+                <div class="menu-item" data-app="spelin"><span class="app-icon">📝</span><span>Spelin</span></div>
             </div>
-        </div>
-        <div class="menu-category">
-            <h3>Accessories</h3>
-            <div class="menu-item" data-app="terminal">
-                <span class="app-icon">&#9638;</span>
-                <span>Terminal</span>
+            <div class="menu-category">
+                <h3>Internet</h3>
+                <div class="menu-item" data-app="browser"><span class="app-icon">&#127760;</span><span>Web Browser</span></div>
+                <div class="menu-item" data-app="browser" data-url="https://255.one/"><span class="app-icon">&#128421;</span><span>Hamnix (255.one)</span></div>
+                <div class="menu-item" data-app="youtube"><span class="app-icon">&#128250;</span><span>YouTube Channel</span></div>
             </div>
-            <div class="menu-item" data-app="text-editor">
-                <span class="app-icon">&#128221;</span>
-                <span>Text Editor</span>
+            <div class="menu-category">
+                <h3>System</h3>
+                <div class="menu-item" data-app="file-manager"><span class="app-icon">&#128193;</span><span>File Manager</span></div>
+                <div class="menu-item" data-app="settings"><span class="app-icon">&#9881;</span><span>Settings</span></div>
             </div>
-            <div class="menu-item" data-app="spelin">
-                <span class="app-icon">📝</span>
-                <span>Spelin</span>
+            <div class="menu-category">
+                <h3>Sound &amp; Video</h3>
+                <div class="menu-item" data-app="music-player"><span class="app-icon">🎵</span><span>Music Player</span></div>
+            </div>
+            <div class="menu-category">
+                <h3>Games</h3>
+                <div class="menu-item" data-app="sandy-potato"><span class="app-icon">🏖️</span><span>Sandy Potato</span></div>
+                <div class="menu-item" data-app="hackers-game"><span class="app-icon">&#128187;</span><span>Code Playground</span></div>
             </div>
         </div>
-        <div class="menu-category">
-            <h3>Internet</h3>
-            <div class="menu-item" data-app="browser">
-                <span class="app-icon">&#127760;</span>
-                <span>Web Browser</span>
-            </div>
-            <div class="menu-item" data-app="browser" data-url="https://255.one/">
-                <span class="app-icon">&#128421;</span>
-                <span>Hamnix (255.one)</span>
-            </div>
-            <div class="menu-item" data-app="youtube">
-                <span class="app-icon">&#128250;</span>
-                <span>YouTube Channel</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <h3>System</h3>
-            <div class="menu-item" data-app="file-manager">
-                <span class="app-icon">&#128193;</span>
-                <span>File Manager</span>
-            </div>
-            <div class="menu-item" data-app="settings">
-                <span class="app-icon">&#9881;</span>
-                <span>Settings</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <h3>Sound & Video</h3>
-            <div class="menu-item" data-app="music-player">
-                <span class="app-icon">🎵</span>
-                <span>Music Player</span>
-            </div>
-        </div>
-        <div class="menu-category">
-            <h3>Games</h3>
-            <div class="menu-item" data-app="sandy-potato">
-                <span class="app-icon">🏖️</span>
-                <span>Sandy Potato</span>
-            </div>
-            <div class="menu-item" data-app="hackers-game">
-                <span class="app-icon">&#128187;</span>
-                <span>Code Playground</span>
+        <div class="start-tiles">
+            <h3>Pinned</h3>
+            <div class="tiles">
+                <div class="tile menu-item" data-app="blog-reader"><span class="tile-icon">&#128240;</span><span>Blog</span></div>
+                <div class="tile menu-item" data-app="browser" data-url="https://freesoft.page/"><span class="tile-icon"><svg class="sg-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 0 20 6 14 12 8 6Z" fill="#7B2FBE"/><path d="M22 8 28 14 22 20 16 14Z" fill="#C42E8E"/><path d="M14 16 20 22 14 28 8 22Z" fill="#E8A200"/><path d="M6 8 12 14 6 20 0 14Z" fill="#12B5B0"/></svg></span><span>Stained Glass OS</span></div>
+                <div class="tile menu-item" data-app="youtube"><span class="tile-icon">&#128250;</span><span>YouTube</span></div>
+                <div class="tile menu-item" data-app="terminal"><span class="tile-icon">&#9638;</span><span>Terminal</span></div>
+                <div class="tile menu-item" data-app="browser" data-url="https://255.one/"><span class="tile-icon">&#128421;</span><span>Hamnix</span></div>
+                <div class="tile menu-item" data-app="sandy-potato"><span class="tile-icon">🏖️</span><span>Sandy Potato</span></div>
             </div>
         </div>
     </div>
@@ -172,6 +136,10 @@
             <div class="desktop-icon" data-app="blog-reader">
                 <div class="icon special">&#128240;</div>
                 <span>Blog</span>
+            </div>
+            <div class="desktop-icon" data-app="browser" data-url="https://freesoft.page/">
+                <div class="icon"><svg class="sg-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 0 20 6 14 12 8 6Z" fill="#7B2FBE"/><path d="M22 8 28 14 22 20 16 14Z" fill="#C42E8E"/><path d="M14 16 20 22 14 28 8 22Z" fill="#E8A200"/><path d="M6 8 12 14 6 20 0 14Z" fill="#12B5B0"/></svg></div>
+                <span>Stained Glass OS</span>
             </div>
             <div class="desktop-icon" data-app="file-manager" data-path="/home/hacker">
                 <div class="icon">&#127968;</div>
@@ -207,11 +175,18 @@
         <div id="windows-container"></div>
     </div>
 
-    <!-- Bottom Panel / Taskbar -->
+    <!-- Taskbar (Stained Glass style) -->
     <div id="bottom-panel" class="panel">
+        <button id="app-menu-btn" class="panel-btn start-btn" title="Start"><svg class="sg-mark" viewBox="0 0 28 28" aria-hidden="true"><path d="M14 0 20 6 14 12 8 6Z" fill="#7B2FBE"/><path d="M22 8 28 14 22 20 16 14Z" fill="#C42E8E"/><path d="M14 16 20 22 14 28 8 22Z" fill="#E8A200"/><path d="M6 8 12 14 6 20 0 14Z" fill="#12B5B0"/></svg></button>
+        <div id="search-container">
+            <span class="search-glyph">&#9906;</span>
+            <input type="text" id="global-search" placeholder="Type here to search">
+            <div id="search-results" class="hidden"></div>
+        </div>
         <div id="taskbar"></div>
         <div class="panel-right">
-            <button id="show-desktop-btn" class="panel-btn" title="Show Desktop">&#9632;</button>
+            <span id="clock"></span>
+            <button id="show-desktop-btn" class="panel-btn" title="Show Desktop"></button>
         </div>
     </div>
 
@@ -221,8 +196,8 @@
             <div class="window-titlebar">
                 <span class="window-title"></span>
                 <div class="window-controls">
-                    <button class="win-btn minimize" title="Minimize">&#8211;</button>
-                    <button class="win-btn maximize" title="Maximize">&#9633;</button>
+                    <button class="win-btn minimize" title="Minimize">&#8212;</button>
+                    <button class="win-btn maximize" title="Maximize">&#9744;</button>
                     <button class="win-btn close" title="Close">&#10005;</button>
                 </div>
             </div>
@@ -267,6 +242,7 @@
     <script src="js/apps/spelin.js"></script>
     <script src="js/search.js"></script>
     <script src="js/compiz.js"></script>
+    <script src="js/stained-glass.js"></script>
     <script src="js/desktop.js"></script>
 </body>
 </html>

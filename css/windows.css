@@ -1,11 +1,10 @@
-/* MATE-style Window Manager */
+/* Stained Glass-style windows */
 
 .window {
     position: absolute;
     background: var(--window-bg);
     border: 1px solid var(--window-border);
-    border-radius: 6px 6px 4px 4px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.25);
     min-width: 300px;
     min-height: 200px;
     display: flex;
@@ -13,94 +12,73 @@
     overflow: hidden;
 }
 
+/* the focused window gets an accent border, as with "Show accent colour on title bars and borders" */
+.window:not(.inactive) {
+    border-color: var(--accent);
+}
+
 .window.inactive {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
 }
 
-.window.inactive .window-titlebar {
-    background: var(--window-titlebar);
+.window.inactive .window-title {
+    color: #8a8592;
 }
 
-/* Window Titlebar */
+/* Window Titlebar: flat, light, caption buttons on the right */
 .window-titlebar {
     background: var(--window-titlebar-active);
-    padding: 0 8px;
-    height: 28px;
+    padding: 0 0 0 12px;
+    height: 32px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     cursor: default;
-    border-bottom: 1px solid rgba(0,0,0,0.3);
-    border-radius: 5px 5px 0 0;
     flex-shrink: 0;
 }
 
 .window-title {
-    color: var(--text-light);
-    font-size: 13px;
-    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 12px;
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
     flex: 1;
     padding-right: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .window-controls {
     display: flex;
-    gap: 6px;
 }
 
 .win-btn {
-    width: 18px;
-    height: 18px;
+    width: 46px;
     border: none;
-    border-radius: 3px;
-    font-size: 10px;
-    line-height: 1;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 11px;
+    font-family: 'Segoe UI Symbol', 'Segoe UI', sans-serif;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.15s;
+    transition: background 0.1s;
 }
 
-.win-btn.minimize {
-    background: linear-gradient(to bottom, #e8c547 0%, #d4a82a 100%);
-    color: #5a4a00;
-    border: 1px solid #a08020;
-}
-
-.win-btn.minimize:hover {
-    background: linear-gradient(to bottom, #f0d050 0%, #e0b830 100%);
-}
-
-.win-btn.maximize {
-    background: linear-gradient(to bottom, #7eb530 0%, #5a9a20 100%);
-    color: #2a4a00;
-    border: 1px solid #4a8010;
-}
-
-.win-btn.maximize:hover {
-    background: linear-gradient(to bottom, #90c540 0%, #6aaa30 100%);
-}
-
-.win-btn.close {
-    background: linear-gradient(to bottom, #e04040 0%, #c02020 100%);
-    color: #fff;
-    border: 1px solid #901010;
-}
-
-.win-btn.close:hover {
-    background: linear-gradient(to bottom, #f05050 0%, #d03030 100%);
-}
+.win-btn:hover { background: rgba(0, 0, 0, 0.08); }
+.win-btn:active { background: rgba(0, 0, 0, 0.16); }
+.win-btn.maximize { font-size: 13px; }
+.win-btn.close:hover { background: #e81123; color: #fff; }
+.win-btn.close:active { background: #f1707a; color: #fff; }
 
 /* Window Content */
 .window-content {
     flex: 1;
     overflow: auto;
-    background: #f5f5f5;
+    background: #ffffff;
     position: relative;
 }
 
@@ -182,11 +160,7 @@
     bottom: 0 !important;
     width: auto !important;
     height: auto !important;
-    border-radius: 0;
-}
-
-.window.maximized .window-titlebar {
-    border-radius: 0;
+    border: none;
 }
 
 .window.maximized .resize-handle {

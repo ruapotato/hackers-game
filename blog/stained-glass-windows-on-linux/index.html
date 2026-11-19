@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stained Glass Follow-Up: Windows on Linux, Answering Your Questions - Hackers Game</title>
+    <meta name="description" content="Is Stained Glass just a reskinned Linux? How do Windows apps actually run? Can it play games? Plus multi-monitor, accent colours, fractional scaling, and moving my own workstation over.">
+    <meta name="author" content="David Hamner">
+    <meta name="keywords" content="stained glass, wine, windows apps, gaming, proton, multi-monitor, nvidia, debian, desktop linux">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hackers-game.com/blog/stained-glass-windows-on-linux/">
+    <meta property="og:title" content="Stained Glass Follow-Up: Windows on Linux, Answering Your Questions">
+    <meta property="og:description" content="Is Stained Glass just a reskinned Linux? How do Windows apps actually run? Can it play games? Plus multi-monitor, accent colours, fractional scaling, and moving my own workstation over.">
+    <meta property="og:image" content="https://img.youtube.com/vi/2nwHxD833-8/maxresdefault.jpg">
+    <meta property="og:site_name" content="Hackers Game">
+    <meta property="article:author" content="David Hamner">
+    <meta property="article:published_time" content="2026-11-15">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackers-game.com/blog/stained-glass-windows-on-linux/">
+    <meta name="twitter:title" content="Stained Glass Follow-Up: Windows on Linux, Answering Your Questions">
+    <meta name="twitter:description" content="Is Stained Glass just a reskinned Linux? How do Windows apps actually run? Can it play games? Plus multi-monitor, accent colours, fractional scaling, and moving my own workstation over.">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/2nwHxD833-8/maxresdefault.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hackers-game.com/blog/stained-glass-windows-on-linux/">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Stained Glass Follow-Up: Windows on Linux, Answering Your Questions",
+        "description": "Is Stained Glass just a reskinned Linux? How do Windows apps actually run? Can it play games? Plus multi-monitor, accent colours, fractional scaling, and moving my own workstation over.",
+        "image": "https://img.youtube.com/vi/2nwHxD833-8/maxresdefault.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "David Hamner",
+            "url": "https://hackers-game.com"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "David Hamner"
+        },
+        "datePublished": "2026-11-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://hackers-game.com/blog/stained-glass-windows-on-linux/"
+        },
+        "video": {
+            "@type": "VideoObject",
+            "name": "Stained Glass Follow-Up: Windows on Linux, Answering Your Questions",
+            "thumbnailUrl": "https://img.youtube.com/vi/2nwHxD833-8/maxresdefault.jpg",
+            "embedUrl": "https://www.youtube.com/embed/2nwHxD833-8"
+        }
+    }
+    </script>
+
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        a { color: #4fc3f7; }
+        h1 { color: #fff; border-bottom: 2px solid #4fc3f7; padding-bottom: 10px; }
+        h2, h3 { color: #4fc3f7; }
+        .meta { color: #888; margin-bottom: 20px; }
+        .tags { margin: 10px 0; }
+        .tag {
+            display: inline-block;
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin: 2px;
+            font-size: 0.85em;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            background: #000;
+            border-radius: 8px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .content { margin: 30px 0; }
+        pre {
+            background: #0d0d1a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background: #0d0d1a;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre code { background: none; padding: 0; }
+        .app-link {
+            display: inline-block;
+            background: #4fc3f7;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .app-link:hover { background: #81d4fa; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+        footer a { color: #4fc3f7; }
+        .nav { margin-bottom: 20px; }
+        .nav a { margin-right: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="https://hackers-game.com">Home</a>
+        <a href="https://hackers-game.com/blog/">All Posts</a>
+        <a href="https://youtube.com/@DavidHamner">YouTube</a>
+        <a href="https://github.com/ruapotato">GitHub</a>
+    </nav>
+
+    <article>
+        <h1>Stained Glass Follow-Up: Windows on Linux, Answering Your Questions</h1>
+        <div class="meta">
+            <span>2026-11-15</span> ·
+            <span>Desktop Linux</span>
+        </div>
+
+        
+        <div class="tags">
+            <span class="tag">stained glass</span><span class="tag">wine</span><span class="tag">windows apps</span><span class="tag">gaming</span><span class="tag">proton</span><span class="tag">multi-monitor</span><span class="tag">nvidia</span><span class="tag">debian</span><span class="tag">desktop linux</span>
+        </div>
+        
+
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/2nwHxD833-8"
+                frameborder="0"
+                allowfullscreen
+                loading="lazy"
+                title="Stained Glass Follow-Up: Windows on Linux, Answering Your Questions">
+            </iframe>
+           </div>
+
+        <div class="content">
+            <p><h1>Stained Glass Follow-Up: Windows on Linux</h1></p><p>Last video about <a href="https://hackers-game.com/?blog=stained-glass-reverse-engineered-windows">Stained Glass</a>, about nineteen thousand of you watched and around a hundred of you left comments full of questions. Is this just a reskinned Linux? How do Windows apps actually run? Can it actually play games? This post answers all of them. But first, the biggest upgrade that week: multi-monitor support.</p><p><h2>Multi-Monitor</h2></p><p>A week before, it was honestly broken. Full-screen apps stretched across every display at once, the login screen got split down the middle, and taskbar icons would vanish on the second screen. Now:</p><p><ul><li>every display gets its own taskbar</li><br><li>full-screen stays on the display it started on</li><br><li>the login screen sits on your main display</li><br><li>on a dock, you can turn the laptop's own screen off right from Settings</li><br><li>each display keeps its own resolution and refresh rate</li></p><p><h2>Accent Colours and Scaling</h2></p><p>Pick an accent colour and the system's icons update to match: the Start menu, File Explorer, Settings, all of it, live, without signing out.</p><p>Display scaling is very good. Windows apps get true fractional scaling, like 125 or 150 percent, and you can change it without signing out. Linux apps get it too. Out of the box, GTK apps on this kind of desktop could only scale in whole numbers, 200 percent or nothing, so Stained Glass ships its own patched GTK that scales by fractions. Qt apps scale by fractions as well.</p><p><h2>Why Build a Whole New Desktop?</h2></p><p>It isn't completely new. Wine has always had a desktop, mostly to help certain apps behave. Stained Glass took that idea and grew it up, because a lot of Windows apps expect a real Windows desktop around them: apps that look for the taskbar to find out where they're allowed to put their window, apps that add an icon to the hidden icons tray, apps like OneDrive that put sync status icons right inside File Explorer. On a normal Linux desktop those things are half there or not there at all. Here they just work, because the desktop speaks Windows.</p><p><h2>"It's Just a Reskinned Linux"</h2></p><p>I get why people say that. It is a Linux distribution. It's Debian underneath, and it runs Debian apps just fine. But Linux apps aren't the point. The point is Windows apps: how many of them run, and how well. It's for people who want their Windows apps and their Windows habits to just work, on top of a Linux base that's already proven.</p><p>The best way to think about it: take Wine and make it the operating system, on a stable Debian base. Then supercharge Wine until it's something you'd actually want to use every day. Stained Glass packs over two thousand custom fixes on top of Wine, targeted at making everyday desktop apps behave like they're actually on Windows.</p><p><h2>How Windows Apps Actually Run</h2></p><p>Windows apps are built on a handful of frameworks, and each one is its own challenge.</p><p><li><strong>Classic Win32 apps</strong> written in C or C++, like Notepad++ or 7-Zip, are Wine's home turf. They mostly just work.</li><br><li><strong>.NET apps</strong> built with WinForms or WPF need the .NET Framework. Wine uses an open source reimplementation of it, and Stained Glass ships its own fork with pieces Wine never had, like WPF's rich text engine, written from scratch. Newer .NET apps bring Microsoft's own runtime with them, and that runs too.</li><br><li><strong>Games and 3D apps</strong> use DirectX, which gets translated to Vulkan with DXVK and VKD3D-Proton. Those are the same pieces Steam uses in Proton, and they run here outside of Steam too.</li><br><li><strong>What doesn't work</strong> is anything that has to run inside the Windows kernel itself: drivers, some VPNs, and kernel anti-cheat. Wine runs apps, not Windows kernel drivers.</li></ul></p><p>Microsoft Office is the hardest test of all, because it uses almost every one of those frameworks at once. That week, PowerPoint's Designer went from crashing on the first click to showing its designs, and Excel's Copilot pane went from a "could not be started" error to opening.</p><p><h2>Gaming</h2></p><p>A lot of you asked about gaming, and it's really good. My recommendation is the Linux version of Steam, so you get all of its Proton versions, which basically makes it a Steam Machine. Many games are native Linux games, which run straight on the Debian base.</p><p>Anti-cheat is the bad news. Most kernel anti-cheat is designed specifically not to work on a system like this. It's not that the games couldn't run; the developers went out of their way to stop them. Some developers do switch it on for Proton, and when they do, those games work through Steam.</p><p><h2>I Moved My Own Workstation</h2></p><p>That week I finally did it: I switched my own workstation, the one I build Stained Glass on, over to Stained Glass. I didn't reinstall. If you already run Debian 13, you add the Stained Glass repository, install one package, and restart. Your files stay where they are, your Linux apps show up in the Start menu, and if you change your mind, removing that package puts your old desktop back.</p><p>The first thing that broke was my NVIDIA card. Steam's store came out scrambled, games flickered, and videos played as a black box. The driver Debian ships is too old for a modern Linux desktop: it can't do something called explicit sync. So Stained Glass now does what Windows Update does. On a supported NVIDIA card it offers NVIDIA's own current driver, and the desktop speaks explicit sync. Now Steam draws cleanly, games are smooth, and video plays the way it should.</p><p><h2>Is It Vibe Coded?</h2></p><p>AI agents write most of the code, mostly Claude. But the architecture is mine, from fifteen years of coding the slow way, and every fix has to come with a test that fails without it before it's allowed in. That's how something this big stays honest.</p><p><h2>What's Next</h2></p><p>Next I want to put it through real tests: the apps you actually use and the games you actually play. Tell me in the YouTube comments what you'd like to see running on Stained Glass. If you rely on big professional software I don't have a licence for, like Autodesk Inventor, give it a try yourself. The ISO is at <a href="https://freesoft.page">freesoft.page</a>, and if something doesn't work, the Report a problem button sends me the details I need to fix it.</p>
+        </div>
+
+        <a href="https://hackers-game.com/?blog=stained-glass-windows-on-linux" class="app-link">View in Interactive Desktop App</a>
+    </article>
+
+    <footer>
+        <p>
+            <strong>David Hamner</strong> - GNU/Linux Stuff<br>
+            <a href="https://youtube.com/@DavidHamner">YouTube</a> ·
+            <a href="https://github.com/ruapotato">GitHub</a> ·
+            <a href="https://www.linkedin.com/in/david-hamner-a1633635/">LinkedIn</a>
+        </p>
+        <p>
+            <a href="https://hackers-game.com/api/content.json">API</a> ·
+            <a href="https://hackers-game.com/sitemap.xml">Sitemap</a>
+        </p>
+    </footer>
+</body>
+</html>

@@ -40,12 +40,13 @@ class Desktop {
 
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const dateStr = now.toLocaleDateString('en-US', {
-                weekday: 'short',
-                month: 'short',
-                day: 'numeric'
+                month: 'numeric',
+                day: 'numeric',
+                year: 'numeric'
             });
 
-            clockEl.textContent = `${dateStr}  ${hours}:${minutes}${period}`;
+            // two lines, as the Stained Glass taskbar clock has them
+            clockEl.innerHTML = `<span>${hours}:${minutes}${period}</span><span>${dateStr}</span>`;
         };
 
         updateClock();
@@ -55,7 +56,6 @@ class Desktop {
     setupAppMenu() {
         const appMenuBtn = document.getElementById('app-menu-btn');
         const appMenu = document.getElementById('app-menu');
-        const placesMenuBtn = document.getElementById('places-menu-btn');
 
         // Toggle app menu
         appMenuBtn.addEventListener('click', (e) => {
@@ -90,10 +90,6 @@ class Desktop {
             });
         });
 
-        // Places menu (quick access)
-        placesMenuBtn.addEventListener('click', () => {
-            fileManagerApp.open('/home/hacker');
-        });
     }
 
     setupDesktopIcons() {
